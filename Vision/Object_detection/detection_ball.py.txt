@@ -1,0 +1,74 @@
+import cv2
+import numpy as np
+import time
+
+
+class Ball:
+
+    def __init__(self, k1, k2):
+        # Initialization
+        self.ball_state = False  # Ball existence
+        self.position_x = 0  # Ball's current coordinates
+        self.position_y = 0
+        self._x_speed = 0
+        self._y_speed = 0
+        self.exchange_value_x = k1  # X-direction conversion factor, from pixel coordinate into own coordinate
+        self.exchange_value_y = k2  # Y-direction conversion factor
+        self.lasttime = time.clock()
+
+    def get_ball_state(self):
+        return self.ball_state
+
+    def get_ball_position(self, color_image):
+        frame = cv2.cvtColor(color_image, cv2.COLOR_RGB2GRAY)  # Convert the color image to grayscale
+        _, frame = cv2.threshold(frame, 180, 255, cv2.THRESH_BINARY)  # Apply binary thresholding
+        rows, cols = frame.shape # Give back the array of the binary image
+
+        for i in range(rows - 1):
+            for j in range(cols - 1):
+                if frame[i, j] >= 180:
+                    begin = j
+                    while frame[i, j] >= 250 and (j < cols - 2):
+                        j += 1
+                    if (j - begin) * self.exchange_value_x <= mindiameter or (
+                            j - begin) * self.exchange_value_x >= maxdiameter:
+                        # Not a ball, scan the next row
+                        continue
+
+                    position_x = int((j + begin) / 2)
+                    position_y = i
+                    radius = (j - begin) * self.exchange_value_x
+                    self.ball_state = True
+                    x = position_x * self.exchange_value_x
+                    y = position_y * self.exchange_value_y
+
+                    newtime = time.clock()
+                    elapsed_time = newtime - self.lasttime
+                    elapsed_time = 1  # Assuming each computation takes 0.5s
+                    self._x_speed = (x - self.position_x) / elapsed_time
+                    self._y_speed = (y - self.position_y) / elapsed_time
+                    self.position_x = x
+                    self.position_y = y
+                    self.lasttime = newtime
+                    return True
+
+        self.ball_state = False
+        return False
+
+    def get_ball_speed(self):
+        if not self.ball_state:
+            return False
+        return self._x_speed, self._y_speed
+
+    def print_ball_position(self):
+        if not self.ball_state:
+            return False
+        print(f"Position: (x={self.position_x}, y={self.position_y})")
+        return True
+
+    def print_ball_speed(self):
+        if not self.ball_state:
+            return False
+        print(f"X-Speed: {self._x_speed} mm/s")
+        print(f"Y-Speed: {self._y_speed} mm/s")
+        return True
