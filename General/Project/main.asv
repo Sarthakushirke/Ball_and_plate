@@ -31,9 +31,8 @@ den_c = cell2mat(C.den);
 
 
 %% Nyquist robustness
-m_max = 0.150*100000;
+m_max = 0.150*1000;
 delta = 0:m_max/10:m_max;
-figure
 for i = 1:length(delta)
 sys = kt/((m_tot+delta(i))*s^2+d*s);
 L = C*sys;
