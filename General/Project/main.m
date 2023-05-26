@@ -19,8 +19,8 @@ d = 0; % Motor friction
 sys = kt/(m_tot*s^2+d*s);
 
 % Load controller
-load('controller_lowpass.mat') % No integrator  
-C = shapeit_data.C_tf_z;
-C = tf(C);
-numc_mi = cell2mat(C.num);
-denc_mi = cell2mat(C.den);
+% load('controller_lowpass.mat') % No integrator  
+% C = shapeit_data.C_tf_z;
+% C = tf(C);
+% numc_mi = cell2mat(C.num);
+% denc_mi = cell2mat(C.den);
