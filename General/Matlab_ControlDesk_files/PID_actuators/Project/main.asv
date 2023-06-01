@@ -43,16 +43,14 @@ C_gain = gain;
 C_lead = ((1/(2*pi*lead_zero))*s+1)/((1/(2*pi*lead_pole))*s+1);
 C_lpf = 1/((1/(2*pi*lpf_pole)^2)*s^2 + ((2*damping)/(2*pi*lpf_pole))*s+1);
 C_int = (s+2*pi*integrator_zero)/s;
-C_shapeit_manually = C_gain*C_lead*C_lpf*(tf(cell2mat(C_int.num),1)); % only the zero part of the integrator
+C = C_gain*C_lead*C_lpf*tf(cell2mat(C_int.num),1); % only the zero part of the integrator
 bode(C_shapeit)
 hold on
 bode(C)
 
-num_c = C_shapeit_manually.num{:};
-den_c = C_shapeit_manually.den{:};
-sys_cl = feedback(sys*C,1);
-figure
-step(sys_cl)
+num_c = C.num{:};
+den_c = C.den{:};
+
 
 %% Control parameters for Simulink model
 numc_mi = C.Numerator{:};
@@ -111,10 +109,5 @@ C = P + I*(1/s) + D*(N/(1+N*(1/s)));
 num_c = C.num{:};
 den_c = C.den{:};
 
-%% import PID sisotool
-pid_struct = pid(C);
-Kp = pid_struct.Kp;
-Ki = pid_struct.Ki;
-Kd = pid_struct.Kd;
-N = pid_struct.Tf;
+%%
 
