@@ -116,5 +116,5 @@ pid_struct = pid(C);
 Kp = pid_struct.Kp;
 Ki = pid_struct.Ki;
 Kd = pid_struct.Kd;
-N = pid_struct.Tf;
+N = 1/pid_struct.Tf;
 
