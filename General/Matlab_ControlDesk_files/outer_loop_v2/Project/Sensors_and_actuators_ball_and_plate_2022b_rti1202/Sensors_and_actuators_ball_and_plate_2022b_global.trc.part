@@ -7,7 +7,10 @@ endgroup
 
 -- ******** State Machine Data ************************************************
 
--- No Stateflow chart within the model.
+group "State Machine Data"
+
+
+endgroup
 
 
 -- ******** Labels ************************************************************

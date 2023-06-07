@@ -6,7 +6,7 @@
    the hardware and software interrupts used.
 
    RTI1202 7.15 (02-Nov-2020)
-   Wed May 31 17:59:15 2023
+   Wed Jun  7 16:38:45 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -403,7 +403,7 @@ static void rti_mdl_initialize_io_boards(void)
   }
 
   /* dSPACE I/O Board DSETHERNET #1 Unit:SETUPUDP */
-  /* --- Sensors_and_actuators_ball_and_plate_2022b/ETHERNET_UDP_SETUP_BL1: ==> Socket ID = (0) --- */
+  /* --- Sensors_and_actuators_ball_and_plate_2022b/Subsystem1/ETHERNET_UDP_SETUP_BL1: ==> Socket ID = (0) --- */
   {
     /* dSPACE I/O Board DSETHERNET #1 Unit:SETUPUDP Group:SETUPUDP */
     DsSSockAddrIn localAddr;
@@ -623,7 +623,7 @@ static void rti_mdl_initialize_io_units(void)
   }
 
   /* dSPACE I/O Board DSETHERNET #1 Unit:SETUPUDP */
-  /* --- Sensors_and_actuators_ball_and_plate_2022b/ETHERNET_UDP_SETUP_BL1: ==> Socket ID = (0) --- */
+  /* --- Sensors_and_actuators_ball_and_plate_2022b/Subsystem1/ETHERNET_UDP_SETUP_BL1: ==> Socket ID = (0) --- */
   {
     /* dSPACE I/O Board DSETHERNET #1 Unit:SETUPUDP Group:SETUPUDP */
     DsSSockAddrIn remoteAddr ;

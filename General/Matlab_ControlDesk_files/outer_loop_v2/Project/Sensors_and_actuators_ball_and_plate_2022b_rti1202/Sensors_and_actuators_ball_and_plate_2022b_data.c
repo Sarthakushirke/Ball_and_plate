@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.12
+ * Model version              : 7.26
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Wed May 31 17:59:15 2023
+ * C source code generated on : Wed Jun  7 16:38:45 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -22,123 +22,163 @@
 
 /* Block parameters (default storage) */
 P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
-  /* Mask Parameter: PIDController_InitialConditionF
-   * Referenced by: '<S43>/Filter'
-   */
-  0.0,
-
   /* Mask Parameter: PIDController1_InitialCondition
-   * Referenced by: '<S91>/Filter'
+   * Referenced by: '<S223>/Filter'
    */
   0.0,
 
-  /* Mask Parameter: PIDController2_InitialCondition
-   * Referenced by: '<S139>/Filter'
+  /* Mask Parameter: PIDController3_InitialCondition
+   * Referenced by: '<S271>/Filter'
    */
   0.0,
 
-  /* Mask Parameter: PIDController_InitialConditio_c
-   * Referenced by: '<S48>/Integrator'
+  /* Mask Parameter: PIDController_InitialConditionF
+   * Referenced by: '<S47>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController1_InitialConditi_j
-   * Referenced by: '<S96>/Integrator'
+   * Referenced by: '<S96>/Filter'
+   */
+  0.0,
+
+  /* Mask Parameter: PIDController2_InitialCondition
+   * Referenced by: '<S146>/Filter'
+   */
+  0.0,
+
+  /* Mask Parameter: PIDController1_InitialCondit_jy
+   * Referenced by: '<S228>/Integrator'
+   */
+  0.0,
+
+  /* Mask Parameter: PIDController3_InitialConditi_d
+   * Referenced by: '<S276>/Integrator'
+   */
+  0.0,
+
+  /* Mask Parameter: PIDController_InitialConditio_c
+   * Referenced by: '<S52>/Integrator'
+   */
+  0.0,
+
+  /* Mask Parameter: PIDController1_InitialCondit_jl
+   * Referenced by: '<S101>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController2_InitialConditi_o
-   * Referenced by: '<S144>/Integrator'
+   * Referenced by: '<S151>/Integrator'
    */
   0.0,
 
-  /* Mask Parameter: PIDController_LowerSaturationLi
-   * Referenced by: '<S55>/Saturation'
+  /* Mask Parameter: PIDController1_LowerSaturationL
+   * Referenced by: '<S235>/Saturation'
    */
   -3.0,
 
-  /* Mask Parameter: PIDController1_LowerSaturationL
-   * Referenced by: '<S103>/Saturation'
+  /* Mask Parameter: PIDController3_LowerSaturationL
+   * Referenced by: '<S283>/Saturation'
+   */
+  -3.0,
+
+  /* Mask Parameter: PIDController_LowerSaturationLi
+   * Referenced by: '<S59>/Saturation'
+   */
+  -3.0,
+
+  /* Mask Parameter: PIDController1_LowerSaturatio_h
+   * Referenced by: '<S108>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController2_LowerSaturationL
-   * Referenced by: '<S151>/Saturation'
+   * Referenced by: '<S158>/Saturation'
    */
   -3.0,
 
-  /* Mask Parameter: PIDController_UpperSaturationLi
-   * Referenced by: '<S55>/Saturation'
+  /* Mask Parameter: PIDController1_UpperSaturationL
+   * Referenced by: '<S235>/Saturation'
    */
   3.0,
 
-  /* Mask Parameter: PIDController1_UpperSaturationL
-   * Referenced by: '<S103>/Saturation'
+  /* Mask Parameter: PIDController3_UpperSaturationL
+   * Referenced by: '<S283>/Saturation'
+   */
+  3.0,
+
+  /* Mask Parameter: PIDController_UpperSaturationLi
+   * Referenced by: '<S59>/Saturation'
+   */
+  3.0,
+
+  /* Mask Parameter: PIDController1_UpperSaturatio_l
+   * Referenced by: '<S108>/Saturation'
    */
   3.0,
 
   /* Mask Parameter: PIDController2_UpperSaturationL
-   * Referenced by: '<S151>/Saturation'
+   * Referenced by: '<S158>/Saturation'
    */
   3.0,
 
   /* Expression: 3
-   * Referenced by: '<S4>/Saturation'
+   * Referenced by: '<S7>/Saturation'
    */
   3.0,
 
   /* Expression: -3
-   * Referenced by: '<S4>/Saturation'
+   * Referenced by: '<S7>/Saturation'
    */
   -3.0,
 
   /* Expression: 10/3
-   * Referenced by: '<S4>/Current2V'
+   * Referenced by: '<S7>/Current2V'
    */
   3.3333333333333335,
 
   /* Expression: 1/10
-   * Referenced by: '<S4>/DSPscale'
+   * Referenced by: '<S7>/DSPscale'
    */
   0.1,
 
   /* Expression: 3
-   * Referenced by: '<S5>/Saturation'
+   * Referenced by: '<S8>/Saturation'
    */
   3.0,
 
   /* Expression: -3
-   * Referenced by: '<S5>/Saturation'
+   * Referenced by: '<S8>/Saturation'
    */
   -3.0,
 
   /* Expression: 10/3
-   * Referenced by: '<S5>/Current2V'
+   * Referenced by: '<S8>/Current2V'
    */
   3.3333333333333335,
 
   /* Expression: 1/10
-   * Referenced by: '<S5>/DSPscale'
+   * Referenced by: '<S8>/DSPscale'
    */
   0.1,
 
   /* Expression: 3
-   * Referenced by: '<S6>/Saturation'
+   * Referenced by: '<S9>/Saturation'
    */
   3.0,
 
   /* Expression: -3
-   * Referenced by: '<S6>/Saturation'
+   * Referenced by: '<S9>/Saturation'
    */
   -3.0,
 
   /* Expression: 10/3
-   * Referenced by: '<S6>/Current2V'
+   * Referenced by: '<S9>/Current2V'
    */
   3.3333333333333335,
 
   /* Expression: 1/10
-   * Referenced by: '<S6>/DSPscale'
+   * Referenced by: '<S9>/DSPscale'
    */
   0.1,
 
@@ -163,22 +203,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S163>/Const'
+   * Referenced by: '<S176>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S163>/Const1'
+   * Referenced by: '<S176>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A
-   * Referenced by: '<S163>/Transfer Fcn'
+   * Referenced by: '<S176>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C
-   * Referenced by: '<S163>/Transfer Fcn'
+   * Referenced by: '<S176>/Transfer Fcn'
    */
   1.0,
 
@@ -208,22 +248,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S168>/Const'
+   * Referenced by: '<S181>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S168>/Const1'
+   * Referenced by: '<S181>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A_b
-   * Referenced by: '<S168>/Transfer Fcn'
+   * Referenced by: '<S181>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C_j
-   * Referenced by: '<S168>/Transfer Fcn'
+   * Referenced by: '<S181>/Transfer Fcn'
    */
   1.0,
 
@@ -253,22 +293,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S173>/Const'
+   * Referenced by: '<S186>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S173>/Const1'
+   * Referenced by: '<S186>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A_p
-   * Referenced by: '<S173>/Transfer Fcn'
+   * Referenced by: '<S186>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C_m
-   * Referenced by: '<S173>/Transfer Fcn'
+   * Referenced by: '<S186>/Transfer Fcn'
    */
   1.0,
 
@@ -282,6 +322,11 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.0,
 
+  /* Expression: 1
+   * Referenced by: '<S14>/Constant1'
+   */
+  1.0,
+
   /* Expression: 0
    * Referenced by: '<Root>/Init_2'
    */
@@ -293,236 +338,281 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Constant'
+   * Referenced by: '<S4>/Constant'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<Root>/constant_ref_1'
+   * Referenced by: '<S4>/constant_ref_1'
    */
   0.0,
 
-  /* Expression: 0.01
-   * Referenced by: '<Root>/Sine Wave'
+  /* Expression: 0.1
+   * Referenced by: '<S1>/Sine Wave'
    */
-  0.01,
+  0.1,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Sine Wave'
+   * Referenced by: '<S1>/Sine Wave'
    */
   0.0,
 
-  /* Expression: 0.75
-   * Referenced by: '<Root>/Sine Wave'
+  /* Expression: (1/5)*2*pi
+   * Referenced by: '<S1>/Sine Wave'
    */
-  0.75,
+  1.2566370614359172,
+
+  /* Expression: pi/2
+   * Referenced by: '<S1>/Sine Wave'
+   */
+  1.5707963267948966,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Sine Wave'
+   * Referenced by: '<S15>/Controller2_P1'
    */
   0.0,
 
-  /* Expression: 0.03
-   * Referenced by: '<Root>/Saturation'
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_D1'
    */
-  0.03,
+  0.0,
 
-  /* Expression: -0.03
-   * Referenced by: '<Root>/Saturation'
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_N1'
    */
-  -0.03,
+  0.0,
+
+  /* Expression: 0.1
+   * Referenced by: '<S1>/Sine Wave1'
+   */
+  0.1,
+
+  /* Expression: 0
+   * Referenced by: '<S1>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: (1/5)*2*pi
+   * Referenced by: '<S1>/Sine Wave1'
+   */
+  1.2566370614359172,
+
+  /* Expression: 0
+   * Referenced by: '<S1>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_P'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_D'
+   */
+  0.0,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_N'
+   */
+  0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/switch_ref_constant_sin_1'
+   * Referenced by: '<S4>/switch_ref_constant_sin_1'
    */
   0.5,
 
-  /* Expression: 0
+  /* Expression: 71.1953
    * Referenced by: '<Root>/Controller_P'
    */
-  0.0,
+  71.1953,
 
   /* Expression: 0
-   * Referenced by: '<Root>/reset_integrator_1'
+   * Referenced by: '<S4>/reset_integrator_1'
    */
   0.0,
 
-  /* Expression: 0
+  /* Expression: 4.2346
    * Referenced by: '<Root>/Controller_D'
    */
-  0.0,
+  4.2346,
 
-  /* Expression: 0
+  /* Expression: 79.4328
    * Referenced by: '<Root>/Controller_N'
    */
-  0.0,
+  79.4328,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/controller_disable_1'
+   * Referenced by: '<S4>/controller_disable_1'
    */
   0.5,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Constant2'
+   * Referenced by: '<S5>/Constant2'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<Root>/constant_ref_2'
+   * Referenced by: '<S5>/constant_ref_2'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/switch_ref_constant_sin_2'
+   * Referenced by: '<S5>/switch_ref_constant_sin_2'
    */
   0.5,
 
   /* Expression: 0
-   * Referenced by: '<Root>/reset_integrator_2'
+   * Referenced by: '<S5>/reset_integrator_2'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/controller_disable_2'
+   * Referenced by: '<S5>/controller_disable_2'
    */
   0.5,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Constant3'
+   * Referenced by: '<S6>/Constant3'
    */
   0.0,
 
   /* Expression: 0
-   * Referenced by: '<Root>/constant_ref_3'
+   * Referenced by: '<S6>/constant_ref_3'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/switch_ref_constant_sin_3'
+   * Referenced by: '<S6>/switch_ref_constant_sin_3'
    */
   0.5,
 
   /* Expression: 0
-   * Referenced by: '<Root>/reset_integrator_3'
+   * Referenced by: '<S6>/reset_integrator_3'
    */
   0.0,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/controller_disable_3'
+   * Referenced by: '<S6>/controller_disable_3'
    */
   0.5,
 
   /* Expression: 0.5
-   * Referenced by: '<Root>/CloseLoop_disable_1'
+   * Referenced by: '<S4>/CloseLoop_disable_1'
    */
   0.5,
 
-  /* Expression: 0.5
-   * Referenced by: '<Root>/CloseLoop_disable_2'
-   */
-  0.5,
-
-  /* Expression: 0.5
-   * Referenced by: '<Root>/CloseLoop_disable_3'
-   */
-  0.5,
-
-  /* Expression: 0
+  /* Expression: 47.4209
    * Referenced by: '<Root>/Controller_I'
    */
+  47.4209,
+
+  /* Expression: 0.5
+   * Referenced by: '<S5>/CloseLoop_disable_2'
+   */
+  0.5,
+
+  /* Expression: 0.5
+   * Referenced by: '<S6>/CloseLoop_disable_3'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_I1'
+   */
   0.0,
 
-  /* Expression: 1
-   * Referenced by: '<Root>/Constant1'
+  /* Expression: 0
+   * Referenced by: '<S15>/Controller2_I'
    */
-  1.0,
+  0.0,
 
   /* Computed Parameter: Gain2_Gain
-   * Referenced by: '<Root>/Gain2'
+   * Referenced by: '<S14>/Gain2'
    */
   128U,
 
   /* Computed Parameter: Gain1_Gain
-   * Referenced by: '<Root>/Gain1'
+   * Referenced by: '<S14>/Gain1'
    */
   128U,
 
-  /* Start of '<S173>/Enabled Subsystem1' */
+  /* Start of '<S186>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S175>/Out1'
+     * Referenced by: '<S188>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S173>/Enabled Subsystem1' */
+  /* End of '<S186>/Enabled Subsystem1' */
 
-  /* Start of '<S173>/Enabled Subsystem' */
+  /* Start of '<S186>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S174>/Out1'
+     * Referenced by: '<S187>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S174>/Constant'
+     * Referenced by: '<S187>/Constant'
      */
     -1.0
   }
   ,
 
-  /* End of '<S173>/Enabled Subsystem' */
+  /* End of '<S186>/Enabled Subsystem' */
 
-  /* Start of '<S168>/Enabled Subsystem1' */
+  /* Start of '<S181>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S170>/Out1'
+     * Referenced by: '<S183>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S168>/Enabled Subsystem1' */
+  /* End of '<S181>/Enabled Subsystem1' */
 
-  /* Start of '<S168>/Enabled Subsystem' */
+  /* Start of '<S181>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S169>/Out1'
+     * Referenced by: '<S182>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S169>/Constant'
+     * Referenced by: '<S182>/Constant'
      */
     -1.0
   }
   ,
 
-  /* End of '<S168>/Enabled Subsystem' */
+  /* End of '<S181>/Enabled Subsystem' */
 
-  /* Start of '<S163>/Enabled Subsystem1' */
+  /* Start of '<S176>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S165>/Out1'
+     * Referenced by: '<S178>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S163>/Enabled Subsystem1' */
+  /* End of '<S176>/Enabled Subsystem1' */
 
-  /* Start of '<S163>/Enabled Subsystem' */
+  /* Start of '<S176>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S164>/Out1'
+     * Referenced by: '<S177>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S164>/Constant'
+     * Referenced by: '<S177>/Constant'
      */
     -1.0
   }
-  /* End of '<S163>/Enabled Subsystem' */
+  /* End of '<S176>/Enabled Subsystem' */
 };

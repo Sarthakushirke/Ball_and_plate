@@ -5,7 +5,7 @@
    Definition of function that initializes the global TRC pointers
 
    RTI1202 7.15 (02-Nov-2020)
-   Wed May 31 17:59:15 2023
+   Wed Jun  7 16:38:45 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -53,6 +53,18 @@ volatile real_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_7 = NULL;
 volatile real_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_8 = NULL;
 volatile real_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_9 = NULL;
 volatile real_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_10 = NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_11 =
+  NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_12 =
+  NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_13 =
+  NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_14 =
+  NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_15 =
+  NULL;
+volatile boolean_T *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_16 =
+  NULL;
 volatile real_T *p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 = NULL;
 volatile real_T *p_2_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 = NULL;
 volatile uint8_T *p_2_Sensors_and_actuators_ball_and_plate_2022b_uint8_T_1 =
@@ -118,10 +130,22 @@ static void rti_init_trc_pointers_0(void)
     &Sensors_and_actuators_ball_an_B.EnabledSubsystem1.In1;
   p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_10 =
     &Sensors_and_actuators_ball_an_B.EnabledSubsystem.OutportBufferForOut1;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_11 =
+    &Sensors_and_actuators_ball_an_B.sf_MATLABFunction_f.saturation;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_12 =
+    &Sensors_and_actuators_ball_an_B.sf_MATLABFunction_c.saturation;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_13 =
+    &Sensors_and_actuators_ball_an_B.sf_MATLABFunction.saturation;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_14 =
+    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction3.outOfBounds;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_15 =
+    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction2.outOfBounds;
+  p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_16 =
+    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction1.outOfBounds;
   p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 =
     &Sensors_and_actuators_ball_an_U.controller_disable1;
   p_2_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 =
-    &Sensors_and_actuators_ball_an_P.PIDController_InitialConditionF;
+    &Sensors_and_actuators_ball_an_P.PIDController1_InitialCondition;
   p_2_Sensors_and_actuators_ball_and_plate_2022b_uint8_T_1 =
     &Sensors_and_actuators_ball_an_P.Gain2_Gain;
   p_2_Sensors_and_actuators_ball_and_plate_2022b_real_T_2 =
@@ -137,7 +161,7 @@ static void rti_init_trc_pointers_0(void)
   p_2_Sensors_and_actuators_ball_and_plate_2022b_real_T_7 =
     &Sensors_and_actuators_ball_an_P.EnabledSubsystem.Out1_Y0;
   p_3_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 =
-    &Sensors_and_actuators_ball_a_DW.SFunction1_RWORK.RECEIVED_FRAMES;
+    &Sensors_and_actuators_ball_a_DW.Sum_DWORK1;
   p_3_Sensors_and_actuators_ball_and_plate_2022b_uint32_T_1 =
     &Sensors_and_actuators_ball_a_DW.Add1_DWORK1;
   p_3_Sensors_and_actuators_ball_and_plate_2022b_uint16_T_2 =
