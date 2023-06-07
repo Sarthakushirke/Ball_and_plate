@@ -24,6 +24,8 @@ den = [m D 0];
 sys = tf(num,den);
 bode(sys)
 
+%controller PID:  with Kp = 15.9, Ki = 33.4, Kd = 1.89
+
 %% Load controller
 load('controller_lowpass.mat') % No integrator  
 % C = shapeit_data.C_tf_z;
