@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.26
+ * Model version              : 7.48
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Wed Jun  7 16:38:45 2023
+ * C source code generated on : Thu Jun  8 18:22:17 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -21,10 +21,10 @@
 #ifndef RTW_HEADER_Sensors_and_actuators_ball_and_plate_2022b_types_h_
 #define RTW_HEADER_Sensors_and_actuators_ball_and_plate_2022b_types_h_
 
-/* Parameters for system: '<S176>/Enabled Subsystem' */
+/* Parameters for system: '<S178>/Enabled Subsystem' */
 typedef struct P_EnabledSubsystem_Sensors_an_T_ P_EnabledSubsystem_Sensors_an_T;
 
-/* Parameters for system: '<S176>/Enabled Subsystem1' */
+/* Parameters for system: '<S178>/Enabled Subsystem1' */
 typedef struct P_EnabledSubsystem1_Sensors_a_T_ P_EnabledSubsystem1_Sensors_a_T;
 
 /* Parameters (default storage) */

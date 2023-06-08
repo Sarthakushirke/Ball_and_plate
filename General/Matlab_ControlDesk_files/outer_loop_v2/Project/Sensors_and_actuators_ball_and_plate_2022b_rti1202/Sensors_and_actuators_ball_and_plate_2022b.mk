@@ -110,7 +110,7 @@ EXT_MODE                       = 0
 MULTITASKING                   = 0
 # Support for parallel computing
 MASTER_ANCHOR_DIR              = 
-START_DIR                      = C:\Users\20203985\Documents\MATLAB\07_06_2023\Project
+START_DIR                      = C:\Users\20203985\Documents\MATLAB\08_06_2023\Project
 # Shared library for utility code
 RTW_SHARED_LIB_SRCS_WILD       = 
 RTW_SHARED_LIB_SRCS_DIR        = 

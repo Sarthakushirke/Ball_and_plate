@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.26
+ * Model version              : 7.48
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Wed Jun  7 16:38:45 2023
+ * C source code generated on : Thu Jun  8 18:22:17 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -23,102 +23,102 @@
 /* Block parameters (default storage) */
 P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   /* Mask Parameter: PIDController1_InitialCondition
-   * Referenced by: '<S223>/Filter'
+   * Referenced by: '<S225>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController3_InitialCondition
-   * Referenced by: '<S271>/Filter'
+   * Referenced by: '<S273>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController_InitialConditionF
-   * Referenced by: '<S47>/Filter'
+   * Referenced by: '<S48>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController1_InitialConditi_j
-   * Referenced by: '<S96>/Filter'
+   * Referenced by: '<S98>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController2_InitialCondition
-   * Referenced by: '<S146>/Filter'
+   * Referenced by: '<S148>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController1_InitialCondit_jy
-   * Referenced by: '<S228>/Integrator'
+   * Referenced by: '<S230>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController3_InitialConditi_d
-   * Referenced by: '<S276>/Integrator'
+   * Referenced by: '<S278>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController_InitialConditio_c
-   * Referenced by: '<S52>/Integrator'
+   * Referenced by: '<S53>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController1_InitialCondit_jl
-   * Referenced by: '<S101>/Integrator'
+   * Referenced by: '<S103>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController2_InitialConditi_o
-   * Referenced by: '<S151>/Integrator'
+   * Referenced by: '<S153>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController1_LowerSaturationL
-   * Referenced by: '<S235>/Saturation'
+   * Referenced by: '<S237>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController3_LowerSaturationL
-   * Referenced by: '<S283>/Saturation'
+   * Referenced by: '<S285>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController_LowerSaturationLi
-   * Referenced by: '<S59>/Saturation'
+   * Referenced by: '<S60>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController1_LowerSaturatio_h
-   * Referenced by: '<S108>/Saturation'
+   * Referenced by: '<S110>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController2_LowerSaturationL
-   * Referenced by: '<S158>/Saturation'
+   * Referenced by: '<S160>/Saturation'
    */
   -3.0,
 
   /* Mask Parameter: PIDController1_UpperSaturationL
-   * Referenced by: '<S235>/Saturation'
+   * Referenced by: '<S237>/Saturation'
    */
   3.0,
 
   /* Mask Parameter: PIDController3_UpperSaturationL
-   * Referenced by: '<S283>/Saturation'
+   * Referenced by: '<S285>/Saturation'
    */
   3.0,
 
   /* Mask Parameter: PIDController_UpperSaturationLi
-   * Referenced by: '<S59>/Saturation'
+   * Referenced by: '<S60>/Saturation'
    */
   3.0,
 
   /* Mask Parameter: PIDController1_UpperSaturatio_l
-   * Referenced by: '<S108>/Saturation'
+   * Referenced by: '<S110>/Saturation'
    */
   3.0,
 
   /* Mask Parameter: PIDController2_UpperSaturationL
-   * Referenced by: '<S158>/Saturation'
+   * Referenced by: '<S160>/Saturation'
    */
   3.0,
 
@@ -203,22 +203,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S176>/Const'
+   * Referenced by: '<S178>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S176>/Const1'
+   * Referenced by: '<S178>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A
-   * Referenced by: '<S176>/Transfer Fcn'
+   * Referenced by: '<S178>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C
-   * Referenced by: '<S176>/Transfer Fcn'
+   * Referenced by: '<S178>/Transfer Fcn'
    */
   1.0,
 
@@ -248,22 +248,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S181>/Const'
+   * Referenced by: '<S183>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S181>/Const1'
+   * Referenced by: '<S183>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A_b
-   * Referenced by: '<S181>/Transfer Fcn'
+   * Referenced by: '<S183>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C_j
-   * Referenced by: '<S181>/Transfer Fcn'
+   * Referenced by: '<S183>/Transfer Fcn'
    */
   1.0,
 
@@ -293,22 +293,22 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Expression: 0.01
-   * Referenced by: '<S186>/Const'
+   * Referenced by: '<S188>/Const'
    */
   0.01,
 
   /* Expression: -0.98
-   * Referenced by: '<S186>/Const1'
+   * Referenced by: '<S188>/Const1'
    */
   -0.98,
 
   /* Computed Parameter: TransferFcn_A_p
-   * Referenced by: '<S186>/Transfer Fcn'
+   * Referenced by: '<S188>/Transfer Fcn'
    */
   -1.0,
 
   /* Computed Parameter: TransferFcn_C_m
-   * Referenced by: '<S186>/Transfer Fcn'
+   * Referenced by: '<S188>/Transfer Fcn'
    */
   1.0,
 
@@ -317,28 +317,13 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.001,
 
-  /* Expression: 0
-   * Referenced by: '<Root>/Init_1'
-   */
-  0.0,
-
   /* Expression: 1
    * Referenced by: '<S14>/Constant1'
    */
   1.0,
 
   /* Expression: 0
-   * Referenced by: '<Root>/Init_2'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<Root>/init_3'
-   */
-  0.0,
-
-  /* Expression: 0
-   * Referenced by: '<S4>/Constant'
+   * Referenced by: '<Root>/Init_1'
    */
   0.0,
 
@@ -346,6 +331,11 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    * Referenced by: '<S4>/constant_ref_1'
    */
   0.0,
+
+  /* Expression: 1
+   * Referenced by: '<S4>/enable_constant_ref_1'
+   */
+  1.0,
 
   /* Expression: 0.1
    * Referenced by: '<S1>/Sine Wave'
@@ -428,6 +418,11 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   71.1953,
 
   /* Expression: 0
+   * Referenced by: '<S4>/Actuator_controller_status_1'
+   */
+  0.0,
+
+  /* Expression: 0
    * Referenced by: '<S4>/reset_integrator_1'
    */
   0.0,
@@ -442,13 +437,8 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   79.4328,
 
-  /* Expression: 0.5
-   * Referenced by: '<S4>/controller_disable_1'
-   */
-  0.5,
-
   /* Expression: 0
-   * Referenced by: '<S5>/Constant2'
+   * Referenced by: '<Root>/Init_2'
    */
   0.0,
 
@@ -457,23 +447,28 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.0,
 
+  /* Expression: 1
+   * Referenced by: '<S5>/enable_constant_ref_2'
+   */
+  1.0,
+
   /* Expression: 0.5
    * Referenced by: '<S5>/switch_ref_constant_sin_2'
    */
   0.5,
 
   /* Expression: 0
+   * Referenced by: '<S5>/Actuator_controller_status_2'
+   */
+  0.0,
+
+  /* Expression: 0
    * Referenced by: '<S5>/reset_integrator_2'
    */
   0.0,
 
-  /* Expression: 0.5
-   * Referenced by: '<S5>/controller_disable_2'
-   */
-  0.5,
-
   /* Expression: 0
-   * Referenced by: '<S6>/Constant3'
+   * Referenced by: '<Root>/init_3'
    */
   0.0,
 
@@ -482,20 +477,25 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.0,
 
+  /* Expression: 1
+   * Referenced by: '<S6>/enable_constant_ref_3'
+   */
+  1.0,
+
   /* Expression: 0.5
    * Referenced by: '<S6>/switch_ref_constant_sin_3'
    */
   0.5,
 
   /* Expression: 0
-   * Referenced by: '<S6>/reset_integrator_3'
+   * Referenced by: '<S6>/Actuator_controller_status_3'
    */
   0.0,
 
-  /* Expression: 0.5
-   * Referenced by: '<S6>/controller_disable_3'
+  /* Expression: 0
+   * Referenced by: '<S6>/reset_integrator_3'
    */
-  0.5,
+  0.0,
 
   /* Expression: 0.5
    * Referenced by: '<S4>/CloseLoop_disable_1'
@@ -537,82 +537,82 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   128U,
 
-  /* Start of '<S186>/Enabled Subsystem1' */
+  /* Start of '<S188>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S188>/Out1'
+     * Referenced by: '<S190>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S186>/Enabled Subsystem1' */
+  /* End of '<S188>/Enabled Subsystem1' */
 
-  /* Start of '<S186>/Enabled Subsystem' */
+  /* Start of '<S188>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S187>/Out1'
+     * Referenced by: '<S189>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S187>/Constant'
+     * Referenced by: '<S189>/Constant'
      */
     -1.0
   }
   ,
 
-  /* End of '<S186>/Enabled Subsystem' */
+  /* End of '<S188>/Enabled Subsystem' */
 
-  /* Start of '<S181>/Enabled Subsystem1' */
+  /* Start of '<S183>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S183>/Out1'
+     * Referenced by: '<S185>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S181>/Enabled Subsystem1' */
+  /* End of '<S183>/Enabled Subsystem1' */
 
-  /* Start of '<S181>/Enabled Subsystem' */
+  /* Start of '<S183>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S182>/Out1'
+     * Referenced by: '<S184>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S182>/Constant'
+     * Referenced by: '<S184>/Constant'
      */
     -1.0
   }
   ,
 
-  /* End of '<S181>/Enabled Subsystem' */
+  /* End of '<S183>/Enabled Subsystem' */
 
-  /* Start of '<S176>/Enabled Subsystem1' */
+  /* Start of '<S178>/Enabled Subsystem1' */
   {
     /* Expression: [0]
-     * Referenced by: '<S178>/Out1'
+     * Referenced by: '<S180>/Out1'
      */
     0.0
   }
   ,
 
-  /* End of '<S176>/Enabled Subsystem1' */
+  /* End of '<S178>/Enabled Subsystem1' */
 
-  /* Start of '<S176>/Enabled Subsystem' */
+  /* Start of '<S178>/Enabled Subsystem' */
   {
     /* Expression: [0]
-     * Referenced by: '<S177>/Out1'
+     * Referenced by: '<S179>/Out1'
      */
     0.0,
 
     /* Expression: -1
-     * Referenced by: '<S177>/Constant'
+     * Referenced by: '<S179>/Constant'
      */
     -1.0
   }
-  /* End of '<S176>/Enabled Subsystem' */
+  /* End of '<S178>/Enabled Subsystem' */
 };
