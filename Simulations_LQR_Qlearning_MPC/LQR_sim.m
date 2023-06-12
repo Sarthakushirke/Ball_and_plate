@@ -104,7 +104,26 @@ xk = [x0 zeros(nx,k_sim)]; %constructing the displacment matrix including I.c
 uk = zeros(nu,k_sim); %constructing the velocity matrix
 for k = 1:k_sim
     track_error = xk(:,k) - x_ref(:,k);
+
+     P = Kp * error;
+
+    % Compute the integral term
+    integral = integral + Ki * error;
+
+%     % Apply anti-windup to the integral term
+%     if integral > upperLimit
+%         integral = upperLimit;
+%     elseif integral < lowerLimit
+%         integral = lowerLimit;
+%     end
+
+    % Compute the derivative term
+    derivative = Kd * (N * (error - error_previous) - (N - 1) * derivative_previous);
+
+    % Compute the control signal
+    control_signal = P + integral + derivative;
     uk(:,k) = K_lqr*track_error; % constructing U based on the control law eq.
+    uk(:,k) = 
     uk(:,k) = min(max(uk(:,k),((-5*pi)/180)*ones(nu,1)),((5*pi)/180)*ones(nu,1));
     xk(:,k+1) = A*xk(:,k)+B*uk(:,k); % constructing X based on the S.S eq.
 end
