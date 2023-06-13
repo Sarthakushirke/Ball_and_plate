@@ -5,7 +5,7 @@
    Task Configuration file for model : Sensors_and_actuators_ball_and_plate_2022b
 
    RTI1202 7.15 (02-Nov-2020)/2.20
-   12-Jun-2023 18:55:00
+   13-Jun-2023 14:20:21
 
    MATLAB 9.13.0.2166757 (R2022b) Update 4
 

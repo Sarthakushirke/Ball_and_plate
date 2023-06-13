@@ -531,6 +531,30 @@
 				</Signal>
 			</Variable>
 			<Variable>
+				<Name type="key">Model Root/Integrator_reset_mode_outerloop/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Outerloop_phi_output/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Outerloop_theta_output/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
 				<Name type="key">Model Root/Position Measurement1/mm2m/Out1</Name>
 				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 				<Active type="key">-1</Active>
@@ -572,6 +596,22 @@
 			</Variable>
 			<Variable>
 				<Name type="key">Model Root/ref_3/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Xpos\n/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Ypos\n/In1</Name>
 				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 				<Active type="key">-1</Active>
 				<Signal>
@@ -783,6 +823,33 @@
 						</Signal>
 					</Variable>
 					<Variable>
+						<Name type="key">Model Root/Integrator_reset_mode_outerloop/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Outerloop_phi_output/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Outerloop_theta_output/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
 						<Name type="key">Model Root/Position Measurement1/mm2m/Out1</Name>
 						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
@@ -829,6 +896,24 @@
 					</Variable>
 					<Variable>
 						<Name type="key">Model Root/ref_3/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Xpos\n/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Ypos\n/In1</Name>
 						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
 						<Recorded type="key">-1</Recorded>

@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.54
+ * Model version              : 7.58
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Mon Jun 12 18:55:09 2023
+ * C source code generated on : Tue Jun 13 14:20:30 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

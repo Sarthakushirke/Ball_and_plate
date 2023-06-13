@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.54
+ * Model version              : 7.58
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Mon Jun 12 18:55:09 2023
+ * C source code generated on : Tue Jun 13 14:20:30 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -50,12 +50,12 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   { 317.0, 242.0 },
 
   /* Mask Parameter: PIDController1_InitialCondition
-   * Referenced by: '<S225>/Filter'
+   * Referenced by: '<S226>/Filter'
    */
   0.0,
 
   /* Mask Parameter: PIDController3_InitialCondition
-   * Referenced by: '<S273>/Filter'
+   * Referenced by: '<S274>/Filter'
    */
   0.0,
 
@@ -75,12 +75,12 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Mask Parameter: PIDController1_InitialCondit_jy
-   * Referenced by: '<S230>/Integrator'
+   * Referenced by: '<S231>/Integrator'
    */
   0.0,
 
   /* Mask Parameter: PIDController3_InitialConditi_d
-   * Referenced by: '<S278>/Integrator'
+   * Referenced by: '<S279>/Integrator'
    */
   0.0,
 
@@ -100,14 +100,14 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   0.0,
 
   /* Mask Parameter: PIDController1_LowerSaturationL
-   * Referenced by: '<S237>/Saturation'
+   * Referenced by: '<S238>/Saturation'
    */
-  -3.0,
+  -0.087,
 
   /* Mask Parameter: PIDController3_LowerSaturationL
-   * Referenced by: '<S285>/Saturation'
+   * Referenced by: '<S286>/Saturation'
    */
-  -3.0,
+  -0.087,
 
   /* Mask Parameter: PIDController_LowerSaturationLi
    * Referenced by: '<S60>/Saturation'
@@ -125,14 +125,14 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
   -3.0,
 
   /* Mask Parameter: PIDController1_UpperSaturationL
-   * Referenced by: '<S237>/Saturation'
+   * Referenced by: '<S238>/Saturation'
    */
-  3.0,
+  0.087,
 
   /* Mask Parameter: PIDController3_UpperSaturationL
-   * Referenced by: '<S285>/Saturation'
+   * Referenced by: '<S286>/Saturation'
    */
-  3.0,
+  0.087,
 
   /* Mask Parameter: PIDController_UpperSaturationLi
    * Referenced by: '<S60>/Saturation'
@@ -364,65 +364,65 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   1.0,
 
-  /* Expression: 0.1
-   * Referenced by: '<S1>/Sine Wave'
-   */
-  0.1,
-
   /* Expression: 0
-   * Referenced by: '<S1>/Sine Wave'
+   * Referenced by: '<S1>/ref_x_constant'
    */
   0.0,
 
-  /* Expression: (1/5)*2*pi
-   * Referenced by: '<S1>/Sine Wave'
+  /* Expression: -7.41
+   * Referenced by: '<Root>/Outer_P'
    */
-  1.2566370614359172,
-
-  /* Expression: pi/2
-   * Referenced by: '<S1>/Sine Wave'
-   */
-  1.5707963267948966,
-
-  /* Expression: 71.1953
-   * Referenced by: '<Root>/Controller_P'
-   */
-  71.1953,
-
-  /* Expression: 4.2346
-   * Referenced by: '<Root>/Controller_D'
-   */
-  4.2346,
-
-  /* Expression: 79.4328
-   * Referenced by: '<Root>/Controller_N'
-   */
-  79.4328,
-
-  /* Expression: 0.1
-   * Referenced by: '<S1>/Sine Wave1'
-   */
-  0.1,
+  -7.41,
 
   /* Expression: 0
-   * Referenced by: '<S1>/Sine Wave1'
+   * Referenced by: '<S15>/Outerloop_controller_status'
    */
   0.0,
 
-  /* Expression: (1/5)*2*pi
-   * Referenced by: '<S1>/Sine Wave1'
-   */
-  1.2566370614359172,
-
   /* Expression: 0
-   * Referenced by: '<S1>/Sine Wave1'
+   * Referenced by: '<S15>/reset_integrator_outerloop'
    */
   0.0,
+
+  /* Expression: -2.31
+   * Referenced by: '<Root>/Outer_D'
+   */
+  -2.31,
+
+  /* Expression: 93.1871
+   * Referenced by: '<Root>/Outer_N'
+   */
+  93.1871,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/0_ref_outerloop_constant'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S15>/Outerloop_theta_switch'
+   */
+  0.5,
+
+  /* Expression: 0
+   * Referenced by: '<S1>/ref_y_constant'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S15>/Outerloop_phi_switch'
+   */
+  0.5,
 
   /* Expression: 0.5
    * Referenced by: '<S4>/switch_ref_constant_sin_1'
    */
   0.5,
+
+  /* Expression: 71.1953
+   * Referenced by: '<Root>/Controller_P'
+   */
+  71.1953,
 
   /* Expression: 0
    * Referenced by: '<S4>/Actuator_controller_status_1'
@@ -433,6 +433,16 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    * Referenced by: '<S4>/reset_integrator_1'
    */
   0.0,
+
+  /* Expression: 4.2346
+   * Referenced by: '<Root>/Controller_D'
+   */
+  4.2346,
+
+  /* Expression: 79.4328
+   * Referenced by: '<Root>/Controller_N'
+   */
+  79.4328,
 
   /* Expression: 0
    * Referenced by: '<Root>/Init_2'
@@ -514,25 +524,10 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.5,
 
-  /* Expression: -2.31
-   * Referenced by: '<Root>/Outer_D'
-   */
-  -2.31,
-
   /* Expression: -5.83
    * Referenced by: '<Root>/Outer_I'
    */
   -5.83,
-
-  /* Expression: 93.1871
-   * Referenced by: '<Root>/Outer_N'
-   */
-  93.1871,
-
-  /* Expression: -7.41
-   * Referenced by: '<Root>/Outer_P'
-   */
-  -7.41,
 
   /* Computed Parameter: Gain1_Gain
    * Referenced by: '<S14>/Gain1'
