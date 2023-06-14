@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.58
+ * Model version              : 7.0
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Tue Jun 13 14:20:30 2023
+ * C source code generated on : Tue Jun 13 16:44:43 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -58,7 +58,7 @@ static void rt_ertODEUpdateContinuousStates(RTWSolverInfo *si )
   ODE1_IntgData *id = (ODE1_IntgData *)rtsiGetSolverData(si);
   real_T *f0 = id->f[0];
   int_T i;
-  int_T nXc = 13;
+  int_T nXc = 9;
   rtsiSetSimTimeStep(si,MINOR_TIME_STEP);
   rtsiSetdX(si, f0);
   Sensors_and_actuators_ball_and_plate_2022b_derivatives();
@@ -307,7 +307,7 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
     /* DataTypeConversion: '<S14>/Data Type Conversion' incorporates:
      *  Constant: '<S14>/Constant1'
      */
-    Sensors_and_actuators_ball_an_B.DataTypeConversion =
+    Sensors_and_actuators_ball_an_B.DataTypeConversion_k =
       (Sensors_and_actuators_ball_an_P.Constant1_Value != 0.0);
 
     /* S-Function (rti_commonblock): '<S195>/S-Function1' incorporates:
@@ -332,7 +332,7 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
       remoteAddr.sin_family = DSIOETH_AF_INET;
 
       /* whether block is enabled */
-      if (Sensors_and_actuators_ball_an_B.DataTypeConversion == 0) {
+      if (Sensors_and_actuators_ball_an_B.DataTypeConversion_k == 0) {
         /* block is disabled */
         /**/
 
@@ -572,6 +572,18 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
 
   /* End of Outputs for SubSystem: '<Root>/Position Measurement1' */
   if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Logic: '<S4>/OR' incorporates:
+     *  Constant: '<Root>/enable_constant_ref_all'
+     *  Constant: '<S4>/enable_constant_ref_1'
+     */
+    Sensors_and_actuators_ball_an_B.OR =
+      ((Sensors_and_actuators_ball_an_P.enable_constant_ref_all_Value != 0.0) ||
+       (Sensors_and_actuators_ball_an_P.enable_constant_ref_1_Value != 0.0));
+
+    /* DataTypeConversion: '<S4>/Data Type Conversion' */
+    Sensors_and_actuators_ball_an_B.DataTypeConversion =
+      Sensors_and_actuators_ball_an_B.OR;
+
     /* Sum: '<Root>/Sum' incorporates:
      *  Constant: '<S1>/ref_x_constant'
      *  Outport: '<Root>/Xpos '
@@ -580,7 +592,7 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
       Sensors_and_actuators_ball_an_P.ref_x_constant_Value -
       Sensors_and_actuators_ball_an_Y.Xpos;
 
-    /* Product: '<S236>/PProd Out' incorporates:
+    /* Product: '<S286>/PProd Out' incorporates:
      *  Constant: '<Root>/Outer_P'
      */
     Sensors_and_actuators_ball_an_B.PProdOut =
@@ -595,109 +607,90 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
       (Sensors_and_actuators_ball_an_P.Outerloop_controller_status_Val,
        Sensors_and_actuators_ball_an_P.reset_integrator_outerloop_Valu,
        &Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f);
-  }
 
-  /* Integrator: '<S231>/Integrator' */
-  if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
-    zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE,
-                         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y));
-    zcEvent = (zcEvent_0 != NO_ZCEVENT);
-
-    /* evaluate zero-crossings and the level of the reset signal */
-    if (zcEvent ||
-        (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
-         0.0)) {
-      Sensors_and_actuators_ball_an_X.Integrator_CSTATE =
-        Sensors_and_actuators_ball_an_P.PIDController1_InitialCondit_jy;
+    /* DiscreteIntegrator: '<S281>/Integrator' */
+    if ((Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
+         0.0) || (Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState != 0))
+    {
+      Sensors_and_actuators_ball_a_DW.Integrator_DSTATE =
+        Sensors_and_actuators_ball_an_P.PID_outer_theta_InitialCondit_j;
     }
-  }
 
-  /* Integrator: '<S231>/Integrator' */
-  Sensors_and_actuators_ball_an_B.Integrator =
-    Sensors_and_actuators_ball_an_X.Integrator_CSTATE;
-  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
-    /* Product: '<S225>/DProd Out' incorporates:
+    /* DiscreteIntegrator: '<S281>/Integrator' */
+    Sensors_and_actuators_ball_an_B.Integrator =
+      Sensors_and_actuators_ball_a_DW.Integrator_DSTATE;
+
+    /* Product: '<S275>/DProd Out' incorporates:
      *  Constant: '<Root>/Outer_D'
      */
     Sensors_and_actuators_ball_an_B.DProdOut =
       Sensors_and_actuators_ball_an_B.Sum_c *
       Sensors_and_actuators_ball_an_P.Outer_D_Value;
-  }
 
-  /* Integrator: '<S226>/Filter' */
-  if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
-    zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE,
-                         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y));
-    zcEvent = (zcEvent_0 != NO_ZCEVENT);
-
-    /* evaluate zero-crossings and the level of the reset signal */
-    if (zcEvent ||
-        (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
-         0.0)) {
-      Sensors_and_actuators_ball_an_X.Filter_CSTATE =
-        Sensors_and_actuators_ball_an_P.PIDController1_InitialCondition;
+    /* DiscreteIntegrator: '<S276>/Filter' */
+    if ((Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
+         0.0) || (Sensors_and_actuators_ball_a_DW.Filter_PrevResetState != 0)) {
+      Sensors_and_actuators_ball_a_DW.Filter_DSTATE =
+        Sensors_and_actuators_ball_an_P.PID_outer_theta_InitialConditio;
     }
-  }
 
-  /* Integrator: '<S226>/Filter' */
-  Sensors_and_actuators_ball_an_B.Filter =
-    Sensors_and_actuators_ball_an_X.Filter_CSTATE;
+    /* DiscreteIntegrator: '<S276>/Filter' */
+    Sensors_and_actuators_ball_an_B.Filter =
+      Sensors_and_actuators_ball_a_DW.Filter_DSTATE;
 
-  /* Sum: '<S226>/SumD' */
-  Sensors_and_actuators_ball_an_B.SumD =
-    Sensors_and_actuators_ball_an_B.DProdOut -
-    Sensors_and_actuators_ball_an_B.Filter;
+    /* Sum: '<S276>/SumD' */
+    Sensors_and_actuators_ball_an_B.SumD =
+      Sensors_and_actuators_ball_an_B.DProdOut -
+      Sensors_and_actuators_ball_an_B.Filter;
 
-  /* Product: '<S234>/NProd Out' incorporates:
-   *  Constant: '<Root>/Outer_N'
-   */
-  Sensors_and_actuators_ball_an_B.NProdOut =
-    Sensors_and_actuators_ball_an_B.SumD *
-    Sensors_and_actuators_ball_an_P.Outer_N_Value;
-
-  /* Sum: '<S240>/Sum' */
-  Sensors_and_actuators_ball_an_B.Sum_n =
-    (Sensors_and_actuators_ball_an_B.PProdOut +
-     Sensors_and_actuators_ball_an_B.Integrator) +
-    Sensors_and_actuators_ball_an_B.NProdOut;
-
-  /* Saturate: '<S238>/Saturation' */
-  u0 = Sensors_and_actuators_ball_an_B.Sum_n;
-  u1 = Sensors_and_actuators_ball_an_P.PIDController1_LowerSaturationL;
-  u2 = Sensors_and_actuators_ball_an_P.PIDController1_UpperSaturationL;
-  if (u0 > u2) {
-    /* Saturate: '<S238>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation = u2;
-  } else if (u0 < u1) {
-    /* Saturate: '<S238>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation = u1;
-  } else {
-    /* Saturate: '<S238>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation = u0;
-  }
-
-  /* End of Saturate: '<S238>/Saturation' */
-
-  /* Switch: '<S15>/Outerloop_theta_switch' incorporates:
-   *  Constant: '<S15>/Outerloop_controller_status'
-   */
-  if (Sensors_and_actuators_ball_an_P.Outerloop_controller_status_Val >
-      Sensors_and_actuators_ball_an_P.Outerloop_theta_switch_Threshol) {
-    /* Switch: '<S15>/Outerloop_theta_switch' */
-    Sensors_and_actuators_ball_an_B.Outerloop_theta_switch =
-      Sensors_and_actuators_ball_an_B.Saturation;
-  } else {
-    /* Switch: '<S15>/Outerloop_theta_switch' incorporates:
-     *  Constant: '<S15>/0_ref_outerloop_constant'
+    /* Product: '<S284>/NProd Out' incorporates:
+     *  Constant: '<Root>/Outer_N'
      */
-    Sensors_and_actuators_ball_an_B.Outerloop_theta_switch =
-      Sensors_and_actuators_ball_an_P.u_ref_outerloop_constant_Value;
-  }
+    Sensors_and_actuators_ball_an_B.NProdOut =
+      Sensors_and_actuators_ball_an_B.SumD *
+      Sensors_and_actuators_ball_an_P.Outer_N_Value;
 
-  /* End of Switch: '<S15>/Outerloop_theta_switch' */
-  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Sum: '<S290>/Sum' */
+    Sensors_and_actuators_ball_an_B.Sum_n =
+      (Sensors_and_actuators_ball_an_B.PProdOut +
+       Sensors_and_actuators_ball_an_B.Integrator) +
+      Sensors_and_actuators_ball_an_B.NProdOut;
+
+    /* Saturate: '<S288>/Saturation' */
+    u0 = Sensors_and_actuators_ball_an_B.Sum_n;
+    u1 = Sensors_and_actuators_ball_an_P.PID_outer_theta_LowerSaturation;
+    u2 = Sensors_and_actuators_ball_an_P.PID_outer_theta_UpperSaturation;
+    if (u0 > u2) {
+      /* Saturate: '<S288>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation = u2;
+    } else if (u0 < u1) {
+      /* Saturate: '<S288>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation = u1;
+    } else {
+      /* Saturate: '<S288>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation = u0;
+    }
+
+    /* End of Saturate: '<S288>/Saturation' */
+
+    /* Switch: '<S15>/Outerloop_theta_switch' incorporates:
+     *  Constant: '<S15>/Outerloop_controller_status'
+     */
+    if (Sensors_and_actuators_ball_an_P.Outerloop_controller_status_Val >
+        Sensors_and_actuators_ball_an_P.Outerloop_theta_switch_Threshol) {
+      /* Outport: '<Root>/Outerloop_theta_output' */
+      Sensors_and_actuators_ball_an_Y.Outerloop_theta_output =
+        Sensors_and_actuators_ball_an_B.Saturation;
+    } else {
+      /* Outport: '<Root>/Outerloop_theta_output' incorporates:
+       *  Constant: '<S15>/0_ref_outerloop_constant'
+       */
+      Sensors_and_actuators_ball_an_Y.Outerloop_theta_output =
+        Sensors_and_actuators_ball_an_P.u_ref_outerloop_constant_Value;
+    }
+
+    /* End of Switch: '<S15>/Outerloop_theta_switch' */
+
     /* Sum: '<Root>/Sum1' incorporates:
      *  Constant: '<S1>/ref_y_constant'
      *  Outport: '<Root>/Ypos '
@@ -706,165 +699,149 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
       Sensors_and_actuators_ball_an_P.ref_y_constant_Value -
       Sensors_and_actuators_ball_an_Y.Ypos;
 
-    /* Product: '<S284>/PProd Out' incorporates:
+    /* Product: '<S238>/PProd Out' incorporates:
      *  Constant: '<Root>/Outer_P'
      */
     Sensors_and_actuators_ball_an_B.PProdOut_m =
       Sensors_and_actuators_ball_an_B.Sum1_e *
       Sensors_and_actuators_ball_an_P.Outer_P_Value;
-  }
 
-  /* Integrator: '<S279>/Integrator' */
-  if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
-    zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_g,
-                         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y));
-    zcEvent = (zcEvent_0 != NO_ZCEVENT);
-
-    /* evaluate zero-crossings and the level of the reset signal */
-    if (zcEvent ||
-        (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
-         0.0)) {
-      Sensors_and_actuators_ball_an_X.Integrator_CSTATE_h =
-        Sensors_and_actuators_ball_an_P.PIDController3_InitialConditi_d;
+    /* DiscreteIntegrator: '<S233>/Integrator' */
+    if ((Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
+         0.0) || (Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i !=
+                  0)) {
+      Sensors_and_actuators_ball_a_DW.Integrator_DSTATE_j =
+        Sensors_and_actuators_ball_an_P.PID_outer_phi_InitialConditio_d;
     }
-  }
 
-  /* Integrator: '<S279>/Integrator' */
-  Sensors_and_actuators_ball_an_B.Integrator_m =
-    Sensors_and_actuators_ball_an_X.Integrator_CSTATE_h;
-  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
-    /* Product: '<S273>/DProd Out' incorporates:
+    /* DiscreteIntegrator: '<S233>/Integrator' */
+    Sensors_and_actuators_ball_an_B.Integrator_l =
+      Sensors_and_actuators_ball_a_DW.Integrator_DSTATE_j;
+
+    /* Product: '<S227>/DProd Out' incorporates:
      *  Constant: '<Root>/Outer_D'
      */
     Sensors_and_actuators_ball_an_B.DProdOut_p =
       Sensors_and_actuators_ball_an_B.Sum1_e *
       Sensors_and_actuators_ball_an_P.Outer_D_Value;
-  }
 
-  /* Integrator: '<S274>/Filter' */
-  if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
-    zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE_p,
-                         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y));
-    zcEvent = (zcEvent_0 != NO_ZCEVENT);
-
-    /* evaluate zero-crossings and the level of the reset signal */
-    if (zcEvent ||
-        (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
-         0.0)) {
-      Sensors_and_actuators_ball_an_X.Filter_CSTATE_d =
-        Sensors_and_actuators_ball_an_P.PIDController3_InitialCondition;
+    /* DiscreteIntegrator: '<S228>/Filter' */
+    if ((Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y !=
+         0.0) || (Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m != 0))
+    {
+      Sensors_and_actuators_ball_a_DW.Filter_DSTATE_e =
+        Sensors_and_actuators_ball_an_P.PID_outer_phi_InitialConditionF;
     }
-  }
 
-  /* Integrator: '<S274>/Filter' */
-  Sensors_and_actuators_ball_an_B.Filter_c =
-    Sensors_and_actuators_ball_an_X.Filter_CSTATE_d;
+    /* DiscreteIntegrator: '<S228>/Filter' */
+    Sensors_and_actuators_ball_an_B.Filter_d =
+      Sensors_and_actuators_ball_a_DW.Filter_DSTATE_e;
 
-  /* Sum: '<S274>/SumD' */
-  Sensors_and_actuators_ball_an_B.SumD_c =
-    Sensors_and_actuators_ball_an_B.DProdOut_p -
-    Sensors_and_actuators_ball_an_B.Filter_c;
+    /* Sum: '<S228>/SumD' */
+    Sensors_and_actuators_ball_an_B.SumD_b =
+      Sensors_and_actuators_ball_an_B.DProdOut_p -
+      Sensors_and_actuators_ball_an_B.Filter_d;
 
-  /* Product: '<S282>/NProd Out' incorporates:
-   *  Constant: '<Root>/Outer_N'
-   */
-  Sensors_and_actuators_ball_an_B.NProdOut_d =
-    Sensors_and_actuators_ball_an_B.SumD_c *
-    Sensors_and_actuators_ball_an_P.Outer_N_Value;
+    /* Product: '<S236>/NProd Out' incorporates:
+     *  Constant: '<Root>/Outer_N'
+     */
+    Sensors_and_actuators_ball_an_B.NProdOut_d =
+      Sensors_and_actuators_ball_an_B.SumD_b *
+      Sensors_and_actuators_ball_an_P.Outer_N_Value;
 
-  /* Sum: '<S288>/Sum' */
-  Sensors_and_actuators_ball_an_B.Sum_nf =
-    (Sensors_and_actuators_ball_an_B.PProdOut_m +
-     Sensors_and_actuators_ball_an_B.Integrator_m) +
-    Sensors_and_actuators_ball_an_B.NProdOut_d;
+    /* Sum: '<S242>/Sum' */
+    Sensors_and_actuators_ball_an_B.Sum_nf =
+      (Sensors_and_actuators_ball_an_B.PProdOut_m +
+       Sensors_and_actuators_ball_an_B.Integrator_l) +
+      Sensors_and_actuators_ball_an_B.NProdOut_d;
 
-  /* Saturate: '<S286>/Saturation' */
-  u0 = Sensors_and_actuators_ball_an_B.Sum_nf;
-  u1 = Sensors_and_actuators_ball_an_P.PIDController3_LowerSaturationL;
-  u2 = Sensors_and_actuators_ball_an_P.PIDController3_UpperSaturationL;
-  if (u0 > u2) {
-    /* Saturate: '<S286>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation_o = u2;
-  } else if (u0 < u1) {
-    /* Saturate: '<S286>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation_o = u1;
-  } else {
-    /* Saturate: '<S286>/Saturation' */
-    Sensors_and_actuators_ball_an_B.Saturation_o = u0;
-  }
+    /* Saturate: '<S240>/Saturation' */
+    u0 = Sensors_and_actuators_ball_an_B.Sum_nf;
+    u1 = Sensors_and_actuators_ball_an_P.PID_outer_phi_LowerSaturationLi;
+    u2 = Sensors_and_actuators_ball_an_P.PID_outer_phi_UpperSaturationLi;
+    if (u0 > u2) {
+      /* Saturate: '<S240>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation_o = u2;
+    } else if (u0 < u1) {
+      /* Saturate: '<S240>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation_o = u1;
+    } else {
+      /* Saturate: '<S240>/Saturation' */
+      Sensors_and_actuators_ball_an_B.Saturation_o = u0;
+    }
 
-  /* End of Saturate: '<S286>/Saturation' */
+    /* End of Saturate: '<S240>/Saturation' */
 
-  /* Switch: '<S15>/Outerloop_phi_switch' incorporates:
-   *  Constant: '<S15>/Outerloop_controller_status'
-   */
-  if (Sensors_and_actuators_ball_an_P.Outerloop_controller_status_Val >
-      Sensors_and_actuators_ball_an_P.Outerloop_phi_switch_Threshold) {
-    /* Switch: '<S15>/Outerloop_phi_switch' */
-    Sensors_and_actuators_ball_an_B.Outerloop_phi_switch =
-      Sensors_and_actuators_ball_an_B.Saturation_o;
-  } else {
     /* Switch: '<S15>/Outerloop_phi_switch' incorporates:
-     *  Constant: '<S15>/0_ref_outerloop_constant'
+     *  Constant: '<S15>/Outerloop_controller_status'
      */
-    Sensors_and_actuators_ball_an_B.Outerloop_phi_switch =
-      Sensors_and_actuators_ball_an_P.u_ref_outerloop_constant_Value;
-  }
+    if (Sensors_and_actuators_ball_an_P.Outerloop_controller_status_Val >
+        Sensors_and_actuators_ball_an_P.Outerloop_phi_switch_Threshold) {
+      /* Outport: '<Root>/Outerloop_phi_output' */
+      Sensors_and_actuators_ball_an_Y.Outerloop_phi_output =
+        Sensors_and_actuators_ball_an_B.Saturation_o;
+    } else {
+      /* Outport: '<Root>/Outerloop_phi_output' incorporates:
+       *  Constant: '<S15>/0_ref_outerloop_constant'
+       */
+      Sensors_and_actuators_ball_an_Y.Outerloop_phi_output =
+        Sensors_and_actuators_ball_an_P.u_ref_outerloop_constant_Value;
+    }
 
-  /* End of Switch: '<S15>/Outerloop_phi_switch' */
+    /* End of Switch: '<S15>/Outerloop_phi_switch' */
 
-  /* MATLAB Function: '<S3>/Inverse Kinematics Calculation Function' */
-  /* MATLAB Function 'Inverse Kinematics/Inverse Kinematics Calculation Function': '<S19>:1' */
-  /* '<S19>:1:2' */
-  /* '<S19>:1:3' */
-  Sensors_and_actuators_ball_an_B.z1 = -0.1732050807568877 * sin
-    (Sensors_and_actuators_ball_an_B.Outerloop_theta_switch);
-
-  /* '<S19>:1:4' */
-  Sensors_and_actuators_ball_an_B.z2 = 0.086602540378443851 * sin
-    (Sensors_and_actuators_ball_an_B.Outerloop_theta_switch) - 0.15 * cos
-    (Sensors_and_actuators_ball_an_B.Outerloop_theta_switch) * sin
-    (Sensors_and_actuators_ball_an_B.Outerloop_phi_switch);
-
-  /* '<S19>:1:5' */
-  Sensors_and_actuators_ball_an_B.z3 = 0.15 * cos
-    (Sensors_and_actuators_ball_an_B.Outerloop_theta_switch) * sin
-    (Sensors_and_actuators_ball_an_B.Outerloop_phi_switch) +
-    0.086602540378443851 * sin
-    (Sensors_and_actuators_ball_an_B.Outerloop_theta_switch);
-
-  /* Switch: '<S4>/switch_ref_constant_sin_1' incorporates:
-   *  Constant: '<S4>/enable_constant_ref_1'
-   */
-  if (Sensors_and_actuators_ball_an_P.enable_constant_ref_1_Value >=
-      Sensors_and_actuators_ball_an_P.switch_ref_constant_sin_1_Thres) {
-    /* Switch: '<S4>/switch_ref_constant_sin_1' incorporates:
-     *  Constant: '<S4>/constant_ref_1'
+    /* MATLAB Function: '<S3>/Inverse Kinematics Calculation Function' incorporates:
+     *  Outport: '<Root>/Outerloop_phi_output'
+     *  Outport: '<Root>/Outerloop_theta_output'
      */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_1 =
-      Sensors_and_actuators_ball_an_P.constant_ref_1_Value;
-  } else {
+    /* MATLAB Function 'Inverse Kinematics/Inverse Kinematics Calculation Function': '<S19>:1' */
+    /* '<S19>:1:2' */
+    /* '<S19>:1:3' */
+    Sensors_and_actuators_ball_an_B.z1 = -0.1732050807568877 * sin
+      (Sensors_and_actuators_ball_an_Y.Outerloop_theta_output);
+
+    /* '<S19>:1:4' */
+    Sensors_and_actuators_ball_an_B.z2 = 0.086602540378443851 * sin
+      (Sensors_and_actuators_ball_an_Y.Outerloop_theta_output) - 0.15 * cos
+      (Sensors_and_actuators_ball_an_Y.Outerloop_theta_output) * sin
+      (Sensors_and_actuators_ball_an_Y.Outerloop_phi_output);
+
+    /* '<S19>:1:5' */
+    Sensors_and_actuators_ball_an_B.z3 = 0.15 * cos
+      (Sensors_and_actuators_ball_an_Y.Outerloop_theta_output) * sin
+      (Sensors_and_actuators_ball_an_Y.Outerloop_phi_output) +
+      0.086602540378443851 * sin
+      (Sensors_and_actuators_ball_an_Y.Outerloop_theta_output);
+
     /* Switch: '<S4>/switch_ref_constant_sin_1' */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_1 =
-      Sensors_and_actuators_ball_an_B.z1;
-  }
+    if (Sensors_and_actuators_ball_an_B.DataTypeConversion >=
+        Sensors_and_actuators_ball_an_P.switch_ref_constant_sin_1_Thres) {
+      /* Outport: '<Root>/ref_1' incorporates:
+       *  Constant: '<S4>/constant_ref_1'
+       */
+      Sensors_and_actuators_ball_an_Y.ref_1 =
+        Sensors_and_actuators_ball_an_P.constant_ref_1_Value;
+    } else {
+      /* Outport: '<Root>/ref_1' */
+      Sensors_and_actuators_ball_an_Y.ref_1 = Sensors_and_actuators_ball_an_B.z1;
+    }
 
-  /* End of Switch: '<S4>/switch_ref_constant_sin_1' */
+    /* End of Switch: '<S4>/switch_ref_constant_sin_1' */
 
-  /* Sum: '<S4>/Sum1' */
-  Sensors_and_actuators_ball_an_B.Sum1_j =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_1 -
-    Sensors_and_actuators_ball_an_B.mm2m_h;
+    /* Sum: '<S4>/Sum1' incorporates:
+     *  Outport: '<Root>/ref_1'
+     */
+    Sensors_and_actuators_ball_an_B.Sum1_j =
+      Sensors_and_actuators_ball_an_Y.ref_1 -
+      Sensors_and_actuators_ball_an_B.mm2m_h;
 
-  /* Product: '<S58>/PProd Out' incorporates:
-   *  Constant: '<Root>/Controller_P'
-   */
-  Sensors_and_actuators_ball_an_B.PProdOut_j =
-    Sensors_and_actuators_ball_an_B.Sum1_j *
-    Sensors_and_actuators_ball_an_P.Controller_P_Value;
-  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Product: '<S58>/PProd Out' incorporates:
+     *  Constant: '<Root>/Controller_P'
+     */
+    Sensors_and_actuators_ball_an_B.PProdOut_j =
+      Sensors_and_actuators_ball_an_B.Sum1_j *
+      Sensors_and_actuators_ball_an_P.Controller_P_Value;
+
     /* MATLAB Function: '<S4>/Integrator reset determination1' incorporates:
      *  Constant: '<S4>/Actuator_controller_status_1'
      *  Constant: '<S4>/reset_integrator_1'
@@ -878,7 +855,7 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   /* Integrator: '<S53>/Integrator' */
   if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
     zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_k,
+                         &Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE,
                          (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y));
     zcEvent = (zcEvent_0 != NO_ZCEVENT);
 
@@ -886,26 +863,27 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
     if (zcEvent ||
         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y !=
          0.0)) {
-      Sensors_and_actuators_ball_an_X.Integrator_CSTATE_c =
+      Sensors_and_actuators_ball_an_X.Integrator_CSTATE =
         Sensors_and_actuators_ball_an_P.PIDController_InitialConditio_c;
     }
   }
 
   /* Integrator: '<S53>/Integrator' */
-  Sensors_and_actuators_ball_an_B.Integrator_m0 =
-    Sensors_and_actuators_ball_an_X.Integrator_CSTATE_c;
-
-  /* Product: '<S47>/DProd Out' incorporates:
-   *  Constant: '<Root>/Controller_D'
-   */
-  Sensors_and_actuators_ball_an_B.DProdOut_b =
-    Sensors_and_actuators_ball_an_B.Sum1_j *
-    Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  Sensors_and_actuators_ball_an_B.Integrator_m =
+    Sensors_and_actuators_ball_an_X.Integrator_CSTATE;
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Product: '<S47>/DProd Out' incorporates:
+     *  Constant: '<Root>/Controller_D'
+     */
+    Sensors_and_actuators_ball_an_B.DProdOut_b =
+      Sensors_and_actuators_ball_an_B.Sum1_j *
+      Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  }
 
   /* Integrator: '<S48>/Filter' */
   if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
     zcEvent_0 = rt_ZCFcn(ANY_ZERO_CROSSING,
-                         &Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE_p4,
+                         &Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE,
                          (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y));
     zcEvent = (zcEvent_0 != NO_ZCEVENT);
 
@@ -913,17 +891,17 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
     if (zcEvent ||
         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y !=
          0.0)) {
-      Sensors_and_actuators_ball_an_X.Filter_CSTATE_g =
+      Sensors_and_actuators_ball_an_X.Filter_CSTATE =
         Sensors_and_actuators_ball_an_P.PIDController_InitialConditionF;
     }
   }
 
   /* Integrator: '<S48>/Filter' */
   Sensors_and_actuators_ball_an_B.Filter_b =
-    Sensors_and_actuators_ball_an_X.Filter_CSTATE_g;
+    Sensors_and_actuators_ball_an_X.Filter_CSTATE;
 
   /* Sum: '<S48>/SumD' */
-  Sensors_and_actuators_ball_an_B.SumD_c3 =
+  Sensors_and_actuators_ball_an_B.SumD_c =
     Sensors_and_actuators_ball_an_B.DProdOut_b -
     Sensors_and_actuators_ball_an_B.Filter_b;
 
@@ -931,13 +909,13 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
    *  Constant: '<Root>/Controller_N'
    */
   Sensors_and_actuators_ball_an_B.NProdOut_e =
-    Sensors_and_actuators_ball_an_B.SumD_c3 *
+    Sensors_and_actuators_ball_an_B.SumD_c *
     Sensors_and_actuators_ball_an_P.Controller_N_Value;
 
   /* Sum: '<S62>/Sum' */
   Sensors_and_actuators_ball_an_B.Sum_k =
     (Sensors_and_actuators_ball_an_B.PProdOut_j +
-     Sensors_and_actuators_ball_an_B.Integrator_m0) +
+     Sensors_and_actuators_ball_an_B.Integrator_m) +
     Sensors_and_actuators_ball_an_B.NProdOut_e;
 
   /* Saturate: '<S60>/Saturation' */
@@ -1078,37 +1056,47 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   }
 
   /* End of Outputs for SubSystem: '<Root>/Position Measurement2' */
-
-  /* Switch: '<S5>/switch_ref_constant_sin_2' incorporates:
-   *  Constant: '<S5>/enable_constant_ref_2'
-   */
-  if (Sensors_and_actuators_ball_an_P.enable_constant_ref_2_Value >=
-      Sensors_and_actuators_ball_an_P.switch_ref_constant_sin_2_Thres) {
-    /* Switch: '<S5>/switch_ref_constant_sin_2' incorporates:
-     *  Constant: '<S5>/constant_ref_2'
-     */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_2 =
-      Sensors_and_actuators_ball_an_P.constant_ref_2_Value;
-  } else {
-    /* Switch: '<S5>/switch_ref_constant_sin_2' */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_2 =
-      Sensors_and_actuators_ball_an_B.z2;
-  }
-
-  /* End of Switch: '<S5>/switch_ref_constant_sin_2' */
-
-  /* Sum: '<S5>/Sum2' */
-  Sensors_and_actuators_ball_an_B.Sum2 =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_2 -
-    Sensors_and_actuators_ball_an_B.mm2m_p;
-
-  /* Product: '<S108>/PProd Out' incorporates:
-   *  Constant: '<Root>/Controller_P'
-   */
-  Sensors_and_actuators_ball_an_B.PProdOut_o =
-    Sensors_and_actuators_ball_an_B.Sum2 *
-    Sensors_and_actuators_ball_an_P.Controller_P_Value;
   if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Logic: '<S5>/OR' incorporates:
+     *  Constant: '<Root>/enable_constant_ref_all'
+     *  Constant: '<S5>/enable_constant_ref_2'
+     */
+    Sensors_and_actuators_ball_an_B.OR_i =
+      ((Sensors_and_actuators_ball_an_P.enable_constant_ref_all_Value != 0.0) ||
+       (Sensors_and_actuators_ball_an_P.enable_constant_ref_2_Value != 0.0));
+
+    /* DataTypeConversion: '<S5>/Data Type Conversion' */
+    Sensors_and_actuators_ball_an_B.DataTypeConversion_a =
+      Sensors_and_actuators_ball_an_B.OR_i;
+
+    /* Switch: '<S5>/switch_ref_constant_sin_2' */
+    if (Sensors_and_actuators_ball_an_B.DataTypeConversion_a >=
+        Sensors_and_actuators_ball_an_P.switch_ref_constant_sin_2_Thres) {
+      /* Outport: '<Root>/ref_2' incorporates:
+       *  Constant: '<S5>/constant_ref_2'
+       */
+      Sensors_and_actuators_ball_an_Y.ref_2 =
+        Sensors_and_actuators_ball_an_P.constant_ref_2_Value;
+    } else {
+      /* Outport: '<Root>/ref_2' */
+      Sensors_and_actuators_ball_an_Y.ref_2 = Sensors_and_actuators_ball_an_B.z2;
+    }
+
+    /* End of Switch: '<S5>/switch_ref_constant_sin_2' */
+
+    /* Sum: '<S5>/Sum2' incorporates:
+     *  Outport: '<Root>/ref_2'
+     */
+    Sensors_and_actuators_ball_an_B.Sum2 = Sensors_and_actuators_ball_an_Y.ref_2
+      - Sensors_and_actuators_ball_an_B.mm2m_p;
+
+    /* Product: '<S108>/PProd Out' incorporates:
+     *  Constant: '<Root>/Controller_P'
+     */
+    Sensors_and_actuators_ball_an_B.PProdOut_o =
+      Sensors_and_actuators_ball_an_B.Sum2 *
+      Sensors_and_actuators_ball_an_P.Controller_P_Value;
+
     /* MATLAB Function: '<S5>/Integrator reset determination' incorporates:
      *  Constant: '<S5>/Actuator_controller_status_2'
      *  Constant: '<S5>/reset_integrator_2'
@@ -1131,20 +1119,21 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_k.y !=
          0.0)) {
       Sensors_and_actuators_ball_an_X.Integrator_CSTATE_b =
-        Sensors_and_actuators_ball_an_P.PIDController1_InitialCondit_jl;
+        Sensors_and_actuators_ball_an_P.PIDController1_InitialConditi_j;
     }
   }
 
   /* Integrator: '<S103>/Integrator' */
   Sensors_and_actuators_ball_an_B.Integrator_a =
     Sensors_and_actuators_ball_an_X.Integrator_CSTATE_b;
-
-  /* Product: '<S97>/DProd Out' incorporates:
-   *  Constant: '<Root>/Controller_D'
-   */
-  Sensors_and_actuators_ball_an_B.DProdOut_pg =
-    Sensors_and_actuators_ball_an_B.Sum2 *
-    Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Product: '<S97>/DProd Out' incorporates:
+     *  Constant: '<Root>/Controller_D'
+     */
+    Sensors_and_actuators_ball_an_B.DProdOut_pg =
+      Sensors_and_actuators_ball_an_B.Sum2 *
+      Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  }
 
   /* Integrator: '<S98>/Filter' */
   if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
@@ -1158,7 +1147,7 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
         (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_k.y !=
          0.0)) {
       Sensors_and_actuators_ball_an_X.Filter_CSTATE_j =
-        Sensors_and_actuators_ball_an_P.PIDController1_InitialConditi_j;
+        Sensors_and_actuators_ball_an_P.PIDController1_InitialCondition;
     }
   }
 
@@ -1186,8 +1175,8 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
 
   /* Saturate: '<S110>/Saturation' */
   u0 = Sensors_and_actuators_ball_an_B.Sum_o;
-  u1 = Sensors_and_actuators_ball_an_P.PIDController1_LowerSaturatio_h;
-  u2 = Sensors_and_actuators_ball_an_P.PIDController1_UpperSaturatio_l;
+  u1 = Sensors_and_actuators_ball_an_P.PIDController1_LowerSaturationL;
+  u2 = Sensors_and_actuators_ball_an_P.PIDController1_UpperSaturationL;
   if (u0 > u2) {
     /* Saturate: '<S110>/Saturation' */
     Sensors_and_actuators_ball_an_B.Saturation_l = u2;
@@ -1322,37 +1311,47 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   }
 
   /* End of Outputs for SubSystem: '<Root>/Position Measurement3' */
-
-  /* Switch: '<S6>/switch_ref_constant_sin_3' incorporates:
-   *  Constant: '<S6>/enable_constant_ref_3'
-   */
-  if (Sensors_and_actuators_ball_an_P.enable_constant_ref_3_Value >=
-      Sensors_and_actuators_ball_an_P.switch_ref_constant_sin_3_Thres) {
-    /* Switch: '<S6>/switch_ref_constant_sin_3' incorporates:
-     *  Constant: '<S6>/constant_ref_3'
-     */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_3 =
-      Sensors_and_actuators_ball_an_P.constant_ref_3_Value;
-  } else {
-    /* Switch: '<S6>/switch_ref_constant_sin_3' */
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_3 =
-      Sensors_and_actuators_ball_an_B.z3;
-  }
-
-  /* End of Switch: '<S6>/switch_ref_constant_sin_3' */
-
-  /* Sum: '<S6>/Sum3' */
-  Sensors_and_actuators_ball_an_B.Sum3 =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_3 -
-    Sensors_and_actuators_ball_an_B.mm2m;
-
-  /* Product: '<S158>/PProd Out' incorporates:
-   *  Constant: '<Root>/Controller_P'
-   */
-  Sensors_and_actuators_ball_an_B.PProdOut_k =
-    Sensors_and_actuators_ball_an_B.Sum3 *
-    Sensors_and_actuators_ball_an_P.Controller_P_Value;
   if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Logic: '<S6>/OR' incorporates:
+     *  Constant: '<Root>/enable_constant_ref_all'
+     *  Constant: '<S6>/enable_constant_ref_3'
+     */
+    Sensors_and_actuators_ball_an_B.OR_p =
+      ((Sensors_and_actuators_ball_an_P.enable_constant_ref_all_Value != 0.0) ||
+       (Sensors_and_actuators_ball_an_P.enable_constant_ref_3_Value != 0.0));
+
+    /* DataTypeConversion: '<S6>/Data Type Conversion' */
+    Sensors_and_actuators_ball_an_B.DataTypeConversion_i =
+      Sensors_and_actuators_ball_an_B.OR_p;
+
+    /* Switch: '<S6>/switch_ref_3' */
+    if (Sensors_and_actuators_ball_an_B.DataTypeConversion_i >=
+        Sensors_and_actuators_ball_an_P.switch_ref_3_Threshold) {
+      /* Outport: '<Root>/ref_3' incorporates:
+       *  Constant: '<S6>/constant_ref_3'
+       */
+      Sensors_and_actuators_ball_an_Y.ref_3 =
+        Sensors_and_actuators_ball_an_P.constant_ref_3_Value;
+    } else {
+      /* Outport: '<Root>/ref_3' */
+      Sensors_and_actuators_ball_an_Y.ref_3 = Sensors_and_actuators_ball_an_B.z3;
+    }
+
+    /* End of Switch: '<S6>/switch_ref_3' */
+
+    /* Sum: '<S6>/Sum3' incorporates:
+     *  Outport: '<Root>/ref_3'
+     */
+    Sensors_and_actuators_ball_an_B.Sum3 = Sensors_and_actuators_ball_an_Y.ref_3
+      - Sensors_and_actuators_ball_an_B.mm2m;
+
+    /* Product: '<S158>/PProd Out' incorporates:
+     *  Constant: '<Root>/Controller_P'
+     */
+    Sensors_and_actuators_ball_an_B.PProdOut_k =
+      Sensors_and_actuators_ball_an_B.Sum3 *
+      Sensors_and_actuators_ball_an_P.Controller_P_Value;
+
     /* MATLAB Function: '<S6>/Integrator reset determination1' incorporates:
      *  Constant: '<S6>/Actuator_controller_status_3'
      *  Constant: '<S6>/reset_integrator_3'
@@ -1382,13 +1381,14 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   /* Integrator: '<S153>/Integrator' */
   Sensors_and_actuators_ball_an_B.Integrator_d =
     Sensors_and_actuators_ball_an_X.Integrator_CSTATE_k;
-
-  /* Product: '<S147>/DProd Out' incorporates:
-   *  Constant: '<Root>/Controller_D'
-   */
-  Sensors_and_actuators_ball_an_B.DProdOut_k =
-    Sensors_and_actuators_ball_an_B.Sum3 *
-    Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Product: '<S147>/DProd Out' incorporates:
+     *  Constant: '<Root>/Controller_D'
+     */
+    Sensors_and_actuators_ball_an_B.DProdOut_k =
+      Sensors_and_actuators_ball_an_B.Sum3 *
+      Sensors_and_actuators_ball_an_P.Controller_D_Value;
+  }
 
   /* Integrator: '<S148>/Filter' */
   if (rtsiIsModeUpdateTimeStep(&Sensors_and_actuators_ball_a_M->solverInfo)) {
@@ -1448,18 +1448,6 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   /* Outport: '<Root>/Actuator_Controller_Output_3' */
   Sensors_and_actuators_ball_an_Y.Actuator_Controller_Output_3 =
     Sensors_and_actuators_ball_an_B.Saturation_f;
-
-  /* Outport: '<Root>/ref_1' */
-  Sensors_and_actuators_ball_an_Y.ref_1 =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_1;
-
-  /* Outport: '<Root>/ref_2' */
-  Sensors_and_actuators_ball_an_Y.ref_2 =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_2;
-
-  /* Outport: '<Root>/ref_3' */
-  Sensors_and_actuators_ball_an_Y.ref_3 =
-    Sensors_and_actuators_ball_an_B.switch_ref_constant_sin_3;
   if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
     /* Outport: '<Root>/Integrator_reset_mode_3' */
     Sensors_and_actuators_ball_an_Y.Integrator_reset_mode_3 =
@@ -1476,27 +1464,26 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
     /* Outport: '<Root>/Integrator_reset_mode_outerloop' */
     Sensors_and_actuators_ball_an_Y.Integrator_reset_mode_outerloop =
       Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y;
+
+    /* MATLAB Function: '<S3>/BoundsFunction1' */
+    Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z1,
+      &Sensors_and_actuators_ball_an_B.sf_BoundsFunction1);
+
+    /* MATLAB Function: '<S3>/BoundsFunction2' */
+    Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z2,
+      &Sensors_and_actuators_ball_an_B.sf_BoundsFunction2);
+
+    /* MATLAB Function: '<S3>/BoundsFunction3' */
+    Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z3,
+      &Sensors_and_actuators_ball_an_B.sf_BoundsFunction3);
+
+    /* Product: '<S50>/IProd Out' incorporates:
+     *  Constant: '<Root>/Controller_I'
+     */
+    Sensors_and_actuators_ball_an_B.IProdOut =
+      Sensors_and_actuators_ball_an_B.Sum1_j *
+      Sensors_and_actuators_ball_an_P.Controller_I_Value;
   }
-
-  /* Outport: '<Root>/Outerloop_theta_output' */
-  Sensors_and_actuators_ball_an_Y.Outerloop_theta_output =
-    Sensors_and_actuators_ball_an_B.Outerloop_theta_switch;
-
-  /* Outport: '<Root>/Outerloop_phi_output' */
-  Sensors_and_actuators_ball_an_Y.Outerloop_phi_output =
-    Sensors_and_actuators_ball_an_B.Outerloop_phi_switch;
-
-  /* MATLAB Function: '<S3>/BoundsFunction1' */
-  Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z1,
-    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction1);
-
-  /* MATLAB Function: '<S3>/BoundsFunction2' */
-  Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z2,
-    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction2);
-
-  /* MATLAB Function: '<S3>/BoundsFunction3' */
-  Sensors_and_act_BoundsFunction1(Sensors_and_actuators_ball_an_B.z3,
-    &Sensors_and_actuators_ball_an_B.sf_BoundsFunction3);
 
   /* Switch: '<S4>/CloseLoop_disable_1' incorporates:
    *  Constant: '<S4>/Actuator_controller_status_1'
@@ -1514,13 +1501,6 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
 
   /* End of Switch: '<S4>/CloseLoop_disable_1' */
 
-  /* Product: '<S50>/IProd Out' incorporates:
-   *  Constant: '<Root>/Controller_I'
-   */
-  Sensors_and_actuators_ball_an_B.IProdOut =
-    Sensors_and_actuators_ball_an_B.Sum1_j *
-    Sensors_and_actuators_ball_an_P.Controller_I_Value;
-
   /* Switch: '<S5>/CloseLoop_disable_2' incorporates:
    *  Constant: '<S5>/Actuator_controller_status_2'
    */
@@ -1536,13 +1516,21 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   }
 
   /* End of Switch: '<S5>/CloseLoop_disable_2' */
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Product: '<S100>/IProd Out' incorporates:
+     *  Constant: '<Root>/Controller_I'
+     */
+    Sensors_and_actuators_ball_an_B.IProdOut_g =
+      Sensors_and_actuators_ball_an_B.Sum2 *
+      Sensors_and_actuators_ball_an_P.Controller_I_Value;
 
-  /* Product: '<S100>/IProd Out' incorporates:
-   *  Constant: '<Root>/Controller_I'
-   */
-  Sensors_and_actuators_ball_an_B.IProdOut_g =
-    Sensors_and_actuators_ball_an_B.Sum2 *
-    Sensors_and_actuators_ball_an_P.Controller_I_Value;
+    /* Product: '<S150>/IProd Out' incorporates:
+     *  Constant: '<Root>/Controller_I'
+     */
+    Sensors_and_actuators_ball_an_B.IProdOut_d =
+      Sensors_and_actuators_ball_an_B.Sum3 *
+      Sensors_and_actuators_ball_an_P.Controller_I_Value;
+  }
 
   /* Switch: '<S6>/CloseLoop_disable_3' incorporates:
    *  Constant: '<S6>/Actuator_controller_status_3'
@@ -1559,13 +1547,6 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
   }
 
   /* End of Switch: '<S6>/CloseLoop_disable_3' */
-
-  /* Product: '<S150>/IProd Out' incorporates:
-   *  Constant: '<Root>/Controller_I'
-   */
-  Sensors_and_actuators_ball_an_B.IProdOut_d =
-    Sensors_and_actuators_ball_an_B.Sum3 *
-    Sensors_and_actuators_ball_an_P.Controller_I_Value;
 
   /* Outputs for Atomic SubSystem: '<Root>/Outputs to Amplifier1' */
 
@@ -1766,40 +1747,81 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
       DsIoEth_getMgmtEvent(DSIOETH_CONNECTION_ID_0);
     }
 
-    /* Product: '<S228>/IProd Out' incorporates:
+    /* Product: '<S230>/IProd Out' incorporates:
+     *  Constant: '<Root>/Outer_I'
+     */
+    Sensors_and_actuators_ball_an_B.IProdOut_i =
+      Sensors_and_actuators_ball_an_B.Sum1_e *
+      Sensors_and_actuators_ball_an_P.Outer_I_Value;
+
+    /* Product: '<S278>/IProd Out' incorporates:
      *  Constant: '<Root>/Outer_I'
      */
     Sensors_and_actuators_ball_an_B.IProdOut_o =
       Sensors_and_actuators_ball_an_B.Sum_c *
       Sensors_and_actuators_ball_an_P.Outer_I_Value;
 
-    /* Product: '<S276>/IProd Out' incorporates:
-     *  Constant: '<Root>/Outer_I'
+    /* MATLAB Function: '<S15>/phi_saturation_check' incorporates:
+     *  Outport: '<Root>/Outerloop_phi_output'
      */
-    Sensors_and_actuators_ball_an_B.IProdOut_i =
-      Sensors_and_actuators_ball_an_B.Sum1_e *
-      Sensors_and_actuators_ball_an_P.Outer_I_Value;
-  }
+    /* MATLAB Function 'xy_controller/phi_saturation_check': '<S200>:1' */
+    if (fabs(Sensors_and_actuators_ball_an_Y.Outerloop_phi_output) >=
+        0.087266462599716474) {
+      /* '<S200>:1:2' */
+      /* '<S200>:1:3' */
+      Sensors_and_actuators_ball_an_B.saturation_k = true;
+    } else {
+      /* '<S200>:1:5' */
+      Sensors_and_actuators_ball_an_B.saturation_k = false;
+    }
 
-  /* DataTypeConversion: '<S2>/actuator_1_RefOutOfBounds' */
-  Sensors_and_actuators_ball_an_B.actuator_1_RefOutOfBounds =
-    Sensors_and_actuators_ball_an_B.sf_BoundsFunction1.outOfBounds;
+    /* End of MATLAB Function: '<S15>/phi_saturation_check' */
+
+    /* MATLAB Function: '<S15>/theta_saturation_check' incorporates:
+     *  Outport: '<Root>/Outerloop_theta_output'
+     */
+    /* MATLAB Function 'xy_controller/theta_saturation_check': '<S201>:1' */
+    if (fabs(Sensors_and_actuators_ball_an_Y.Outerloop_theta_output) >=
+        0.087266462599716474) {
+      /* '<S201>:1:2' */
+      /* '<S201>:1:3' */
+      Sensors_and_actuators_ball_an_B.saturation = true;
+    } else {
+      /* '<S201>:1:5' */
+      Sensors_and_actuators_ball_an_B.saturation = false;
+    }
+
+    /* End of MATLAB Function: '<S15>/theta_saturation_check' */
+
+    /* DataTypeConversion: '<S2>/actuator_1_RefOutOfBounds' */
+    Sensors_and_actuators_ball_an_B.actuator_1_RefOutOfBounds =
+      Sensors_and_actuators_ball_an_B.sf_BoundsFunction1.outOfBounds;
+
+    /* DataTypeConversion: '<S2>/actuator_2_RefOutOfBounds' */
+    Sensors_and_actuators_ball_an_B.actuator_2_RefOutOfBounds =
+      Sensors_and_actuators_ball_an_B.sf_BoundsFunction2.outOfBounds;
+  }
 
   /* DataTypeConversion: '<S2>/actuator_1_SaturationReached' */
   Sensors_and_actuators_ball_an_B.actuator_1_SaturationReached =
     Sensors_and_actuators_ball_an_B.sf_MATLABFunction.saturation;
 
-  /* DataTypeConversion: '<S2>/actuator_2_RefOutOfBounds' */
-  Sensors_and_actuators_ball_an_B.actuator_2_RefOutOfBounds =
-    Sensors_and_actuators_ball_an_B.sf_BoundsFunction2.outOfBounds;
-
   /* DataTypeConversion: '<S2>/actuator_2_SaturationReached' */
   Sensors_and_actuators_ball_an_B.actuator_2_SaturationReached =
     Sensors_and_actuators_ball_an_B.sf_MATLABFunction_c.saturation;
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* DataTypeConversion: '<S2>/actuator_3_RefOutOfBounds' */
+    Sensors_and_actuators_ball_an_B.actuator_3_RefOutOfBounds =
+      Sensors_and_actuators_ball_an_B.sf_BoundsFunction3.outOfBounds;
 
-  /* DataTypeConversion: '<S2>/actuator_3_RefOutOfBounds' */
-  Sensors_and_actuators_ball_an_B.actuator_3_RefOutOfBounds =
-    Sensors_and_actuators_ball_an_B.sf_BoundsFunction3.outOfBounds;
+    /* DataTypeConversion: '<S2>/phi_saturation_reached' */
+    Sensors_and_actuators_ball_an_B.phi_saturation_reached =
+      Sensors_and_actuators_ball_an_B.saturation;
+
+    /* DataTypeConversion: '<S2>/theta_saturation_reached' */
+    Sensors_and_actuators_ball_an_B.theta_saturation_reached =
+      Sensors_and_actuators_ball_an_B.saturation_k;
+  }
 
   /* DataTypeConversion: '<S2>/actuator_3_SaturationReached' */
   Sensors_and_actuators_ball_an_B.actuator_3_SaturationReached =
@@ -1809,6 +1831,84 @@ void Sensors_and_actuators_ball_and_plate_2022b_output(void)
 /* Model update function */
 void Sensors_and_actuators_ball_and_plate_2022b_update(void)
 {
+  if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
+    /* Update for DiscreteIntegrator: '<S281>/Integrator' */
+    Sensors_and_actuators_ball_a_DW.Integrator_DSTATE +=
+      Sensors_and_actuators_ball_an_P.Integrator_gainval *
+      Sensors_and_actuators_ball_an_B.IProdOut_o;
+    if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y > 0.0)
+    {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState = 1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               < 0.0) {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState = -1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               == 0.0) {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState = 0;
+    } else {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState = 2;
+    }
+
+    /* End of Update for DiscreteIntegrator: '<S281>/Integrator' */
+
+    /* Update for DiscreteIntegrator: '<S276>/Filter' */
+    Sensors_and_actuators_ball_a_DW.Filter_DSTATE +=
+      Sensors_and_actuators_ball_an_P.Filter_gainval *
+      Sensors_and_actuators_ball_an_B.NProdOut;
+    if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y > 0.0)
+    {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState = 1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               < 0.0) {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState = -1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               == 0.0) {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState = 0;
+    } else {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState = 2;
+    }
+
+    /* End of Update for DiscreteIntegrator: '<S276>/Filter' */
+
+    /* Update for DiscreteIntegrator: '<S233>/Integrator' */
+    Sensors_and_actuators_ball_a_DW.Integrator_DSTATE_j +=
+      Sensors_and_actuators_ball_an_P.Integrator_gainval_e *
+      Sensors_and_actuators_ball_an_B.IProdOut_i;
+    if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y > 0.0)
+    {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i = 1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               < 0.0) {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i = -1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               == 0.0) {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i = 0;
+    } else {
+      Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i = 2;
+    }
+
+    /* End of Update for DiscreteIntegrator: '<S233>/Integrator' */
+
+    /* Update for DiscreteIntegrator: '<S228>/Filter' */
+    Sensors_and_actuators_ball_a_DW.Filter_DSTATE_e +=
+      Sensors_and_actuators_ball_an_P.Filter_gainval_o *
+      Sensors_and_actuators_ball_an_B.NProdOut_d;
+    if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y > 0.0)
+    {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m = 1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               < 0.0) {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m = -1;
+    } else if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y
+               == 0.0) {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m = 0;
+    } else {
+      Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m = 2;
+    }
+
+    /* End of Update for DiscreteIntegrator: '<S228>/Filter' */
+  }
+
   if (rtmIsMajorTimeStep(Sensors_and_actuators_ball_a_M)) {
     rt_ertODEUpdateContinuousStates(&Sensors_and_actuators_ball_a_M->solverInfo);
   }
@@ -1862,46 +1962,19 @@ void Sensors_and_actuators_ball_and_plate_2022b_derivatives(void)
 
   /* End of Derivatives for SubSystem: '<Root>/Position Measurement1' */
 
-  /* Derivatives for Integrator: '<S231>/Integrator' incorporates:
-   *  Integrator: '<S226>/Filter'
-   *  Integrator: '<S274>/Filter'
-   *  Integrator: '<S279>/Integrator'
+  /* Derivatives for Integrator: '<S53>/Integrator' incorporates:
+   *  Integrator: '<S48>/Filter'
    */
-  if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdeterminati_f.y == 0.0)
+  if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y == 0.0)
   {
-    _rtXdot->Integrator_CSTATE = Sensors_and_actuators_ball_an_B.IProdOut_o;
-    _rtXdot->Filter_CSTATE = Sensors_and_actuators_ball_an_B.NProdOut;
-    _rtXdot->Integrator_CSTATE_h = Sensors_and_actuators_ball_an_B.IProdOut_i;
-    _rtXdot->Filter_CSTATE_d = Sensors_and_actuators_ball_an_B.NProdOut_d;
+    _rtXdot->Integrator_CSTATE = Sensors_and_actuators_ball_an_B.IProdOut;
+    _rtXdot->Filter_CSTATE = Sensors_and_actuators_ball_an_B.NProdOut_e;
   } else {
     /* level reset is active */
     _rtXdot->Integrator_CSTATE = 0.0;
 
     /* level reset is active */
     _rtXdot->Filter_CSTATE = 0.0;
-
-    /* level reset is active */
-    _rtXdot->Integrator_CSTATE_h = 0.0;
-
-    /* level reset is active */
-    _rtXdot->Filter_CSTATE_d = 0.0;
-  }
-
-  /* End of Derivatives for Integrator: '<S231>/Integrator' */
-
-  /* Derivatives for Integrator: '<S53>/Integrator' incorporates:
-   *  Integrator: '<S48>/Filter'
-   */
-  if (Sensors_and_actuators_ball_an_B.sf_Integratorresetdetermination.y == 0.0)
-  {
-    _rtXdot->Integrator_CSTATE_c = Sensors_and_actuators_ball_an_B.IProdOut;
-    _rtXdot->Filter_CSTATE_g = Sensors_and_actuators_ball_an_B.NProdOut_e;
-  } else {
-    /* level reset is active */
-    _rtXdot->Integrator_CSTATE_c = 0.0;
-
-    /* level reset is active */
-    _rtXdot->Filter_CSTATE_g = 0.0;
   }
 
   /* End of Derivatives for Integrator: '<S53>/Integrator' */
@@ -2076,10 +2149,6 @@ void Sensors_and_actuators_ball_and_plate_2022b_initialize(void)
   /* End of Start for SubSystem: '<Root>/Position Measurement3' */
   Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE = UNINITIALIZED_ZCSIG;
   Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE = UNINITIALIZED_ZCSIG;
-  Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_g = UNINITIALIZED_ZCSIG;
-  Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE_p = UNINITIALIZED_ZCSIG;
-  Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_k = UNINITIALIZED_ZCSIG;
-  Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE_p4 = UNINITIALIZED_ZCSIG;
   Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_c = UNINITIALIZED_ZCSIG;
   Sensors_and_actuators_b_PrevZCX.Filter_Reset_ZCE_l = UNINITIALIZED_ZCSIG;
   Sensors_and_actuators_b_PrevZCX.Integrator_Reset_ZCE_h = UNINITIALIZED_ZCSIG;
@@ -2091,37 +2160,41 @@ void Sensors_and_actuators_ball_and_plate_2022b_initialize(void)
   Sensors_and_actuators_b_PrevZCX.EMC_ENCODER_POS_SET_BL1_Trig_ZC =
     UNINITIALIZED_ZCSIG;
 
-  /* InitializeConditions for Integrator: '<S231>/Integrator' */
-  Sensors_and_actuators_ball_an_X.Integrator_CSTATE =
-    Sensors_and_actuators_ball_an_P.PIDController1_InitialCondit_jy;
+  /* InitializeConditions for DiscreteIntegrator: '<S281>/Integrator' */
+  Sensors_and_actuators_ball_a_DW.Integrator_DSTATE =
+    Sensors_and_actuators_ball_an_P.PID_outer_theta_InitialCondit_j;
+  Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState = 0;
 
-  /* InitializeConditions for Integrator: '<S226>/Filter' */
-  Sensors_and_actuators_ball_an_X.Filter_CSTATE =
-    Sensors_and_actuators_ball_an_P.PIDController1_InitialCondition;
+  /* InitializeConditions for DiscreteIntegrator: '<S276>/Filter' */
+  Sensors_and_actuators_ball_a_DW.Filter_DSTATE =
+    Sensors_and_actuators_ball_an_P.PID_outer_theta_InitialConditio;
+  Sensors_and_actuators_ball_a_DW.Filter_PrevResetState = 0;
 
-  /* InitializeConditions for Integrator: '<S279>/Integrator' */
-  Sensors_and_actuators_ball_an_X.Integrator_CSTATE_h =
-    Sensors_and_actuators_ball_an_P.PIDController3_InitialConditi_d;
+  /* InitializeConditions for DiscreteIntegrator: '<S233>/Integrator' */
+  Sensors_and_actuators_ball_a_DW.Integrator_DSTATE_j =
+    Sensors_and_actuators_ball_an_P.PID_outer_phi_InitialConditio_d;
+  Sensors_and_actuators_ball_a_DW.Integrator_PrevResetState_i = 0;
 
-  /* InitializeConditions for Integrator: '<S274>/Filter' */
-  Sensors_and_actuators_ball_an_X.Filter_CSTATE_d =
-    Sensors_and_actuators_ball_an_P.PIDController3_InitialCondition;
+  /* InitializeConditions for DiscreteIntegrator: '<S228>/Filter' */
+  Sensors_and_actuators_ball_a_DW.Filter_DSTATE_e =
+    Sensors_and_actuators_ball_an_P.PID_outer_phi_InitialConditionF;
+  Sensors_and_actuators_ball_a_DW.Filter_PrevResetState_m = 0;
 
   /* InitializeConditions for Integrator: '<S53>/Integrator' */
-  Sensors_and_actuators_ball_an_X.Integrator_CSTATE_c =
+  Sensors_and_actuators_ball_an_X.Integrator_CSTATE =
     Sensors_and_actuators_ball_an_P.PIDController_InitialConditio_c;
 
   /* InitializeConditions for Integrator: '<S48>/Filter' */
-  Sensors_and_actuators_ball_an_X.Filter_CSTATE_g =
+  Sensors_and_actuators_ball_an_X.Filter_CSTATE =
     Sensors_and_actuators_ball_an_P.PIDController_InitialConditionF;
 
   /* InitializeConditions for Integrator: '<S103>/Integrator' */
   Sensors_and_actuators_ball_an_X.Integrator_CSTATE_b =
-    Sensors_and_actuators_ball_an_P.PIDController1_InitialCondit_jl;
+    Sensors_and_actuators_ball_an_P.PIDController1_InitialConditi_j;
 
   /* InitializeConditions for Integrator: '<S98>/Filter' */
   Sensors_and_actuators_ball_an_X.Filter_CSTATE_j =
-    Sensors_and_actuators_ball_an_P.PIDController1_InitialConditi_j;
+    Sensors_and_actuators_ball_an_P.PIDController1_InitialCondition;
 
   /* InitializeConditions for Integrator: '<S153>/Integrator' */
   Sensors_and_actuators_ball_an_X.Integrator_CSTATE_k =

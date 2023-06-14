@@ -77,7 +77,7 @@
 				<item>
 					<Component type="key">VariablesManagement</Component>
 					<Name type="key">startup_test.vdb</Name>
-					<DisplayName type="key">C:\Users\20203985\Documents\MATLAB\13_06_2023\control_desk\startup_test\Variable Descriptions\startup_test.vdb</DisplayName>
+					<DisplayName type="key">C:\Users\20203985\Documents\MATLAB\13_06_2023_session2\control_desk\startup_test\Variable Descriptions\startup_test.vdb</DisplayName>
 					<Path type="key">.\Variable Descriptions</Path>
 					<Flags type="key">276</Flags>
 					<Type type="key">18</Type>
@@ -358,6 +358,15 @@ Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_202
 
 Variable description reloaded on 13.06.2023 14:22:24 (C:\Users\20203985\Documents\MATLAB\13_06_2023\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf)
 Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf [2023-06-13 12:20:43 (UTC)]
+
+Variable description reloaded on 13.06.2023 16:47:40 (C:\Users\20203985\Documents\MATLAB\13_06_2023_session2\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf)
+Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf [2023-06-13 14:45:07 (UTC)]
+
+Variable description reloaded on 13.06.2023 18:44:48 (C:\Users\20203985\Documents\MATLAB\13_06_2023_session2\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf)
+Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf [2023-06-13 14:45:07 (UTC)]
+
+Variable description reloaded on 13.06.2023 18:45:04 (C:\Users\20203985\Documents\MATLAB\13_06_2023_session2\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf)
+Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_2022b.sdf [2023-06-13 14:45:07 (UTC)]
 </ItemInfoLog>
 					<ItemInfoAddInfoDb type="key"/>
 					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
@@ -369,9 +378,9 @@ Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_202
 						<Flags type="key">18692</Flags>
 						<ExtendedFlags type="key">1</ExtendedFlags>
 						<Type type="key">4</Type>
-						<UniqueID type="key">863543426</UniqueID>
-						<EntityID type="key">{4811F3B6-8662-4D5D-8868-3FCB3597560A}</EntityID>
-						<ItemInfoDate type="key">13/06/2023 14:22:24</ItemInfoDate>
+						<UniqueID type="key">303186029</UniqueID>
+						<EntityID type="key">{B82600CF-A031-4C57-9C84-784C7F740F74}</EntityID>
+						<ItemInfoDate type="key">13/06/2023 18:45:04</ItemInfoDate>
 						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
 						<ItemInfoDescr type="key"/>
 						<ItemInfoAddInfoDb type="key"/>
@@ -385,9 +394,9 @@ Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_202
 						<Flags type="key">18692</Flags>
 						<ExtendedFlags type="key">1</ExtendedFlags>
 						<Type type="key">4</Type>
-						<UniqueID type="key">99372319</UniqueID>
-						<EntityID type="key">{D8EE0F81-39DD-4B15-B310-E7993AE4DDC5}</EntityID>
-						<ItemInfoDate type="key">13/06/2023 14:22:24</ItemInfoDate>
+						<UniqueID type="key">224426822</UniqueID>
+						<EntityID type="key">{ECA52E74-C953-4262-A047-1AEEB61898BD}</EntityID>
+						<ItemInfoDate type="key">13/06/2023 18:45:04</ItemInfoDate>
 						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
 						<ItemInfoDescr type="key"/>
 						<ItemInfoAddInfoDb type="key"/>
@@ -401,9 +410,9 @@ Original file added from ..\..\simulink\sensors_and_actuators_ball_and_plate_202
 						<Flags type="key">18692</Flags>
 						<ExtendedFlags type="key">1</ExtendedFlags>
 						<Type type="key">30</Type>
-						<UniqueID type="key">446967705</UniqueID>
-						<EntityID type="key">{35945002-141A-478A-BAA5-EF59C33D420A}</EntityID>
-						<ItemInfoDate type="key">13/06/2023 14:22:24</ItemInfoDate>
+						<UniqueID type="key">533639892</UniqueID>
+						<EntityID type="key">{8B92E734-FF82-4A7C-9988-0929E30E0E5C}</EntityID>
+						<ItemInfoDate type="key">13/06/2023 18:45:04</ItemInfoDate>
 						<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
 						<ItemInfoDescr type="key"/>
 						<ItemInfoAddInfoDb type="key"/>

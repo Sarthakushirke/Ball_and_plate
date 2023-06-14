@@ -105,12 +105,12 @@ S_FUNCTIONS_LIB                =
 SOLVER                         = 
 NUMST                          = 2
 TID01EQ                        = 1
-NCSTATES                       = 13
+NCSTATES                       = 9
 EXT_MODE                       = 0
 MULTITASKING                   = 0
 # Support for parallel computing
 MASTER_ANCHOR_DIR              = 
-START_DIR                      = C:\Users\20203985\Documents\MATLAB\13_06_2023\simulink
+START_DIR                      = C:\Users\20203985\Documents\MATLAB\13_06_2023_session2\simulink
 # Shared library for utility code
 RTW_SHARED_LIB_SRCS_WILD       = 
 RTW_SHARED_LIB_SRCS_DIR        = 

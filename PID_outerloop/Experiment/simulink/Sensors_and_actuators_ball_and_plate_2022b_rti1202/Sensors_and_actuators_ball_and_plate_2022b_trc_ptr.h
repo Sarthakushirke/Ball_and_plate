@@ -5,7 +5,7 @@
    Declaration of function that initializes the global TRC pointers
 
    RTI1202 7.15 (02-Nov-2020)
-   Tue Jun 13 14:20:30 2023
+   Tue Jun 13 16:44:43 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -93,8 +93,8 @@ EXTERN_C volatile uint32_T
   *p_2_Sensors_and_actuators_ball_and_plate_2022b_uint32_T_1;
 EXTERN_C volatile uint16_T
   *p_2_Sensors_and_actuators_ball_and_plate_2022b_uint16_T_2;
-EXTERN_C volatile boolean_T
-  *p_2_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_3;
+EXTERN_C volatile int8_T
+  *p_2_Sensors_and_actuators_ball_and_plate_2022b_int8_T_3;
 EXTERN_C volatile boolean_T
   *p_2_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_4;
 EXTERN_C volatile boolean_T
@@ -105,6 +105,8 @@ EXTERN_C volatile boolean_T
   *p_2_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_7;
 EXTERN_C volatile boolean_T
   *p_2_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_8;
+EXTERN_C volatile boolean_T
+  *p_2_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_9;
 EXTERN_C volatile real_T
   *p_3_Sensors_and_actuators_ball_and_plate_2022b_real_T_0;
 EXTERN_C volatile real_T

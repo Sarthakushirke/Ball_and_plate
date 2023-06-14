@@ -114,6 +114,48 @@
 						<UniqueID type="key">37203835</UniqueID>
 						<LinkedItem type="key">821072781</LinkedItem>
 						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">490946842</UniqueID>
+							<LinkedItem type="key">1033044519</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">371535963</UniqueID>
+							<LinkedItem type="key">202618591</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">356</Flags>
+							<UniqueID type="key">1016906358</UniqueID>
+							<LinkedItem type="key">357957314</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">356</Flags>
+							<UniqueID type="key">336849689</UniqueID>
+							<LinkedItem type="key">840871808</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">522909450</UniqueID>
+							<LinkedItem type="key">507815053</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">232182769</UniqueID>
+							<LinkedItem type="key">44144717</LinkedItem>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">1380</Flags>
+							<UniqueID type="key">50909067</UniqueID>
+							<LinkedItem type="key">658055332</LinkedItem>
+						</item>
+						<item>
 							<Component type="key">DataSetManager</Component>
 							<Name type="key">Data Sets</Name>
 							<DisplayName type="key">Data Sets</DisplayName>
@@ -127,6 +169,12 @@
 							<ItemInfoDescr type="key"/>
 							<ItemInfoAddInfoDb type="key"/>
 							<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+						</item>
+						<item>
+							<Component type="key">MeasureDataManagement</Component>
+							<Flags type="key">356</Flags>
+							<UniqueID type="key">386020449</UniqueID>
+							<LinkedItem type="key">247850620</LinkedItem>
 						</item>
 					</item>
 				</item>
@@ -161,6 +209,166 @@
 				<ItemInfoDescr type="key"/>
 				<ItemInfoAddInfoDb type="key"/>
 				<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_001.mf4</Name>
+					<DisplayName type="key">rec1_001.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">1033044519</UniqueID>
+					<EntityID type="key">{ACF04B1A-7D09-4E80-B285-333C752E554B}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:10:58</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_002.mf4</Name>
+					<DisplayName type="key">rec1_002.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">202618591</UniqueID>
+					<EntityID type="key">{C331E2E4-8F37-4E2D-9F29-0A44079D5BEA}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:13:27</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_003.mf4</Name>
+					<DisplayName type="key">rec1_003.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">64</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">357957314</UniqueID>
+					<EntityID type="key">{87068B80-5966-4D3F-822B-C61234C4870B}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:16:29</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_004.mf4</Name>
+					<DisplayName type="key">rec1_004.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">64</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">840871808</UniqueID>
+					<EntityID type="key">{45752449-C337-4587-83CC-1EE7AEE3449C}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:30:15</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_005.mf4</Name>
+					<DisplayName type="key">rec1_005.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">507815053</UniqueID>
+					<EntityID type="key">{C89F522C-3D72-44F5-B4C4-31640F5E2D8A}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:39:57</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_006.mf4</Name>
+					<DisplayName type="key">rec1_006.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">44144717</UniqueID>
+					<EntityID type="key">{833A0019-1F31-42B5-98E9-5AEBBEFC480A}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:41:51</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_007.mf4</Name>
+					<DisplayName type="key">rec1_007.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">1088</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">658055332</UniqueID>
+					<EntityID type="key">{99E22F70-4684-425D-A8F4-5FAA391ECB87}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:43:14</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
+				<item>
+					<Component type="key">MeasureDataManagement</Component>
+					<Name type="key">rec1_008.mf4</Name>
+					<DisplayName type="key">rec1_008.mf4</DisplayName>
+					<Path type="key">.\Measurement Data</Path>
+					<Flags type="key">64</Flags>
+					<Type type="key">9</Type>
+					<UniqueID type="key">247850620</UniqueID>
+					<EntityID type="key">{016EEA87-CFFA-466D-822F-17037B50F76D}</EntityID>
+					<ItemInfoDate type="key">13/06/2023 18:46:14</ItemInfoDate>
+					<ItemInfoPath type="key">$FPATH$</ItemInfoPath>
+					<ItemInfoLog type="key">
+Software revision: sensors_and_actuators_ball_and_plate_2022b.sdf, sensors_and_actuators_ball_and_plate_2022b.rta
+Variable description: sensors_and_actuators_ball_and_plate_2022b.sdf
+    Platform / Device: Platform [DS1202 MicroLabBox, assigned to 'ds1202']
+ControlDesk version: 7.3</ItemInfoLog>
+					<ItemInfoDescr type="key"/>
+					<ItemInfoAddInfoDb type="key"/>
+					<ItemInfoAuthor type="key">20203985</ItemInfoAuthor>
+				</item>
 			</item>
 			<item>
 				<Targets type="key">.rtf,.pdf,.html,.xml,.txt,.csv</Targets>
@@ -478,7 +686,7 @@
 		</DeviceFactory>
 	</PlatformManagement>
 	<MeasurementConfiguration>
-		<NextUniqueKey type="key">4</NextUniqueKey>
+		<NextUniqueKey type="key">6</NextUniqueKey>
 		<SortedColumn type="key">4</SortedColumn>
 		<SortAscending type="key">-1</SortAscending>
 		<SignalList>
@@ -532,6 +740,30 @@
 			</Variable>
 			<Variable>
 				<Name type="key">Model Root/Integrator_reset_mode_outerloop/In1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Inverse Kinematics/ref_l1</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Inverse Kinematics/ref_l2</Name>
+				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+				<Active type="key">-1</Active>
+				<Signal>
+					<Raster type="key">HostService</Raster>
+				</Signal>
+			</Variable>
+			<Variable>
+				<Name type="key">Model Root/Inverse Kinematics/ref_l3</Name>
 				<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 				<Active type="key">-1</Active>
 				<Signal>
@@ -761,7 +993,7 @@
 					<AutomaticExportFolder type="key"/>
 					<AutomaticNamingEnabled type="key">-1</AutomaticNamingEnabled>
 					<AutomaticNamingMinimunDigits type="key">3</AutomaticNamingMinimunDigits>
-					<AutomaticNamingStartIndex type="key">1</AutomaticNamingStartIndex>
+					<AutomaticNamingStartIndex type="key">9</AutomaticNamingStartIndex>
 					<Description type="key"/>
 					<FileNamePrefix type="key">rec1_</FileNamePrefix>
 					<OpenInMeasurementDataPoolEnabled type="key">0</OpenInMeasurementDataPoolEnabled>
@@ -824,6 +1056,33 @@
 					</Variable>
 					<Variable>
 						<Name type="key">Model Root/Integrator_reset_mode_outerloop/In1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Inverse Kinematics/ref_l1</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Inverse Kinematics/ref_l2</Name>
+						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
+						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
+						<Recorded type="key">-1</Recorded>
+						<Signal>
+							<Raster type="key">HostService</Raster>
+						</Signal>
+					</Variable>
+					<Variable>
+						<Name type="key">Model Root/Inverse Kinematics/ref_l3</Name>
 						<Platform type="key">e1f7be39-f726-4caf-a30f-43506f53022e</Platform>
 						<PlatformDisplayName type="key">Platform</PlatformDisplayName>
 						<Recorded type="key">-1</Recorded>
