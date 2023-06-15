@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.0
+ * Model version              : 7.14
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Tue Jun 13 16:44:43 2023
+ * C source code generated on : Wed Jun 14 18:32:46 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -96,8 +96,6 @@ extern DioCl2EncoderInSDrvObject *pRTIEmcEncoder_Unit_2_DioCl_2_Port_1_Ch3;
 extern DioCl2EncoderInSDrvObject *pRTIEmcEncoder_Unit_3_DioCl_2_Port_1_Ch5;
 extern void Sensors_and_act_BoundsFunction1(real_T rtu_ref,
   B_BoundsFunction1_Sensors_and_T *localB);
-extern void S_Integratorresetdetermination1(real_T rtu_closed_loop_disabled,
-  real_T rtu_integrator_reset, B_Integratorresetdeterminatio_T *localB);
 extern void Sensors_and_actu_MATLABFunction(real_T rtu_current,
   B_MATLABFunction_Sensors_and__T *localB);
 extern void Sensors_a_EnabledSubsystem_Init(B_EnabledSubsystem_Sensors_an_T

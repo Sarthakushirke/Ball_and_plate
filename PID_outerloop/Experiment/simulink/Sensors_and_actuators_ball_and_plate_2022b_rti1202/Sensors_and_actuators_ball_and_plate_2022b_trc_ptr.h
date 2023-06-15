@@ -5,7 +5,7 @@
    Declaration of function that initializes the global TRC pointers
 
    RTI1202 7.15 (02-Nov-2020)
-   Tue Jun 13 16:44:43 2023
+   Wed Jun 14 18:32:46 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -51,26 +51,18 @@ EXTERN_C volatile real_T
   *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_9;
 EXTERN_C volatile real_T
   *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_10;
-EXTERN_C volatile real_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_11;
+EXTERN_C volatile boolean_T
+  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_11;
 EXTERN_C volatile boolean_T
   *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_12;
 EXTERN_C volatile boolean_T
   *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_13;
 EXTERN_C volatile boolean_T
   *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_14;
-EXTERN_C volatile real_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_15;
-EXTERN_C volatile real_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_16;
-EXTERN_C volatile real_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_17;
 EXTERN_C volatile boolean_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_18;
+  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_15;
 EXTERN_C volatile boolean_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_19;
-EXTERN_C volatile boolean_T
-  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_20;
+  *p_0_Sensors_and_actuators_ball_and_plate_2022b_boolean_T_16;
 EXTERN_C volatile real_T
   *p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0;
 EXTERN_C volatile uint8_T

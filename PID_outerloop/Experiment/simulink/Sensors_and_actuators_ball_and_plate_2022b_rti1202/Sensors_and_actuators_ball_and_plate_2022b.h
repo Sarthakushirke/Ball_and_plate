@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.0
+ * Model version              : 7.14
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Tue Jun 13 16:44:43 2023
+ * C source code generated on : Wed Jun 14 18:32:46 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -148,49 +148,43 @@
 
 #define Sensors_and_actuators_ball_and_plate_2022b_M (Sensors_and_actuators_ball_a_M)
 
-/* Block signals for system '<S3>/BoundsFunction1' */
+/* Block signals for system '<S4>/BoundsFunction1' */
 typedef struct {
-  boolean_T outOfBounds;               /* '<S3>/BoundsFunction1' */
+  boolean_T outOfBounds;               /* '<S4>/BoundsFunction1' */
 } B_BoundsFunction1_Sensors_and_T;
 
-/* Block signals for system '<S4>/Integrator reset determination1' */
+/* Block signals for system '<S8>/MATLAB Function' */
 typedef struct {
-  real_T y;                         /* '<S4>/Integrator reset determination1' */
-} B_Integratorresetdeterminatio_T;
-
-/* Block signals for system '<S7>/MATLAB Function' */
-typedef struct {
-  boolean_T saturation;                /* '<S7>/MATLAB Function' */
+  boolean_T saturation;                /* '<S8>/MATLAB Function' */
 } B_MATLABFunction_Sensors_and__T;
 
-/* Block signals for system '<S178>/Enabled Subsystem' */
+/* Block signals for system '<S181>/Enabled Subsystem' */
 typedef struct {
-  real_T OutportBufferForOut1;         /* '<S179>/Constant' */
+  real_T OutportBufferForOut1;         /* '<S182>/Constant' */
 } B_EnabledSubsystem_Sensors_an_T;
 
-/* Block states (default storage) for system '<S178>/Enabled Subsystem' */
+/* Block states (default storage) for system '<S181>/Enabled Subsystem' */
 typedef struct {
-  boolean_T EnabledSubsystem_MODE;     /* '<S178>/Enabled Subsystem' */
+  boolean_T EnabledSubsystem_MODE;     /* '<S181>/Enabled Subsystem' */
 } DW_EnabledSubsystem_Sensors_a_T;
 
-/* Block signals for system '<S178>/Enabled Subsystem1' */
+/* Block signals for system '<S181>/Enabled Subsystem1' */
 typedef struct {
-  real_T In1;                          /* '<S180>/In1' */
+  real_T In1;                          /* '<S183>/In1' */
 } B_EnabledSubsystem1_Sensors_a_T;
 
-/* Block states (default storage) for system '<S178>/Enabled Subsystem1' */
+/* Block states (default storage) for system '<S181>/Enabled Subsystem1' */
 typedef struct {
-  boolean_T EnabledSubsystem1_MODE;    /* '<S178>/Enabled Subsystem1' */
+  boolean_T EnabledSubsystem1_MODE;    /* '<S181>/Enabled Subsystem1' */
 } DW_EnabledSubsystem1_Sensors__T;
 
 /* Block signals (default storage) */
 typedef struct {
-  real_T Sum1;                         /* '<S14>/Sum1' */
-  real_T Gain4;                        /* '<S14>/Gain4' */
-  real_T Sum;                          /* '<S14>/Sum' */
-  real_T Gain3;                        /* '<S14>/Gain3' */
-  real_T DataTypeConversion;           /* '<S4>/Data Type Conversion' */
-  real_T Sum_c;                        /* '<Root>/Sum' */
+  real_T Sum1;                         /* '<S1>/Sum1' */
+  real_T Gain4;                        /* '<S1>/Gain4' */
+  real_T Sum;                          /* '<S1>/Sum' */
+  real_T Gain3;                        /* '<S1>/Gain3' */
+  real_T Ref_error_sum_x;              /* '<Root>/Ref_error_sum_x' */
   real_T PProdOut;                     /* '<S286>/PProd Out' */
   real_T Integrator;                   /* '<S281>/Integrator' */
   real_T DProdOut;                     /* '<S275>/DProd Out' */
@@ -199,7 +193,7 @@ typedef struct {
   real_T NProdOut;                     /* '<S284>/NProd Out' */
   real_T Sum_n;                        /* '<S290>/Sum' */
   real_T Saturation;                   /* '<S288>/Saturation' */
-  real_T Sum1_e;                       /* '<Root>/Sum1' */
+  real_T Ref_error_sum_y;              /* '<Root>/Ref_error_sum_y' */
   real_T PProdOut_m;                   /* '<S238>/PProd Out' */
   real_T Integrator_l;                 /* '<S233>/Integrator' */
   real_T DProdOut_p;                   /* '<S227>/DProd Out' */
@@ -208,129 +202,130 @@ typedef struct {
   real_T NProdOut_d;                   /* '<S236>/NProd Out' */
   real_T Sum_nf;                       /* '<S242>/Sum' */
   real_T Saturation_o;                 /* '<S240>/Saturation' */
-  real_T Sum1_j;                       /* '<S4>/Sum1' */
-  real_T PProdOut_j;                   /* '<S58>/PProd Out' */
-  real_T Integrator_m;                 /* '<S53>/Integrator' */
-  real_T DProdOut_b;                   /* '<S47>/DProd Out' */
-  real_T Filter_b;                     /* '<S48>/Filter' */
-  real_T SumD_c;                       /* '<S48>/SumD' */
-  real_T NProdOut_e;                   /* '<S56>/NProd Out' */
-  real_T Sum_k;                        /* '<S62>/Sum' */
-  real_T Saturation_m;                 /* '<S60>/Saturation' */
-  real_T DataTypeConversion_a;         /* '<S5>/Data Type Conversion' */
-  real_T Sum2;                         /* '<S5>/Sum2' */
-  real_T PProdOut_o;                   /* '<S108>/PProd Out' */
-  real_T Integrator_a;                 /* '<S103>/Integrator' */
-  real_T DProdOut_pg;                  /* '<S97>/DProd Out' */
-  real_T Filter_a;                     /* '<S98>/Filter' */
-  real_T SumD_k;                       /* '<S98>/SumD' */
-  real_T NProdOut_m;                   /* '<S106>/NProd Out' */
-  real_T Sum_o;                        /* '<S112>/Sum' */
-  real_T Saturation_l;                 /* '<S110>/Saturation' */
-  real_T DataTypeConversion_i;         /* '<S6>/Data Type Conversion' */
-  real_T Sum3;                         /* '<S6>/Sum3' */
-  real_T PProdOut_k;                   /* '<S158>/PProd Out' */
-  real_T Integrator_d;                 /* '<S153>/Integrator' */
-  real_T DProdOut_k;                   /* '<S147>/DProd Out' */
-  real_T Filter_o;                     /* '<S148>/Filter' */
-  real_T SumD_e;                       /* '<S148>/SumD' */
-  real_T NProdOut_g;                   /* '<S156>/NProd Out' */
-  real_T Sum_a;                        /* '<S162>/Sum' */
-  real_T Saturation_f;                 /* '<S160>/Saturation' */
-  real_T CloseLoop_disable_1;          /* '<S4>/CloseLoop_disable_1' */
-  real_T IProdOut;                     /* '<S50>/IProd Out' */
-  real_T CloseLoop_disable_2;          /* '<S5>/CloseLoop_disable_2' */
-  real_T IProdOut_g;                   /* '<S100>/IProd Out' */
-  real_T CloseLoop_disable_3;          /* '<S6>/CloseLoop_disable_3' */
-  real_T IProdOut_d;                   /* '<S150>/IProd Out' */
+  real_T DataTypeConversion;           /* '<S5>/Data Type Conversion' */
+  real_T ref_1;                        /* '<S5>/ref_1' */
+  real_T Sum1_j;                       /* '<S5>/Sum1' */
+  real_T DProdOut_b;                   /* '<S50>/DProd Out' */
+  real_T Filter_b;                     /* '<S51>/Filter' */
+  real_T SumD_c;                       /* '<S51>/SumD' */
+  real_T IProdOut;                     /* '<S53>/IProd Out' */
+  real_T Integrator_m;                 /* '<S56>/Integrator' */
+  real_T NProdOut_e;                   /* '<S59>/NProd Out' */
+  real_T PProdOut_j;                   /* '<S61>/PProd Out' */
+  real_T Sum_k;                        /* '<S65>/Sum' */
+  real_T Saturation_m;                 /* '<S63>/Saturation' */
+  real_T CloseLoop_disable_1;          /* '<S5>/CloseLoop_disable_1' */
+  real_T DataTypeConversion_a;         /* '<S6>/Data Type Conversion' */
+  real_T ref_2;                        /* '<S6>/ref_2' */
+  real_T Sum2;                         /* '<S6>/Sum2' */
+  real_T DProdOut_pg;                  /* '<S100>/DProd Out' */
+  real_T Filter_a;                     /* '<S101>/Filter' */
+  real_T SumD_k;                       /* '<S101>/SumD' */
+  real_T IProdOut_g;                   /* '<S103>/IProd Out' */
+  real_T Integrator_a;                 /* '<S106>/Integrator' */
+  real_T NProdOut_m;                   /* '<S109>/NProd Out' */
+  real_T PProdOut_o;                   /* '<S111>/PProd Out' */
+  real_T Sum_o;                        /* '<S115>/Sum' */
+  real_T Saturation_l;                 /* '<S113>/Saturation' */
+  real_T CloseLoop_disable_2;          /* '<S6>/CloseLoop_disable_2' */
+  real_T DataTypeConversion_i;         /* '<S7>/Data Type Conversion' */
+  real_T ref_3;                        /* '<S7>/ref_3' */
+  real_T Sum3;                         /* '<S7>/Sum3' */
+  real_T DProdOut_k;                   /* '<S150>/DProd Out' */
+  real_T Filter_o;                     /* '<S151>/Filter' */
+  real_T SumD_e;                       /* '<S151>/SumD' */
+  real_T IProdOut_d;                   /* '<S153>/IProd Out' */
+  real_T Integrator_d;                 /* '<S156>/Integrator' */
+  real_T NProdOut_g;                   /* '<S159>/NProd Out' */
+  real_T PProdOut_k;                   /* '<S161>/PProd Out' */
+  real_T Sum_a;                        /* '<S165>/Sum' */
+  real_T Saturation_f;                 /* '<S163>/Saturation' */
+  real_T CloseLoop_disable_3;          /* '<S7>/CloseLoop_disable_3' */
   real_T IProdOut_i;                   /* '<S230>/IProd Out' */
   real_T IProdOut_o;                   /* '<S278>/IProd Out' */
-  real_T SFunction1_o1;                /* '<S186>/S-Function1' */
-  real_T SFunction1_o2;                /* '<S186>/S-Function1' */
-  real_T Inc2Pos;                      /* '<S12>/Inc2Pos' */
-  real_T AbsPosition;                  /* '<S12>/AbsPosition' */
-  real_T Abs;                          /* '<S188>/Abs' */
-  real_T TransferFcn;                  /* '<S188>/Transfer Fcn' */
-  real_T mm2m;                         /* '<S12>/mm2m' */
-  real_T SFunction1_o1_g;              /* '<S181>/S-Function1' */
-  real_T SFunction1_o2_p;              /* '<S181>/S-Function1' */
-  real_T Inc2Pos_i;                    /* '<S11>/Inc2Pos' */
-  real_T AbsPosition_h;                /* '<S11>/AbsPosition' */
-  real_T Abs_l;                        /* '<S183>/Abs' */
-  real_T TransferFcn_d;                /* '<S183>/Transfer Fcn' */
-  real_T mm2m_p;                       /* '<S11>/mm2m' */
-  real_T SFunction1_o1_o;              /* '<S176>/S-Function1' */
-  real_T SFunction1_o2_n;              /* '<S176>/S-Function1' */
-  real_T Inc2Pos_g;                    /* '<S10>/Inc2Pos' */
-  real_T AbsPosition_hs;               /* '<S10>/AbsPosition' */
-  real_T Abs_c;                        /* '<S178>/Abs' */
-  real_T TransferFcn_f;                /* '<S178>/Transfer Fcn' */
-  real_T mm2m_h;                       /* '<S10>/mm2m' */
-  real_T Saturation_mt;                /* '<S9>/Saturation' */
-  real_T Current2V;                    /* '<S9>/Current2V' */
-  real_T DSPscale;                     /* '<S9>/DSPscale' */
-  real_T Saturation_li;                /* '<S8>/Saturation' */
-  real_T Current2V_a;                  /* '<S8>/Current2V' */
-  real_T DSPscale_a;                   /* '<S8>/DSPscale' */
-  real_T Saturation_e;                 /* '<S7>/Saturation' */
-  real_T Current2V_p;                  /* '<S7>/Current2V' */
-  real_T DSPscale_o;                   /* '<S7>/DSPscale' */
-  real_T z1;                /* '<S3>/Inverse Kinematics Calculation Function' */
-  real_T z2;                /* '<S3>/Inverse Kinematics Calculation Function' */
-  real_T z3;                /* '<S3>/Inverse Kinematics Calculation Function' */
-  uint32_T SFunction1_o4;              /* '<S195>/S-Function1' */
-  uint32_T SFunction1_o1_h[3];         /* '<S194>/S-Function1' */
-  uint16_T SFunction1_o6;              /* '<S195>/S-Function1' */
-  uint16_T Gain1;                      /* '<S14>/Gain1' */
-  uint16_T Add1;                       /* '<S14>/Add1' */
-  uint16_T Gain2;                      /* '<S14>/Gain2' */
-  uint16_T Add;                        /* '<S14>/Add' */
-  uint8_T SFunction1_o1_n[32];         /* '<S195>/S-Function1' */
-  uint8_T SFunction1_o5[4];            /* '<S195>/S-Function1' */
-  uint8_T SFunction1_o2_m[4];          /* '<S194>/S-Function1' */
-  boolean_T DataTypeConversion_k;      /* '<S14>/Data Type Conversion' */
-  boolean_T OR;                        /* '<S4>/OR' */
-  boolean_T OR_i;                      /* '<S5>/OR' */
-  boolean_T OR_p;                      /* '<S6>/OR' */
-  boolean_T actuator_1_RefOutOfBounds; /* '<S2>/actuator_1_RefOutOfBounds' */
-  boolean_T actuator_1_SaturationReached;/* '<S2>/actuator_1_SaturationReached' */
-  boolean_T actuator_2_RefOutOfBounds; /* '<S2>/actuator_2_RefOutOfBounds' */
-  boolean_T actuator_2_SaturationReached;/* '<S2>/actuator_2_SaturationReached' */
-  boolean_T actuator_3_RefOutOfBounds; /* '<S2>/actuator_3_RefOutOfBounds' */
-  boolean_T actuator_3_SaturationReached;/* '<S2>/actuator_3_SaturationReached' */
-  boolean_T phi_saturation_reached;    /* '<S2>/phi_saturation_reached' */
-  boolean_T theta_saturation_reached;  /* '<S2>/theta_saturation_reached' */
-  boolean_T saturation;                /* '<S15>/theta_saturation_check' */
-  boolean_T saturation_k;              /* '<S15>/phi_saturation_check' */
-  boolean_T RelationalOperator1;       /* '<S188>/Relational Operator1' */
-  boolean_T RelationalOperator;        /* '<S188>/Relational Operator' */
-  boolean_T LogicalOperator2;          /* '<S188>/Logical Operator2' */
-  boolean_T RelationalOperator1_p;     /* '<S183>/Relational Operator1' */
-  boolean_T RelationalOperator_n;      /* '<S183>/Relational Operator' */
-  boolean_T LogicalOperator2_k;        /* '<S183>/Logical Operator2' */
-  boolean_T RelationalOperator1_b;     /* '<S178>/Relational Operator1' */
-  boolean_T RelationalOperator_c;      /* '<S178>/Relational Operator' */
-  boolean_T LogicalOperator2_c;        /* '<S178>/Logical Operator2' */
-  B_Integratorresetdeterminatio_T sf_Integratorresetdeterminati_f;
+  real_T Integrator_reset_mode_outerloop;
                          /* '<S15>/Integrator reset determination outer loop' */
-  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_j;/* '<S188>/Enabled Subsystem1' */
-  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem_c;/* '<S188>/Enabled Subsystem' */
-  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_m;/* '<S183>/Enabled Subsystem1' */
-  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem_h;/* '<S183>/Enabled Subsystem' */
-  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1;/* '<S178>/Enabled Subsystem1' */
-  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem;/* '<S178>/Enabled Subsystem' */
-  B_MATLABFunction_Sensors_and__T sf_MATLABFunction_f;/* '<S9>/MATLAB Function' */
-  B_MATLABFunction_Sensors_and__T sf_MATLABFunction_c;/* '<S8>/MATLAB Function' */
-  B_MATLABFunction_Sensors_and__T sf_MATLABFunction;/* '<S7>/MATLAB Function' */
-  B_Integratorresetdeterminatio_T sf_Integratorresetdeterminati_l;
-                                    /* '<S6>/Integrator reset determination1' */
-  B_Integratorresetdeterminatio_T sf_Integratorresetdeterminati_k;
-                                     /* '<S5>/Integrator reset determination' */
-  B_Integratorresetdeterminatio_T sf_Integratorresetdetermination;
-                                    /* '<S4>/Integrator reset determination1' */
-  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction3;/* '<S3>/BoundsFunction3' */
-  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction2;/* '<S3>/BoundsFunction2' */
-  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction1;/* '<S3>/BoundsFunction1' */
+  real_T SFunction1_o1;                /* '<S189>/S-Function1' */
+  real_T SFunction1_o2;                /* '<S189>/S-Function1' */
+  real_T Inc2Pos;                      /* '<S13>/Inc2Pos' */
+  real_T AbsPosition;                  /* '<S13>/AbsPosition' */
+  real_T Abs;                          /* '<S191>/Abs' */
+  real_T TransferFcn;                  /* '<S191>/Transfer Fcn' */
+  real_T mm2m;                         /* '<S13>/mm2m' */
+  real_T SFunction1_o1_g;              /* '<S184>/S-Function1' */
+  real_T SFunction1_o2_p;              /* '<S184>/S-Function1' */
+  real_T Inc2Pos_i;                    /* '<S12>/Inc2Pos' */
+  real_T AbsPosition_h;                /* '<S12>/AbsPosition' */
+  real_T Abs_l;                        /* '<S186>/Abs' */
+  real_T TransferFcn_d;                /* '<S186>/Transfer Fcn' */
+  real_T mm2m_p;                       /* '<S12>/mm2m' */
+  real_T SFunction1_o1_o;              /* '<S179>/S-Function1' */
+  real_T SFunction1_o2_n;              /* '<S179>/S-Function1' */
+  real_T Inc2Pos_g;                    /* '<S11>/Inc2Pos' */
+  real_T AbsPosition_hs;               /* '<S11>/AbsPosition' */
+  real_T Abs_c;                        /* '<S181>/Abs' */
+  real_T TransferFcn_f;                /* '<S181>/Transfer Fcn' */
+  real_T mm2m_h;                       /* '<S11>/mm2m' */
+  real_T Saturation_mt;                /* '<S10>/Saturation' */
+  real_T Current2V;                    /* '<S10>/Current2V' */
+  real_T DSPscale;                     /* '<S10>/DSPscale' */
+  real_T Saturation_li;                /* '<S9>/Saturation' */
+  real_T Current2V_a;                  /* '<S9>/Current2V' */
+  real_T DSPscale_a;                   /* '<S9>/DSPscale' */
+  real_T Saturation_e;                 /* '<S8>/Saturation' */
+  real_T Current2V_p;                  /* '<S8>/Current2V' */
+  real_T DSPscale_o;                   /* '<S8>/DSPscale' */
+  real_T Integrator_reset_mode_3;   /* '<S7>/Integrator reset determination1' */
+  real_T Integrator_reset_mode_2;    /* '<S6>/Integrator reset determination' */
+  real_T Integrator_reset_mode_1;   /* '<S5>/Integrator reset determination1' */
+  real_T z1;                /* '<S4>/Inverse Kinematics Calculation Function' */
+  real_T z2;                /* '<S4>/Inverse Kinematics Calculation Function' */
+  real_T z3;                /* '<S4>/Inverse Kinematics Calculation Function' */
+  uint32_T SFunction1_o4;              /* '<S17>/S-Function1' */
+  uint32_T SFunction1_o1_h[3];         /* '<S16>/S-Function1' */
+  uint16_T SFunction1_o6;              /* '<S17>/S-Function1' */
+  uint16_T Gain1;                      /* '<S1>/Gain1' */
+  uint16_T Add1;                       /* '<S1>/Add1' */
+  uint16_T Gain2;                      /* '<S1>/Gain2' */
+  uint16_T Add;                        /* '<S1>/Add' */
+  uint8_T SFunction1_o1_n[32];         /* '<S17>/S-Function1' */
+  uint8_T SFunction1_o5[4];            /* '<S17>/S-Function1' */
+  uint8_T SFunction1_o2_m[4];          /* '<S16>/S-Function1' */
+  boolean_T DataTypeConversion_k;      /* '<S1>/Data Type Conversion' */
+  boolean_T OR;                        /* '<S5>/OR' */
+  boolean_T OR_i;                      /* '<S6>/OR' */
+  boolean_T OR_p;                      /* '<S7>/OR' */
+  boolean_T actuator_1_RefOutOfBounds; /* '<S3>/actuator_1_RefOutOfBounds' */
+  boolean_T actuator_1_SaturationReached;/* '<S3>/actuator_1_SaturationReached' */
+  boolean_T actuator_2_RefOutOfBounds; /* '<S3>/actuator_2_RefOutOfBounds' */
+  boolean_T actuator_2_SaturationReached;/* '<S3>/actuator_2_SaturationReached' */
+  boolean_T actuator_3_RefOutOfBounds; /* '<S3>/actuator_3_RefOutOfBounds' */
+  boolean_T actuator_3_SaturationReached;/* '<S3>/actuator_3_SaturationReached' */
+  boolean_T phi_saturation_reached;    /* '<S3>/phi_saturation_reached' */
+  boolean_T theta_saturation_reached;  /* '<S3>/theta_saturation_reached' */
+  boolean_T theta_saturation_reached_n;/* '<S15>/theta_saturation_check' */
+  boolean_T phi_saturation_reached_c;  /* '<S15>/phi_saturation_check' */
+  boolean_T RelationalOperator1;       /* '<S191>/Relational Operator1' */
+  boolean_T RelationalOperator;        /* '<S191>/Relational Operator' */
+  boolean_T LogicalOperator2;          /* '<S191>/Logical Operator2' */
+  boolean_T RelationalOperator1_p;     /* '<S186>/Relational Operator1' */
+  boolean_T RelationalOperator_n;      /* '<S186>/Relational Operator' */
+  boolean_T LogicalOperator2_k;        /* '<S186>/Logical Operator2' */
+  boolean_T RelationalOperator1_b;     /* '<S181>/Relational Operator1' */
+  boolean_T RelationalOperator_c;      /* '<S181>/Relational Operator' */
+  boolean_T LogicalOperator2_c;        /* '<S181>/Logical Operator2' */
+  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_j;/* '<S191>/Enabled Subsystem1' */
+  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem_c;/* '<S191>/Enabled Subsystem' */
+  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_m;/* '<S186>/Enabled Subsystem1' */
+  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem_h;/* '<S186>/Enabled Subsystem' */
+  B_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1;/* '<S181>/Enabled Subsystem1' */
+  B_EnabledSubsystem_Sensors_an_T EnabledSubsystem;/* '<S181>/Enabled Subsystem' */
+  B_MATLABFunction_Sensors_and__T sf_MATLABFunction_f;/* '<S10>/MATLAB Function' */
+  B_MATLABFunction_Sensors_and__T sf_MATLABFunction_c;/* '<S9>/MATLAB Function' */
+  B_MATLABFunction_Sensors_and__T sf_MATLABFunction;/* '<S8>/MATLAB Function' */
+  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction3;/* '<S4>/BoundsFunction3' */
+  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction2;/* '<S4>/BoundsFunction2' */
+  B_BoundsFunction1_Sensors_and_T sf_BoundsFunction1;/* '<S4>/BoundsFunction1' */
 } B_Sensors_and_actuators_ball__T;
 
 /* Block states (default storage) for system '<Root>' */
@@ -339,79 +334,79 @@ typedef struct {
   real_T Filter_DSTATE;                /* '<S276>/Filter' */
   real_T Integrator_DSTATE_j;          /* '<S233>/Integrator' */
   real_T Filter_DSTATE_e;              /* '<S228>/Filter' */
-  real_T Sum1_DWORK1;                  /* '<S14>/Sum1' */
+  real_T Sum1_DWORK1;                  /* '<S1>/Sum1' */
   struct {
     real_T RECEIVED_FRAMES;
-  } SFunction1_RWORK;                  /* '<S195>/S-Function1' */
+  } SFunction1_RWORK;                  /* '<S17>/S-Function1' */
 
   struct {
     real_T RX_DROPPED_FRAMES[2];
-  } SFunction1_RWORK_c;                /* '<S196>/S-Function1' */
+  } SFunction1_RWORK_c;                /* '<S18>/S-Function1' */
 
-  uint32_T Add1_DWORK1;                /* '<S14>/Add1' */
-  uint16_T Add_DWORK1;                 /* '<S14>/Add' */
+  uint32_T Add1_DWORK1;                /* '<S1>/Add1' */
+  uint16_T Add_DWORK1;                 /* '<S1>/Add' */
   int8_T Integrator_PrevResetState;    /* '<S281>/Integrator' */
   int8_T Filter_PrevResetState;        /* '<S276>/Filter' */
   int8_T Integrator_PrevResetState_i;  /* '<S233>/Integrator' */
   int8_T Filter_PrevResetState_m;      /* '<S228>/Filter' */
-  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1_j;/* '<S188>/Enabled Subsystem1' */
-  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem_c;/* '<S188>/Enabled Subsystem' */
-  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1_m;/* '<S183>/Enabled Subsystem1' */
-  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem_h;/* '<S183>/Enabled Subsystem' */
-  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1;/* '<S178>/Enabled Subsystem1' */
-  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem;/* '<S178>/Enabled Subsystem' */
+  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1_j;/* '<S191>/Enabled Subsystem1' */
+  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem_c;/* '<S191>/Enabled Subsystem' */
+  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1_m;/* '<S186>/Enabled Subsystem1' */
+  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem_h;/* '<S186>/Enabled Subsystem' */
+  DW_EnabledSubsystem1_Sensors__T EnabledSubsystem1;/* '<S181>/Enabled Subsystem1' */
+  DW_EnabledSubsystem_Sensors_a_T EnabledSubsystem;/* '<S181>/Enabled Subsystem' */
 } DW_Sensors_and_actuators_ball_T;
 
 /* Continuous states (default storage) */
 typedef struct {
-  real_T Integrator_CSTATE;            /* '<S53>/Integrator' */
-  real_T Filter_CSTATE;                /* '<S48>/Filter' */
-  real_T Integrator_CSTATE_b;          /* '<S103>/Integrator' */
-  real_T Filter_CSTATE_j;              /* '<S98>/Filter' */
-  real_T Integrator_CSTATE_k;          /* '<S153>/Integrator' */
-  real_T Filter_CSTATE_a;              /* '<S148>/Filter' */
-  real_T TransferFcn_CSTATE;           /* '<S188>/Transfer Fcn' */
-  real_T TransferFcn_CSTATE_k;         /* '<S183>/Transfer Fcn' */
-  real_T TransferFcn_CSTATE_b;         /* '<S178>/Transfer Fcn' */
+  real_T Filter_CSTATE;                /* '<S51>/Filter' */
+  real_T Integrator_CSTATE;            /* '<S56>/Integrator' */
+  real_T Filter_CSTATE_j;              /* '<S101>/Filter' */
+  real_T Integrator_CSTATE_b;          /* '<S106>/Integrator' */
+  real_T Filter_CSTATE_a;              /* '<S151>/Filter' */
+  real_T Integrator_CSTATE_k;          /* '<S156>/Integrator' */
+  real_T TransferFcn_CSTATE;           /* '<S191>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE_k;         /* '<S186>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE_b;         /* '<S181>/Transfer Fcn' */
 } X_Sensors_and_actuators_ball__T;
 
 /* State derivatives (default storage) */
 typedef struct {
-  real_T Integrator_CSTATE;            /* '<S53>/Integrator' */
-  real_T Filter_CSTATE;                /* '<S48>/Filter' */
-  real_T Integrator_CSTATE_b;          /* '<S103>/Integrator' */
-  real_T Filter_CSTATE_j;              /* '<S98>/Filter' */
-  real_T Integrator_CSTATE_k;          /* '<S153>/Integrator' */
-  real_T Filter_CSTATE_a;              /* '<S148>/Filter' */
-  real_T TransferFcn_CSTATE;           /* '<S188>/Transfer Fcn' */
-  real_T TransferFcn_CSTATE_k;         /* '<S183>/Transfer Fcn' */
-  real_T TransferFcn_CSTATE_b;         /* '<S178>/Transfer Fcn' */
+  real_T Filter_CSTATE;                /* '<S51>/Filter' */
+  real_T Integrator_CSTATE;            /* '<S56>/Integrator' */
+  real_T Filter_CSTATE_j;              /* '<S101>/Filter' */
+  real_T Integrator_CSTATE_b;          /* '<S106>/Integrator' */
+  real_T Filter_CSTATE_a;              /* '<S151>/Filter' */
+  real_T Integrator_CSTATE_k;          /* '<S156>/Integrator' */
+  real_T TransferFcn_CSTATE;           /* '<S191>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE_k;         /* '<S186>/Transfer Fcn' */
+  real_T TransferFcn_CSTATE_b;         /* '<S181>/Transfer Fcn' */
 } XDot_Sensors_and_actuators_ba_T;
 
 /* State disabled  */
 typedef struct {
-  boolean_T Integrator_CSTATE;         /* '<S53>/Integrator' */
-  boolean_T Filter_CSTATE;             /* '<S48>/Filter' */
-  boolean_T Integrator_CSTATE_b;       /* '<S103>/Integrator' */
-  boolean_T Filter_CSTATE_j;           /* '<S98>/Filter' */
-  boolean_T Integrator_CSTATE_k;       /* '<S153>/Integrator' */
-  boolean_T Filter_CSTATE_a;           /* '<S148>/Filter' */
-  boolean_T TransferFcn_CSTATE;        /* '<S188>/Transfer Fcn' */
-  boolean_T TransferFcn_CSTATE_k;      /* '<S183>/Transfer Fcn' */
-  boolean_T TransferFcn_CSTATE_b;      /* '<S178>/Transfer Fcn' */
+  boolean_T Filter_CSTATE;             /* '<S51>/Filter' */
+  boolean_T Integrator_CSTATE;         /* '<S56>/Integrator' */
+  boolean_T Filter_CSTATE_j;           /* '<S101>/Filter' */
+  boolean_T Integrator_CSTATE_b;       /* '<S106>/Integrator' */
+  boolean_T Filter_CSTATE_a;           /* '<S151>/Filter' */
+  boolean_T Integrator_CSTATE_k;       /* '<S156>/Integrator' */
+  boolean_T TransferFcn_CSTATE;        /* '<S191>/Transfer Fcn' */
+  boolean_T TransferFcn_CSTATE_k;      /* '<S186>/Transfer Fcn' */
+  boolean_T TransferFcn_CSTATE_b;      /* '<S181>/Transfer Fcn' */
 } XDis_Sensors_and_actuators_ba_T;
 
 /* Zero-crossing (trigger) state */
 typedef struct {
-  ZCSigState Integrator_Reset_ZCE;     /* '<S53>/Integrator' */
-  ZCSigState Filter_Reset_ZCE;         /* '<S48>/Filter' */
-  ZCSigState Integrator_Reset_ZCE_c;   /* '<S103>/Integrator' */
-  ZCSigState Filter_Reset_ZCE_l;       /* '<S98>/Filter' */
-  ZCSigState Integrator_Reset_ZCE_h;   /* '<S153>/Integrator' */
-  ZCSigState Filter_Reset_ZCE_f;       /* '<S148>/Filter' */
-  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig_ZC;/* '<S12>/EMC_ENCODER_POS_SET_BL1' */
-  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig__n;/* '<S11>/EMC_ENCODER_POS_SET_BL1' */
-  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig__o;/* '<S10>/EMC_ENCODER_POS_SET_BL1' */
+  ZCSigState Filter_Reset_ZCE;         /* '<S51>/Filter' */
+  ZCSigState Integrator_Reset_ZCE;     /* '<S56>/Integrator' */
+  ZCSigState Filter_Reset_ZCE_l;       /* '<S101>/Filter' */
+  ZCSigState Integrator_Reset_ZCE_c;   /* '<S106>/Integrator' */
+  ZCSigState Filter_Reset_ZCE_f;       /* '<S151>/Filter' */
+  ZCSigState Integrator_Reset_ZCE_h;   /* '<S156>/Integrator' */
+  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig_ZC;/* '<S13>/EMC_ENCODER_POS_SET_BL1' */
+  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig__n;/* '<S12>/EMC_ENCODER_POS_SET_BL1' */
+  ZCSigState EMC_ENCODER_POS_SET_BL1_Trig__o;/* '<S11>/EMC_ENCODER_POS_SET_BL1' */
 } PrevZCX_Sensors_and_actuators_T;
 
 #ifndef ODE1_INTG
@@ -430,59 +425,45 @@ typedef struct {
   real_T Ypos;                         /* '<Root>/Ypos ' */
   uint32_T Status;                     /* '<Root>/Status ' */
   real_T Frames;                       /* '<Root>/Frames ' */
-  real_T Actuator_Controller_Output_1;
-                                     /* '<Root>/Actuator_Controller_Output_1' */
-  real_T Actuator_Controller_Output_2;
-                                     /* '<Root>/Actuator_Controller_Output_2' */
-  real_T Actuator_Controller_Output_3;
-                                     /* '<Root>/Actuator_Controller_Output_3' */
-  real_T ref_1;                        /* '<Root>/ref_1' */
-  real_T ref_2;                        /* '<Root>/ref_2' */
-  real_T ref_3;                        /* '<Root>/ref_3' */
-  real_T Integrator_reset_mode_3;      /* '<Root>/Integrator_reset_mode_3' */
-  real_T Integrator_reset_mode_2;      /* '<Root>/Integrator_reset_mode_2' */
-  real_T Integrator_reset_mode_1;      /* '<Root>/Integrator_reset_mode_1' */
   real_T Outerloop_theta_output;       /* '<Root>/Outerloop_theta_output' */
   real_T Outerloop_phi_output;         /* '<Root>/Outerloop_phi_output' */
-  real_T Integrator_reset_mode_outerloop;
-                                  /* '<Root>/Integrator_reset_mode_outerloop' */
 } ExtY_Sensors_and_actuators_ba_T;
 
-/* Parameters for system: '<S178>/Enabled Subsystem' */
+/* Parameters for system: '<S181>/Enabled Subsystem' */
 struct P_EnabledSubsystem_Sensors_an_T_ {
   real_T Out1_Y0;                      /* Expression: [0]
-                                        * Referenced by: '<S179>/Out1'
+                                        * Referenced by: '<S182>/Out1'
                                         */
   real_T Constant_Value;               /* Expression: -1
-                                        * Referenced by: '<S179>/Constant'
+                                        * Referenced by: '<S182>/Constant'
                                         */
 };
 
-/* Parameters for system: '<S178>/Enabled Subsystem1' */
+/* Parameters for system: '<S181>/Enabled Subsystem1' */
 struct P_EnabledSubsystem1_Sensors_a_T_ {
   real_T Out1_Y0;                      /* Expression: [0]
-                                        * Referenced by: '<S180>/Out1'
+                                        * Referenced by: '<S183>/Out1'
                                         */
 };
 
 /* Parameters (default storage) */
 struct P_Sensors_and_actuators_ball__T_ {
   real_T a_x;                          /* Variable: a_x
-                                        * Referenced by: '<S14>/Gain3'
+                                        * Referenced by: '<S1>/Gain3'
                                         */
   real_T a_y;                          /* Variable: a_y
-                                        * Referenced by: '<S14>/Gain4'
+                                        * Referenced by: '<S1>/Gain4'
                                         */
   real_T b_x;                          /* Variable: b_x
-                                        * Referenced by: '<S14>/Constant2'
+                                        * Referenced by: '<S1>/Constant2'
                                         */
   real_T b_y;                          /* Variable: b_y
-                                        * Referenced by: '<S14>/Constant'
+                                        * Referenced by: '<S1>/Constant'
                                         */
   real_T center[2];                    /* Variable: center
                                         * Referenced by:
-                                        *   '<S14>/Constant3'
-                                        *   '<S14>/Constant4'
+                                        *   '<S1>/Constant3'
+                                        *   '<S1>/Constant4'
                                         */
   real_T PID_outer_theta_InitialConditio;
                               /* Mask Parameter: PID_outer_theta_InitialConditio
@@ -492,17 +473,17 @@ struct P_Sensors_and_actuators_ball__T_ {
                               /* Mask Parameter: PID_outer_phi_InitialConditionF
                                * Referenced by: '<S228>/Filter'
                                */
-  real_T PIDController_InitialConditionF;
-                              /* Mask Parameter: PIDController_InitialConditionF
-                               * Referenced by: '<S48>/Filter'
+  real_T Actuator_PID_1_InitialCondition;
+                              /* Mask Parameter: Actuator_PID_1_InitialCondition
+                               * Referenced by: '<S51>/Filter'
                                */
-  real_T PIDController1_InitialCondition;
-                              /* Mask Parameter: PIDController1_InitialCondition
-                               * Referenced by: '<S98>/Filter'
+  real_T Actuator_PID_2_InitialCondition;
+                              /* Mask Parameter: Actuator_PID_2_InitialCondition
+                               * Referenced by: '<S101>/Filter'
                                */
-  real_T PIDController2_InitialCondition;
-                              /* Mask Parameter: PIDController2_InitialCondition
-                               * Referenced by: '<S148>/Filter'
+  real_T Actuator_PID_3_InitialCondition;
+                              /* Mask Parameter: Actuator_PID_3_InitialCondition
+                               * Referenced by: '<S151>/Filter'
                                */
   real_T PID_outer_theta_InitialCondit_j;
                               /* Mask Parameter: PID_outer_theta_InitialCondit_j
@@ -512,17 +493,17 @@ struct P_Sensors_and_actuators_ball__T_ {
                               /* Mask Parameter: PID_outer_phi_InitialConditio_d
                                * Referenced by: '<S233>/Integrator'
                                */
-  real_T PIDController_InitialConditio_c;
-                              /* Mask Parameter: PIDController_InitialConditio_c
-                               * Referenced by: '<S53>/Integrator'
+  real_T Actuator_PID_1_InitialConditi_c;
+                              /* Mask Parameter: Actuator_PID_1_InitialConditi_c
+                               * Referenced by: '<S56>/Integrator'
                                */
-  real_T PIDController1_InitialConditi_j;
-                              /* Mask Parameter: PIDController1_InitialConditi_j
-                               * Referenced by: '<S103>/Integrator'
+  real_T Actuator_PID_2_InitialConditi_j;
+                              /* Mask Parameter: Actuator_PID_2_InitialConditi_j
+                               * Referenced by: '<S106>/Integrator'
                                */
-  real_T PIDController2_InitialConditi_o;
-                              /* Mask Parameter: PIDController2_InitialConditi_o
-                               * Referenced by: '<S153>/Integrator'
+  real_T Actuator_PID_3_InitialConditi_o;
+                              /* Mask Parameter: Actuator_PID_3_InitialConditi_o
+                               * Referenced by: '<S156>/Integrator'
                                */
   real_T PID_outer_theta_LowerSaturation;
                               /* Mask Parameter: PID_outer_theta_LowerSaturation
@@ -532,17 +513,17 @@ struct P_Sensors_and_actuators_ball__T_ {
                               /* Mask Parameter: PID_outer_phi_LowerSaturationLi
                                * Referenced by: '<S240>/Saturation'
                                */
-  real_T PIDController_LowerSaturationLi;
-                              /* Mask Parameter: PIDController_LowerSaturationLi
-                               * Referenced by: '<S60>/Saturation'
+  real_T Actuator_PID_1_LowerSaturationL;
+                              /* Mask Parameter: Actuator_PID_1_LowerSaturationL
+                               * Referenced by: '<S63>/Saturation'
                                */
-  real_T PIDController1_LowerSaturationL;
-                              /* Mask Parameter: PIDController1_LowerSaturationL
-                               * Referenced by: '<S110>/Saturation'
+  real_T Actuator_PID_2_LowerSaturationL;
+                              /* Mask Parameter: Actuator_PID_2_LowerSaturationL
+                               * Referenced by: '<S113>/Saturation'
                                */
-  real_T PIDController2_LowerSaturationL;
-                              /* Mask Parameter: PIDController2_LowerSaturationL
-                               * Referenced by: '<S160>/Saturation'
+  real_T Actuator_PID_3_LowerSaturationL;
+                              /* Mask Parameter: Actuator_PID_3_LowerSaturationL
+                               * Referenced by: '<S163>/Saturation'
                                */
   real_T PID_outer_theta_UpperSaturation;
                               /* Mask Parameter: PID_outer_theta_UpperSaturation
@@ -552,158 +533,149 @@ struct P_Sensors_and_actuators_ball__T_ {
                               /* Mask Parameter: PID_outer_phi_UpperSaturationLi
                                * Referenced by: '<S240>/Saturation'
                                */
-  real_T PIDController_UpperSaturationLi;
-                              /* Mask Parameter: PIDController_UpperSaturationLi
-                               * Referenced by: '<S60>/Saturation'
+  real_T Actuator_PID_1_UpperSaturationL;
+                              /* Mask Parameter: Actuator_PID_1_UpperSaturationL
+                               * Referenced by: '<S63>/Saturation'
                                */
-  real_T PIDController1_UpperSaturationL;
-                              /* Mask Parameter: PIDController1_UpperSaturationL
-                               * Referenced by: '<S110>/Saturation'
+  real_T Actuator_PID_2_UpperSaturationL;
+                              /* Mask Parameter: Actuator_PID_2_UpperSaturationL
+                               * Referenced by: '<S113>/Saturation'
                                */
-  real_T PIDController2_UpperSaturationL;
-                              /* Mask Parameter: PIDController2_UpperSaturationL
-                               * Referenced by: '<S160>/Saturation'
+  real_T Actuator_PID_3_UpperSaturationL;
+                              /* Mask Parameter: Actuator_PID_3_UpperSaturationL
+                               * Referenced by: '<S163>/Saturation'
                                */
   real_T constant_ref_1_Value;         /* Expression: 0
-                                        * Referenced by: '<S4>/constant_ref_1'
+                                        * Referenced by: '<S5>/constant_ref_1'
                                         */
   real_T constant_ref_2_Value;         /* Expression: 0
-                                        * Referenced by: '<S5>/constant_ref_2'
+                                        * Referenced by: '<S6>/constant_ref_2'
                                         */
   real_T constant_ref_3_Value;         /* Expression: 0
-                                        * Referenced by: '<S6>/constant_ref_3'
+                                        * Referenced by: '<S7>/constant_ref_3'
                                         */
   real_T Saturation_UpperSat;          /* Expression: 3
-                                        * Referenced by: '<S7>/Saturation'
+                                        * Referenced by: '<S8>/Saturation'
                                         */
   real_T Saturation_LowerSat;          /* Expression: -3
-                                        * Referenced by: '<S7>/Saturation'
+                                        * Referenced by: '<S8>/Saturation'
                                         */
   real_T Current2V_Gain;               /* Expression: 10/3
-                                        * Referenced by: '<S7>/Current2V'
-                                        */
-  real_T DSPscale_Gain;                /* Expression: 1/10
-                                        * Referenced by: '<S7>/DSPscale'
-                                        */
-  real_T Saturation_UpperSat_g;        /* Expression: 3
-                                        * Referenced by: '<S8>/Saturation'
-                                        */
-  real_T Saturation_LowerSat_a;        /* Expression: -3
-                                        * Referenced by: '<S8>/Saturation'
-                                        */
-  real_T Current2V_Gain_l;             /* Expression: 10/3
                                         * Referenced by: '<S8>/Current2V'
                                         */
-  real_T DSPscale_Gain_j;              /* Expression: 1/10
+  real_T DSPscale_Gain;                /* Expression: 1/10
                                         * Referenced by: '<S8>/DSPscale'
                                         */
-  real_T Saturation_UpperSat_j;        /* Expression: 3
+  real_T Saturation_UpperSat_g;        /* Expression: 3
                                         * Referenced by: '<S9>/Saturation'
                                         */
-  real_T Saturation_LowerSat_m;        /* Expression: -3
+  real_T Saturation_LowerSat_a;        /* Expression: -3
                                         * Referenced by: '<S9>/Saturation'
                                         */
-  real_T Current2V_Gain_j;             /* Expression: 10/3
+  real_T Current2V_Gain_l;             /* Expression: 10/3
                                         * Referenced by: '<S9>/Current2V'
                                         */
-  real_T DSPscale_Gain_h;              /* Expression: 1/10
+  real_T DSPscale_Gain_j;              /* Expression: 1/10
                                         * Referenced by: '<S9>/DSPscale'
                                         */
+  real_T Saturation_UpperSat_j;        /* Expression: 3
+                                        * Referenced by: '<S10>/Saturation'
+                                        */
+  real_T Saturation_LowerSat_m;        /* Expression: -3
+                                        * Referenced by: '<S10>/Saturation'
+                                        */
+  real_T Current2V_Gain_j;             /* Expression: 10/3
+                                        * Referenced by: '<S10>/Current2V'
+                                        */
+  real_T DSPscale_Gain_h;              /* Expression: 1/10
+                                        * Referenced by: '<S10>/DSPscale'
+                                        */
   real_T Constant_Value;               /* Expression: 10
-                                        * Referenced by: '<S10>/Constant'
-                                        */
-  real_T ZP_Value;                     /* Expression: 29
-                                        * Referenced by: '<S10>/ZP'
-                                        */
-  real_T Inc2Pos_Gain;                 /* Expression: 8e-3
-                                        * Referenced by: '<S10>/Inc2Pos'
-                                        */
-  real_T Pos_offset_Value;             /* Expression: 0
-                                        * Referenced by: '<S10>/Pos_offset'
-                                        */
-  real_T Const_Value;                  /* Expression: 0.01
-                                        * Referenced by: '<S178>/Const'
-                                        */
-  real_T Const1_Value;                 /* Expression: -0.98
-                                        * Referenced by: '<S178>/Const1'
-                                        */
-  real_T TransferFcn_A;                /* Computed Parameter: TransferFcn_A
-                                        * Referenced by: '<S178>/Transfer Fcn'
-                                        */
-  real_T TransferFcn_C;                /* Computed Parameter: TransferFcn_C
-                                        * Referenced by: '<S178>/Transfer Fcn'
-                                        */
-  real_T mm2m_Gain;                    /* Expression: 0.001
-                                        * Referenced by: '<S10>/mm2m'
-                                        */
-  real_T Constant_Value_d;             /* Expression: 10
                                         * Referenced by: '<S11>/Constant'
                                         */
-  real_T ZP_Value_a;                   /* Expression: 29
+  real_T ZP_Value;                     /* Expression: 29
                                         * Referenced by: '<S11>/ZP'
                                         */
-  real_T Inc2Pos_Gain_j;               /* Expression: 8e-3
+  real_T Inc2Pos_Gain;                 /* Expression: 8e-3
                                         * Referenced by: '<S11>/Inc2Pos'
                                         */
-  real_T Pos_offset_Value_f;           /* Expression: 0
+  real_T Pos_offset_Value;             /* Expression: 0
                                         * Referenced by: '<S11>/Pos_offset'
                                         */
-  real_T Const_Value_d;                /* Expression: 0.01
-                                        * Referenced by: '<S183>/Const'
+  real_T Const_Value;                  /* Expression: 0.01
+                                        * Referenced by: '<S181>/Const'
                                         */
-  real_T Const1_Value_k;               /* Expression: -0.98
-                                        * Referenced by: '<S183>/Const1'
+  real_T Const1_Value;                 /* Expression: -0.98
+                                        * Referenced by: '<S181>/Const1'
                                         */
-  real_T TransferFcn_A_b;              /* Computed Parameter: TransferFcn_A_b
-                                        * Referenced by: '<S183>/Transfer Fcn'
+  real_T TransferFcn_A;                /* Computed Parameter: TransferFcn_A
+                                        * Referenced by: '<S181>/Transfer Fcn'
                                         */
-  real_T TransferFcn_C_j;              /* Computed Parameter: TransferFcn_C_j
-                                        * Referenced by: '<S183>/Transfer Fcn'
+  real_T TransferFcn_C;                /* Computed Parameter: TransferFcn_C
+                                        * Referenced by: '<S181>/Transfer Fcn'
                                         */
-  real_T mm2m_Gain_f;                  /* Expression: 0.001
+  real_T mm2m_Gain;                    /* Expression: 0.001
                                         * Referenced by: '<S11>/mm2m'
                                         */
-  real_T Constant_Value_c;             /* Expression: 10
+  real_T Constant_Value_d;             /* Expression: 10
                                         * Referenced by: '<S12>/Constant'
                                         */
-  real_T ZP_Value_d;                   /* Expression: 29
+  real_T ZP_Value_a;                   /* Expression: 29
                                         * Referenced by: '<S12>/ZP'
                                         */
-  real_T Inc2Pos_Gain_i;               /* Expression: 8e-3
+  real_T Inc2Pos_Gain_j;               /* Expression: 8e-3
                                         * Referenced by: '<S12>/Inc2Pos'
                                         */
-  real_T Pos_offset_Value_b;           /* Expression: 0
+  real_T Pos_offset_Value_f;           /* Expression: 0
                                         * Referenced by: '<S12>/Pos_offset'
                                         */
-  real_T Const_Value_i;                /* Expression: 0.01
-                                        * Referenced by: '<S188>/Const'
+  real_T Const_Value_d;                /* Expression: 0.01
+                                        * Referenced by: '<S186>/Const'
                                         */
-  real_T Const1_Value_n;               /* Expression: -0.98
-                                        * Referenced by: '<S188>/Const1'
+  real_T Const1_Value_k;               /* Expression: -0.98
+                                        * Referenced by: '<S186>/Const1'
                                         */
-  real_T TransferFcn_A_p;              /* Computed Parameter: TransferFcn_A_p
-                                        * Referenced by: '<S188>/Transfer Fcn'
+  real_T TransferFcn_A_b;              /* Computed Parameter: TransferFcn_A_b
+                                        * Referenced by: '<S186>/Transfer Fcn'
                                         */
-  real_T TransferFcn_C_m;              /* Computed Parameter: TransferFcn_C_m
-                                        * Referenced by: '<S188>/Transfer Fcn'
+  real_T TransferFcn_C_j;              /* Computed Parameter: TransferFcn_C_j
+                                        * Referenced by: '<S186>/Transfer Fcn'
                                         */
-  real_T mm2m_Gain_a;                  /* Expression: 0.001
+  real_T mm2m_Gain_f;                  /* Expression: 0.001
                                         * Referenced by: '<S12>/mm2m'
                                         */
+  real_T Constant_Value_c;             /* Expression: 10
+                                        * Referenced by: '<S13>/Constant'
+                                        */
+  real_T ZP_Value_d;                   /* Expression: 29
+                                        * Referenced by: '<S13>/ZP'
+                                        */
+  real_T Inc2Pos_Gain_i;               /* Expression: 8e-3
+                                        * Referenced by: '<S13>/Inc2Pos'
+                                        */
+  real_T Pos_offset_Value_b;           /* Expression: 0
+                                        * Referenced by: '<S13>/Pos_offset'
+                                        */
+  real_T Const_Value_i;                /* Expression: 0.01
+                                        * Referenced by: '<S191>/Const'
+                                        */
+  real_T Const1_Value_n;               /* Expression: -0.98
+                                        * Referenced by: '<S191>/Const1'
+                                        */
+  real_T TransferFcn_A_p;              /* Computed Parameter: TransferFcn_A_p
+                                        * Referenced by: '<S191>/Transfer Fcn'
+                                        */
+  real_T TransferFcn_C_m;              /* Computed Parameter: TransferFcn_C_m
+                                        * Referenced by: '<S191>/Transfer Fcn'
+                                        */
+  real_T mm2m_Gain_a;                  /* Expression: 0.001
+                                        * Referenced by: '<S13>/mm2m'
+                                        */
   real_T Constant1_Value;              /* Expression: 1
-                                        * Referenced by: '<S14>/Constant1'
-                                        */
-  real_T Init_1_Value;                 /* Expression: 0
-                                        * Referenced by: '<Root>/Init_1'
-                                        */
-  real_T enable_constant_ref_all_Value;/* Expression: 1
-                                        * Referenced by: '<Root>/enable_constant_ref_all'
-                                        */
-  real_T enable_constant_ref_1_Value;  /* Expression: 0
-                                        * Referenced by: '<S4>/enable_constant_ref_1'
+                                        * Referenced by: '<S1>/Constant1'
                                         */
   real_T ref_x_constant_Value;         /* Expression: 0
-                                        * Referenced by: '<S1>/ref_x_constant'
+                                        * Referenced by: '<S2>/ref_x_constant'
                                         */
   real_T Outer_P_Value;                /* Expression: -7.41
                                         * Referenced by: '<Root>/Outer_P'
@@ -733,7 +705,7 @@ struct P_Sensors_and_actuators_ball__T_ {
                                           * Referenced by: '<S15>/Outerloop_theta_switch'
                                           */
   real_T ref_y_constant_Value;         /* Expression: 0
-                                        * Referenced by: '<S1>/ref_y_constant'
+                                        * Referenced by: '<S2>/ref_y_constant'
                                         */
   real_T Integrator_gainval_e;       /* Computed Parameter: Integrator_gainval_e
                                       * Referenced by: '<S233>/Integrator'
@@ -744,81 +716,90 @@ struct P_Sensors_and_actuators_ball__T_ {
   real_T Outerloop_phi_switch_Threshold;/* Expression: 0.5
                                          * Referenced by: '<S15>/Outerloop_phi_switch'
                                          */
-  real_T switch_ref_constant_sin_1_Thres;/* Expression: 0.5
-                                          * Referenced by: '<S4>/switch_ref_constant_sin_1'
-                                          */
-  real_T Controller_P_Value;           /* Expression: 71.1953
-                                        * Referenced by: '<Root>/Controller_P'
-                                        */
-  real_T Actuator_controller_status_1_Va;/* Expression: 0
-                                          * Referenced by: '<S4>/Actuator_controller_status_1'
-                                          */
-  real_T reset_integrator_1_Value;     /* Expression: 0
-                                        * Referenced by: '<S4>/reset_integrator_1'
-                                        */
-  real_T Controller_D_Value;           /* Expression: 4.2346
-                                        * Referenced by: '<Root>/Controller_D'
-                                        */
-  real_T Controller_N_Value;           /* Expression: 79.4328
-                                        * Referenced by: '<Root>/Controller_N'
+  real_T Init_1_Value;                 /* Expression: 0
+                                        * Referenced by: '<Root>/Init_1'
                                         */
   real_T Init_2_Value;                 /* Expression: 0
                                         * Referenced by: '<Root>/Init_2'
                                         */
-  real_T enable_constant_ref_2_Value;  /* Expression: 0
-                                        * Referenced by: '<S5>/enable_constant_ref_2'
+  real_T enable_constant_ref_all_Value;/* Expression: 1
+                                        * Referenced by: '<Root>/enable_constant_ref_all'
                                         */
-  real_T switch_ref_constant_sin_2_Thres;/* Expression: 0.5
-                                          * Referenced by: '<S5>/switch_ref_constant_sin_2'
+  real_T enable_constant_ref_1_Value;  /* Expression: 0
+                                        * Referenced by: '<S5>/enable_constant_ref_1'
+                                        */
+  real_T ref_1_Threshold;              /* Expression: 0.5
+                                        * Referenced by: '<S5>/ref_1'
+                                        */
+  real_T Controller_D_Value;           /* Expression: 4.2346
+                                        * Referenced by: '<Root>/Controller_D'
+                                        */
+  real_T Actuator_controller_status_1_Va;/* Expression: 0
+                                          * Referenced by: '<S5>/Actuator_controller_status_1'
                                           */
+  real_T reset_integrator_1_Value;     /* Expression: 0
+                                        * Referenced by: '<S5>/reset_integrator_1'
+                                        */
+  real_T Controller_I_Value;           /* Expression: 47.4209
+                                        * Referenced by: '<Root>/Controller_I'
+                                        */
+  real_T Controller_N_Value;           /* Expression: 79.4328
+                                        * Referenced by: '<Root>/Controller_N'
+                                        */
+  real_T Controller_P_Value;           /* Expression: 71.1953
+                                        * Referenced by: '<Root>/Controller_P'
+                                        */
+  real_T CloseLoop_disable_1_Threshold;/* Expression: 0.5
+                                        * Referenced by: '<S5>/CloseLoop_disable_1'
+                                        */
+  real_T enable_constant_ref_2_Value;  /* Expression: 0
+                                        * Referenced by: '<S6>/enable_constant_ref_2'
+                                        */
+  real_T ref_2_Threshold;              /* Expression: 0.5
+                                        * Referenced by: '<S6>/ref_2'
+                                        */
   real_T Actuator_controller_status_2_Va;/* Expression: 0
-                                          * Referenced by: '<S5>/Actuator_controller_status_2'
+                                          * Referenced by: '<S6>/Actuator_controller_status_2'
                                           */
   real_T reset_integrator_2_Value;     /* Expression: 0
-                                        * Referenced by: '<S5>/reset_integrator_2'
+                                        * Referenced by: '<S6>/reset_integrator_2'
+                                        */
+  real_T CloseLoop_disable_2_Threshold;/* Expression: 0.5
+                                        * Referenced by: '<S6>/CloseLoop_disable_2'
                                         */
   real_T init_3_Value;                 /* Expression: 0
                                         * Referenced by: '<Root>/init_3'
                                         */
   real_T enable_constant_ref_3_Value;  /* Expression: 0
-                                        * Referenced by: '<S6>/enable_constant_ref_3'
+                                        * Referenced by: '<S7>/enable_constant_ref_3'
                                         */
-  real_T switch_ref_3_Threshold;       /* Expression: 0.5
-                                        * Referenced by: '<S6>/switch_ref_3'
+  real_T ref_3_Threshold;              /* Expression: 0.5
+                                        * Referenced by: '<S7>/ref_3'
                                         */
   real_T Actuator_controller_status_3_Va;/* Expression: 0
-                                          * Referenced by: '<S6>/Actuator_controller_status_3'
+                                          * Referenced by: '<S7>/Actuator_controller_status_3'
                                           */
   real_T reset_integrator_3_Value;     /* Expression: 0
-                                        * Referenced by: '<S6>/reset_integrator_3'
-                                        */
-  real_T CloseLoop_disable_1_Threshold;/* Expression: 0.5
-                                        * Referenced by: '<S4>/CloseLoop_disable_1'
-                                        */
-  real_T Controller_I_Value;           /* Expression: 47.4209
-                                        * Referenced by: '<Root>/Controller_I'
-                                        */
-  real_T CloseLoop_disable_2_Threshold;/* Expression: 0.5
-                                        * Referenced by: '<S5>/CloseLoop_disable_2'
+                                        * Referenced by: '<S7>/reset_integrator_3'
                                         */
   real_T CloseLoop_disable_3_Threshold;/* Expression: 0.5
-                                        * Referenced by: '<S6>/CloseLoop_disable_3'
+                                        * Referenced by: '<S7>/CloseLoop_disable_3'
                                         */
   real_T Outer_I_Value;                /* Expression: -5.83
                                         * Referenced by: '<Root>/Outer_I'
                                         */
   uint8_T Gain1_Gain;                  /* Computed Parameter: Gain1_Gain
-                                        * Referenced by: '<S14>/Gain1'
+                                        * Referenced by: '<S1>/Gain1'
                                         */
   uint8_T Gain2_Gain;                  /* Computed Parameter: Gain2_Gain
-                                        * Referenced by: '<S14>/Gain2'
+                                        * Referenced by: '<S1>/Gain2'
                                         */
-  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_j;/* '<S188>/Enabled Subsystem1' */
-  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem_c;/* '<S188>/Enabled Subsystem' */
-  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_m;/* '<S183>/Enabled Subsystem1' */
-  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem_h;/* '<S183>/Enabled Subsystem' */
-  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1;/* '<S178>/Enabled Subsystem1' */
-  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem;/* '<S178>/Enabled Subsystem' */
+  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_j;/* '<S191>/Enabled Subsystem1' */
+  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem_c;/* '<S191>/Enabled Subsystem' */
+  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1_m;/* '<S186>/Enabled Subsystem1' */
+  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem_h;/* '<S186>/Enabled Subsystem' */
+  P_EnabledSubsystem1_Sensors_a_T EnabledSubsystem1;/* '<S181>/Enabled Subsystem1' */
+  P_EnabledSubsystem_Sensors_an_T EnabledSubsystem;/* '<S181>/Enabled Subsystem' */
 };
 
 /* Real-time Model Data Structure */
@@ -908,202 +889,202 @@ extern RT_MODEL_Sensors_and_actuator_T *const Sensors_and_actuators_ball_a_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'Sensors_and_actuators_ball_and_plate_2022b'
- * '<S1>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Circular reference'
- * '<S2>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Error subsystem'
- * '<S3>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics'
- * '<S4>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1'
- * '<S5>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2'
- * '<S6>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3'
- * '<S7>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1'
- * '<S8>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2'
- * '<S9>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3'
- * '<S10>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1'
- * '<S11>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2'
- * '<S12>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3'
- * '<S13>'  : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data'
- * '<S14>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Subsystem1'
+ * '<S1>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Camera output'
+ * '<S2>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Circular reference'
+ * '<S3>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Error subsystem'
+ * '<S4>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics'
+ * '<S5>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1'
+ * '<S6>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2'
+ * '<S7>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3'
+ * '<S8>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1'
+ * '<S9>'   : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2'
+ * '<S10>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3'
+ * '<S11>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1'
+ * '<S12>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2'
+ * '<S13>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3'
+ * '<S14>'  : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data'
  * '<S15>'  : 'Sensors_and_actuators_ball_and_plate_2022b/xy_controller'
- * '<S16>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction1'
- * '<S17>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction2'
- * '<S18>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction3'
- * '<S19>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/Inverse Kinematics Calculation Function'
- * '<S20>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Integrator reset determination1'
- * '<S21>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller'
- * '<S22>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Anti-windup'
- * '<S23>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/D Gain'
- * '<S24>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Filter'
- * '<S25>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Filter ICs'
- * '<S26>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/I Gain'
- * '<S27>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Ideal P Gain'
- * '<S28>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Ideal P Gain Fdbk'
- * '<S29>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Integrator'
- * '<S30>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Integrator ICs'
- * '<S31>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/N Copy'
- * '<S32>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/N Gain'
- * '<S33>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/P Copy'
- * '<S34>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Parallel P Gain'
- * '<S35>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Reset Signal'
- * '<S36>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Saturation'
- * '<S37>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Saturation Fdbk'
- * '<S38>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Sum'
- * '<S39>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Sum Fdbk'
- * '<S40>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tracking Mode'
- * '<S41>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tracking Mode Sum'
- * '<S42>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tsamp - Integral'
- * '<S43>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tsamp - Ngain'
- * '<S44>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/postSat Signal'
- * '<S45>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/preSat Signal'
- * '<S46>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Anti-windup/Passthrough'
- * '<S47>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/D Gain/External Parameters'
- * '<S48>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Filter/Cont. Filter'
- * '<S49>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Filter ICs/Internal IC - Filter'
- * '<S50>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/I Gain/External Parameters'
- * '<S51>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Ideal P Gain/Passthrough'
- * '<S52>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Ideal P Gain Fdbk/Disabled'
- * '<S53>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Integrator/Continuous'
- * '<S54>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Integrator ICs/Internal IC'
- * '<S55>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/N Copy/Disabled'
- * '<S56>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/N Gain/External Parameters'
- * '<S57>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/P Copy/Disabled'
- * '<S58>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Parallel P Gain/External Parameters'
- * '<S59>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Reset Signal/External Reset'
- * '<S60>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Saturation/Enabled'
- * '<S61>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Saturation Fdbk/Disabled'
- * '<S62>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Sum/Sum_PID'
- * '<S63>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Sum Fdbk/Disabled'
- * '<S64>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tracking Mode/Disabled'
- * '<S65>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tracking Mode Sum/Passthrough'
- * '<S66>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tsamp - Integral/Passthrough'
- * '<S67>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/Tsamp - Ngain/Passthrough'
- * '<S68>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/postSat Signal/Forward_Path'
- * '<S69>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/PID Controller/preSat Signal/Forward_Path'
- * '<S70>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Integrator reset determination'
- * '<S71>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1'
- * '<S72>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Anti-windup'
- * '<S73>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/D Gain'
- * '<S74>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Filter'
- * '<S75>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Filter ICs'
- * '<S76>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/I Gain'
- * '<S77>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Ideal P Gain'
- * '<S78>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Ideal P Gain Fdbk'
- * '<S79>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Integrator'
- * '<S80>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Integrator ICs'
- * '<S81>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/N Copy'
- * '<S82>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/N Gain'
- * '<S83>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/P Copy'
- * '<S84>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Parallel P Gain'
- * '<S85>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Reset Signal'
- * '<S86>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Saturation'
- * '<S87>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Saturation Fdbk'
- * '<S88>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Sum'
- * '<S89>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Sum Fdbk'
- * '<S90>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tracking Mode'
- * '<S91>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tracking Mode Sum'
- * '<S92>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tsamp - Integral'
- * '<S93>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tsamp - Ngain'
- * '<S94>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/postSat Signal'
- * '<S95>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/preSat Signal'
- * '<S96>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Anti-windup/Passthrough'
- * '<S97>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/D Gain/External Parameters'
- * '<S98>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Filter/Cont. Filter'
- * '<S99>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Filter ICs/Internal IC - Filter'
- * '<S100>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/I Gain/External Parameters'
- * '<S101>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Ideal P Gain/Passthrough'
- * '<S102>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Ideal P Gain Fdbk/Disabled'
- * '<S103>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Integrator/Continuous'
- * '<S104>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Integrator ICs/Internal IC'
- * '<S105>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/N Copy/Disabled'
- * '<S106>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/N Gain/External Parameters'
- * '<S107>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/P Copy/Disabled'
- * '<S108>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Parallel P Gain/External Parameters'
- * '<S109>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Reset Signal/External Reset'
- * '<S110>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Saturation/Enabled'
- * '<S111>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Saturation Fdbk/Disabled'
- * '<S112>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Sum/Sum_PID'
- * '<S113>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Sum Fdbk/Disabled'
- * '<S114>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tracking Mode/Disabled'
- * '<S115>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tracking Mode Sum/Passthrough'
- * '<S116>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tsamp - Integral/Passthrough'
- * '<S117>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/Tsamp - Ngain/Passthrough'
- * '<S118>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/postSat Signal/Forward_Path'
- * '<S119>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/PID Controller1/preSat Signal/Forward_Path'
- * '<S120>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Integrator reset determination1'
- * '<S121>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2'
- * '<S122>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Anti-windup'
- * '<S123>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/D Gain'
- * '<S124>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Filter'
- * '<S125>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Filter ICs'
- * '<S126>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/I Gain'
- * '<S127>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Ideal P Gain'
- * '<S128>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Ideal P Gain Fdbk'
- * '<S129>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Integrator'
- * '<S130>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Integrator ICs'
- * '<S131>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/N Copy'
- * '<S132>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/N Gain'
- * '<S133>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/P Copy'
- * '<S134>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Parallel P Gain'
- * '<S135>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Reset Signal'
- * '<S136>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Saturation'
- * '<S137>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Saturation Fdbk'
- * '<S138>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Sum'
- * '<S139>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Sum Fdbk'
- * '<S140>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tracking Mode'
- * '<S141>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tracking Mode Sum'
- * '<S142>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tsamp - Integral'
- * '<S143>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tsamp - Ngain'
- * '<S144>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/postSat Signal'
- * '<S145>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/preSat Signal'
- * '<S146>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Anti-windup/Passthrough'
- * '<S147>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/D Gain/External Parameters'
- * '<S148>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Filter/Cont. Filter'
- * '<S149>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Filter ICs/Internal IC - Filter'
- * '<S150>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/I Gain/External Parameters'
- * '<S151>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Ideal P Gain/Passthrough'
- * '<S152>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Ideal P Gain Fdbk/Disabled'
- * '<S153>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Integrator/Continuous'
- * '<S154>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Integrator ICs/Internal IC'
- * '<S155>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/N Copy/Disabled'
- * '<S156>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/N Gain/External Parameters'
- * '<S157>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/P Copy/Disabled'
- * '<S158>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Parallel P Gain/External Parameters'
- * '<S159>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Reset Signal/External Reset'
- * '<S160>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Saturation/Enabled'
- * '<S161>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Saturation Fdbk/Disabled'
- * '<S162>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Sum/Sum_PID'
- * '<S163>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Sum Fdbk/Disabled'
- * '<S164>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tracking Mode/Disabled'
- * '<S165>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tracking Mode Sum/Passthrough'
- * '<S166>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tsamp - Integral/Passthrough'
- * '<S167>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/Tsamp - Ngain/Passthrough'
- * '<S168>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/postSat Signal/Forward_Path'
- * '<S169>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/PID Controller2/preSat Signal/Forward_Path'
- * '<S170>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1/DAC_CLASS1_BL1'
- * '<S171>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1/MATLAB Function'
- * '<S172>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2/DAC_CLASS1_BL1'
- * '<S173>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2/MATLAB Function'
- * '<S174>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3/DAC_CLASS1_BL1'
- * '<S175>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3/MATLAB Function'
- * '<S176>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/EMC_ENCODER_BL1'
- * '<S177>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/EMC_ENCODER_POS_SET_BL1'
- * '<S178>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial'
- * '<S179>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial/Enabled Subsystem'
- * '<S180>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial/Enabled Subsystem1'
- * '<S181>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/EMC_ENCODER_BL1'
- * '<S182>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/EMC_ENCODER_POS_SET_BL1'
- * '<S183>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial'
- * '<S184>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial/Enabled Subsystem'
- * '<S185>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial/Enabled Subsystem1'
- * '<S186>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/EMC_ENCODER_BL1'
- * '<S187>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/EMC_ENCODER_POS_SET_BL1'
- * '<S188>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial'
- * '<S189>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial/Enabled Subsystem'
- * '<S190>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial/Enabled Subsystem1'
- * '<S191>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store'
- * '<S192>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store/RTI Data Store'
- * '<S193>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
- * '<S194>' : 'Sensors_and_actuators_ball_and_plate_2022b/Subsystem1/ETHERNET_SETUP_BL1'
- * '<S195>' : 'Sensors_and_actuators_ball_and_plate_2022b/Subsystem1/ETHERNET_UDP_RX_BL1'
- * '<S196>' : 'Sensors_and_actuators_ball_and_plate_2022b/Subsystem1/ETHERNET_UDP_SETUP_BL1'
+ * '<S16>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Camera output/ETHERNET_SETUP_BL1'
+ * '<S17>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Camera output/ETHERNET_UDP_RX_BL1'
+ * '<S18>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Camera output/ETHERNET_UDP_SETUP_BL1'
+ * '<S19>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction1'
+ * '<S20>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction2'
+ * '<S21>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/BoundsFunction3'
+ * '<S22>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Inverse Kinematics/Inverse Kinematics Calculation Function'
+ * '<S23>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1'
+ * '<S24>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Integrator reset determination1'
+ * '<S25>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Anti-windup'
+ * '<S26>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/D Gain'
+ * '<S27>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Filter'
+ * '<S28>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Filter ICs'
+ * '<S29>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/I Gain'
+ * '<S30>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Ideal P Gain'
+ * '<S31>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Ideal P Gain Fdbk'
+ * '<S32>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Integrator'
+ * '<S33>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Integrator ICs'
+ * '<S34>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/N Copy'
+ * '<S35>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/N Gain'
+ * '<S36>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/P Copy'
+ * '<S37>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Parallel P Gain'
+ * '<S38>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Reset Signal'
+ * '<S39>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Saturation'
+ * '<S40>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Saturation Fdbk'
+ * '<S41>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Sum'
+ * '<S42>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Sum Fdbk'
+ * '<S43>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tracking Mode'
+ * '<S44>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tracking Mode Sum'
+ * '<S45>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tsamp - Integral'
+ * '<S46>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tsamp - Ngain'
+ * '<S47>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/postSat Signal'
+ * '<S48>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/preSat Signal'
+ * '<S49>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Anti-windup/Passthrough'
+ * '<S50>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/D Gain/External Parameters'
+ * '<S51>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Filter/Cont. Filter'
+ * '<S52>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Filter ICs/Internal IC - Filter'
+ * '<S53>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/I Gain/External Parameters'
+ * '<S54>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Ideal P Gain/Passthrough'
+ * '<S55>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Ideal P Gain Fdbk/Disabled'
+ * '<S56>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Integrator/Continuous'
+ * '<S57>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Integrator ICs/Internal IC'
+ * '<S58>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/N Copy/Disabled'
+ * '<S59>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/N Gain/External Parameters'
+ * '<S60>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/P Copy/Disabled'
+ * '<S61>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Parallel P Gain/External Parameters'
+ * '<S62>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Reset Signal/External Reset'
+ * '<S63>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Saturation/Enabled'
+ * '<S64>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Saturation Fdbk/Disabled'
+ * '<S65>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Sum/Sum_PID'
+ * '<S66>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Sum Fdbk/Disabled'
+ * '<S67>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tracking Mode/Disabled'
+ * '<S68>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tracking Mode Sum/Passthrough'
+ * '<S69>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tsamp - Integral/Passthrough'
+ * '<S70>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/Tsamp - Ngain/Passthrough'
+ * '<S71>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/postSat Signal/Forward_Path'
+ * '<S72>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor1/Actuator_PID_1/preSat Signal/Forward_Path'
+ * '<S73>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2'
+ * '<S74>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Integrator reset determination'
+ * '<S75>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Anti-windup'
+ * '<S76>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/D Gain'
+ * '<S77>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Filter'
+ * '<S78>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Filter ICs'
+ * '<S79>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/I Gain'
+ * '<S80>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Ideal P Gain'
+ * '<S81>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Ideal P Gain Fdbk'
+ * '<S82>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Integrator'
+ * '<S83>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Integrator ICs'
+ * '<S84>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/N Copy'
+ * '<S85>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/N Gain'
+ * '<S86>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/P Copy'
+ * '<S87>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Parallel P Gain'
+ * '<S88>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Reset Signal'
+ * '<S89>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Saturation'
+ * '<S90>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Saturation Fdbk'
+ * '<S91>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Sum'
+ * '<S92>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Sum Fdbk'
+ * '<S93>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tracking Mode'
+ * '<S94>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tracking Mode Sum'
+ * '<S95>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tsamp - Integral'
+ * '<S96>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tsamp - Ngain'
+ * '<S97>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/postSat Signal'
+ * '<S98>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/preSat Signal'
+ * '<S99>'  : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Anti-windup/Passthrough'
+ * '<S100>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/D Gain/External Parameters'
+ * '<S101>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Filter/Cont. Filter'
+ * '<S102>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Filter ICs/Internal IC - Filter'
+ * '<S103>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/I Gain/External Parameters'
+ * '<S104>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Ideal P Gain/Passthrough'
+ * '<S105>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Ideal P Gain Fdbk/Disabled'
+ * '<S106>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Integrator/Continuous'
+ * '<S107>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Integrator ICs/Internal IC'
+ * '<S108>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/N Copy/Disabled'
+ * '<S109>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/N Gain/External Parameters'
+ * '<S110>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/P Copy/Disabled'
+ * '<S111>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Parallel P Gain/External Parameters'
+ * '<S112>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Reset Signal/External Reset'
+ * '<S113>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Saturation/Enabled'
+ * '<S114>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Saturation Fdbk/Disabled'
+ * '<S115>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Sum/Sum_PID'
+ * '<S116>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Sum Fdbk/Disabled'
+ * '<S117>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tracking Mode/Disabled'
+ * '<S118>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tracking Mode Sum/Passthrough'
+ * '<S119>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tsamp - Integral/Passthrough'
+ * '<S120>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/Tsamp - Ngain/Passthrough'
+ * '<S121>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/postSat Signal/Forward_Path'
+ * '<S122>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor2/Actuator_PID_2/preSat Signal/Forward_Path'
+ * '<S123>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3'
+ * '<S124>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Integrator reset determination1'
+ * '<S125>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Anti-windup'
+ * '<S126>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/D Gain'
+ * '<S127>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Filter'
+ * '<S128>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Filter ICs'
+ * '<S129>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/I Gain'
+ * '<S130>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Ideal P Gain'
+ * '<S131>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Ideal P Gain Fdbk'
+ * '<S132>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Integrator'
+ * '<S133>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Integrator ICs'
+ * '<S134>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/N Copy'
+ * '<S135>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/N Gain'
+ * '<S136>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/P Copy'
+ * '<S137>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Parallel P Gain'
+ * '<S138>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Reset Signal'
+ * '<S139>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Saturation'
+ * '<S140>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Saturation Fdbk'
+ * '<S141>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Sum'
+ * '<S142>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Sum Fdbk'
+ * '<S143>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tracking Mode'
+ * '<S144>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tracking Mode Sum'
+ * '<S145>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tsamp - Integral'
+ * '<S146>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tsamp - Ngain'
+ * '<S147>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/postSat Signal'
+ * '<S148>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/preSat Signal'
+ * '<S149>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Anti-windup/Passthrough'
+ * '<S150>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/D Gain/External Parameters'
+ * '<S151>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Filter/Cont. Filter'
+ * '<S152>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Filter ICs/Internal IC - Filter'
+ * '<S153>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/I Gain/External Parameters'
+ * '<S154>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Ideal P Gain/Passthrough'
+ * '<S155>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Ideal P Gain Fdbk/Disabled'
+ * '<S156>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Integrator/Continuous'
+ * '<S157>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Integrator ICs/Internal IC'
+ * '<S158>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/N Copy/Disabled'
+ * '<S159>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/N Gain/External Parameters'
+ * '<S160>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/P Copy/Disabled'
+ * '<S161>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Parallel P Gain/External Parameters'
+ * '<S162>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Reset Signal/External Reset'
+ * '<S163>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Saturation/Enabled'
+ * '<S164>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Saturation Fdbk/Disabled'
+ * '<S165>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Sum/Sum_PID'
+ * '<S166>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Sum Fdbk/Disabled'
+ * '<S167>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tracking Mode/Disabled'
+ * '<S168>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tracking Mode Sum/Passthrough'
+ * '<S169>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tsamp - Integral/Passthrough'
+ * '<S170>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/Tsamp - Ngain/Passthrough'
+ * '<S171>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/postSat Signal/Forward_Path'
+ * '<S172>' : 'Sensors_and_actuators_ball_and_plate_2022b/Motor3/Actuator_PID_3/preSat Signal/Forward_Path'
+ * '<S173>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1/DAC_CLASS1_BL1'
+ * '<S174>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier1/MATLAB Function'
+ * '<S175>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2/DAC_CLASS1_BL1'
+ * '<S176>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier2/MATLAB Function'
+ * '<S177>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3/DAC_CLASS1_BL1'
+ * '<S178>' : 'Sensors_and_actuators_ball_and_plate_2022b/Outputs to Amplifier3/MATLAB Function'
+ * '<S179>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/EMC_ENCODER_BL1'
+ * '<S180>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/EMC_ENCODER_POS_SET_BL1'
+ * '<S181>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial'
+ * '<S182>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial/Enabled Subsystem'
+ * '<S183>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement1/Initial/Enabled Subsystem1'
+ * '<S184>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/EMC_ENCODER_BL1'
+ * '<S185>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/EMC_ENCODER_POS_SET_BL1'
+ * '<S186>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial'
+ * '<S187>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial/Enabled Subsystem'
+ * '<S188>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement2/Initial/Enabled Subsystem1'
+ * '<S189>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/EMC_ENCODER_BL1'
+ * '<S190>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/EMC_ENCODER_POS_SET_BL1'
+ * '<S191>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial'
+ * '<S192>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial/Enabled Subsystem'
+ * '<S193>' : 'Sensors_and_actuators_ball_and_plate_2022b/Position Measurement3/Initial/Enabled Subsystem1'
+ * '<S194>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store'
+ * '<S195>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store/RTI Data Store'
+ * '<S196>' : 'Sensors_and_actuators_ball_and_plate_2022b/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store'
  * '<S197>' : 'Sensors_and_actuators_ball_and_plate_2022b/xy_controller/Integrator reset determination outer loop'
  * '<S198>' : 'Sensors_and_actuators_ball_and_plate_2022b/xy_controller/PID_outer_phi'
  * '<S199>' : 'Sensors_and_actuators_ball_and_plate_2022b/xy_controller/PID_outer_theta'
