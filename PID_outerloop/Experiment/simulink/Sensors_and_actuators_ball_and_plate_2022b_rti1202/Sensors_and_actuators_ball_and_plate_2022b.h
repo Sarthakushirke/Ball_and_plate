@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.14
+ * Model version              : 7.23
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Wed Jun 14 18:32:46 2023
+ * C source code generated on : Mon Jun 19 18:49:32 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -184,7 +184,13 @@ typedef struct {
   real_T Gain4;                        /* '<S1>/Gain4' */
   real_T Sum;                          /* '<S1>/Sum' */
   real_T Gain3;                        /* '<S1>/Gain3' */
+  real_T Add3;                         /* '<S1>/Add3' */
+  real_T SineWave;                     /* '<S2>/Sine Wave' */
+  real_T Switch;                       /* '<S2>/Switch' */
   real_T Ref_error_sum_x;              /* '<Root>/Ref_error_sum_x' */
+  real_T RateTransition;               /* '<Root>/Rate Transition' */
+  real_T DiscreteTransferFcn2;         /* '<S15>/Discrete Transfer Fcn2' */
+  real_T Saturation1;                  /* '<S15>/Saturation1' */
   real_T PProdOut;                     /* '<S286>/PProd Out' */
   real_T Integrator;                   /* '<S281>/Integrator' */
   real_T DProdOut;                     /* '<S275>/DProd Out' */
@@ -193,7 +199,12 @@ typedef struct {
   real_T NProdOut;                     /* '<S284>/NProd Out' */
   real_T Sum_n;                        /* '<S290>/Sum' */
   real_T Saturation;                   /* '<S288>/Saturation' */
+  real_T SineWave1;                    /* '<S2>/Sine Wave1' */
+  real_T Switch1;                      /* '<S2>/Switch1' */
   real_T Ref_error_sum_y;              /* '<Root>/Ref_error_sum_y' */
+  real_T RateTransition1;              /* '<Root>/Rate Transition1' */
+  real_T DiscreteTransferFcn1;         /* '<S15>/Discrete Transfer Fcn1' */
+  real_T Saturation_k;                 /* '<S15>/Saturation' */
   real_T PProdOut_m;                   /* '<S238>/PProd Out' */
   real_T Integrator_l;                 /* '<S233>/Integrator' */
   real_T DProdOut_p;                   /* '<S227>/DProd Out' */
@@ -243,6 +254,8 @@ typedef struct {
   real_T CloseLoop_disable_3;          /* '<S7>/CloseLoop_disable_3' */
   real_T IProdOut_i;                   /* '<S230>/IProd Out' */
   real_T IProdOut_o;                   /* '<S278>/IProd Out' */
+  real_T Switch_j;                     /* '<S15>/Switch' */
+  real_T Switch1_c;                    /* '<S15>/Switch1' */
   real_T Integrator_reset_mode_outerloop;
                          /* '<S15>/Integrator reset determination outer loop' */
   real_T SFunction1_o1;                /* '<S189>/S-Function1' */
@@ -330,11 +343,17 @@ typedef struct {
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
+  real_T DiscreteTransferFcn2_states[2];/* '<S15>/Discrete Transfer Fcn2' */
   real_T Integrator_DSTATE;            /* '<S281>/Integrator' */
   real_T Filter_DSTATE;                /* '<S276>/Filter' */
+  real_T DiscreteTransferFcn1_states[2];/* '<S15>/Discrete Transfer Fcn1' */
   real_T Integrator_DSTATE_j;          /* '<S233>/Integrator' */
   real_T Filter_DSTATE_e;              /* '<S228>/Filter' */
   real_T Sum1_DWORK1;                  /* '<S1>/Sum1' */
+  real_T RateTransition_Buffer;        /* '<Root>/Rate Transition' */
+  real_T DiscreteTransferFcn2_tmp;     /* '<S15>/Discrete Transfer Fcn2' */
+  real_T RateTransition1_Buffer;       /* '<Root>/Rate Transition1' */
+  real_T DiscreteTransferFcn1_tmp;     /* '<S15>/Discrete Transfer Fcn1' */
   struct {
     real_T RECEIVED_FRAMES;
   } SFunction1_RWORK;                  /* '<S17>/S-Function1' */
@@ -671,13 +690,58 @@ struct P_Sensors_and_actuators_ball__T_ {
   real_T mm2m_Gain_a;                  /* Expression: 0.001
                                         * Referenced by: '<S13>/mm2m'
                                         */
+  real_T Switch1_Threshold;            /* Expression: 0
+                                        * Referenced by: '<S15>/Switch1'
+                                        */
+  real_T Switch_Threshold;             /* Expression: 0.5
+                                        * Referenced by: '<S15>/Switch'
+                                        */
   real_T Constant1_Value;              /* Expression: 1
                                         * Referenced by: '<S1>/Constant1'
+                                        */
+  real_T Gain_Gain;                    /* Expression: -1
+                                        * Referenced by: '<S1>/Gain'
+                                        */
+  real_T SineWave_Amp;                 /* Expression: 0.1
+                                        * Referenced by: '<S2>/Sine Wave'
+                                        */
+  real_T SineWave_Bias;                /* Expression: 0
+                                        * Referenced by: '<S2>/Sine Wave'
+                                        */
+  real_T SineWave_Freq;                /* Expression: 0.25*2*pi
+                                        * Referenced by: '<S2>/Sine Wave'
+                                        */
+  real_T SineWave_Phase;               /* Expression: pi/2
+                                        * Referenced by: '<S2>/Sine Wave'
+                                        */
+  real_T circle_reference_on_Value;    /* Expression: 0
+                                        * Referenced by: '<S2>/circle_reference_on'
                                         */
   real_T ref_x_constant_Value;         /* Expression: 0
                                         * Referenced by: '<S2>/ref_x_constant'
                                         */
-  real_T Outer_P_Value;                /* Expression: -7.41
+  real_T Switch_Threshold_m;           /* Expression: 0.5
+                                        * Referenced by: '<S2>/Switch'
+                                        */
+  real_T DiscreteTransferFcn2_NumCoef[3];/* Expression: [-2.127 3.042 -0.9575]
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn2'
+                                          */
+  real_T DiscreteTransferFcn2_DenCoef[3];/* Expression: [1 -0.7776 0.199]
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn2'
+                                          */
+  real_T DiscreteTransferFcn2_InitialSta;/* Expression: 0
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn2'
+                                          */
+  real_T Saturation1_UpperSat;         /* Expression: 0.087
+                                        * Referenced by: '<S15>/Saturation1'
+                                        */
+  real_T Saturation1_LowerSat;         /* Expression: -0.087
+                                        * Referenced by: '<S15>/Saturation1'
+                                        */
+  real_T switch_outerloop_controller_Val;/* Expression: 0
+                                          * Referenced by: '<S15>/switch_outerloop_controller'
+                                          */
+  real_T Outer_P_Value;                /* Expression: -0.157
                                         * Referenced by: '<Root>/Outer_P'
                                         */
   real_T Outerloop_controller_status_Val;/* Expression: 0
@@ -689,13 +753,13 @@ struct P_Sensors_and_actuators_ball__T_ {
   real_T Integrator_gainval;           /* Computed Parameter: Integrator_gainval
                                         * Referenced by: '<S281>/Integrator'
                                         */
-  real_T Outer_D_Value;                /* Expression: -2.31
+  real_T Outer_D_Value;                /* Expression: -0.479
                                         * Referenced by: '<Root>/Outer_D'
                                         */
   real_T Filter_gainval;               /* Computed Parameter: Filter_gainval
                                         * Referenced by: '<S276>/Filter'
                                         */
-  real_T Outer_N_Value;                /* Expression: 93.1871
+  real_T Outer_N_Value;                /* Expression: 3.1722
                                         * Referenced by: '<Root>/Outer_N'
                                         */
   real_T u_ref_outerloop_constant_Value;/* Expression: 0
@@ -704,8 +768,38 @@ struct P_Sensors_and_actuators_ball__T_ {
   real_T Outerloop_theta_switch_Threshol;/* Expression: 0.5
                                           * Referenced by: '<S15>/Outerloop_theta_switch'
                                           */
+  real_T SineWave1_Amp;                /* Expression: 0.1
+                                        * Referenced by: '<S2>/Sine Wave1'
+                                        */
+  real_T SineWave1_Bias;               /* Expression: 0
+                                        * Referenced by: '<S2>/Sine Wave1'
+                                        */
+  real_T SineWave1_Freq;               /* Expression: 0.25*2*pi
+                                        * Referenced by: '<S2>/Sine Wave1'
+                                        */
+  real_T SineWave1_Phase;              /* Expression: 0
+                                        * Referenced by: '<S2>/Sine Wave1'
+                                        */
   real_T ref_y_constant_Value;         /* Expression: 0
                                         * Referenced by: '<S2>/ref_y_constant'
+                                        */
+  real_T Switch1_Threshold_p;          /* Expression: 0.5
+                                        * Referenced by: '<S2>/Switch1'
+                                        */
+  real_T DiscreteTransferFcn1_NumCoef[3];/* Expression: [-2.127 3.042 -0.9575]
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn1'
+                                          */
+  real_T DiscreteTransferFcn1_DenCoef[3];/* Expression: [1 -0.7776 0.199]
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn1'
+                                          */
+  real_T DiscreteTransferFcn1_InitialSta;/* Expression: 0
+                                          * Referenced by: '<S15>/Discrete Transfer Fcn1'
+                                          */
+  real_T Saturation_UpperSat_k;        /* Expression: 0.087
+                                        * Referenced by: '<S15>/Saturation'
+                                        */
+  real_T Saturation_LowerSat_o;        /* Expression: -0.087
+                                        * Referenced by: '<S15>/Saturation'
                                         */
   real_T Integrator_gainval_e;       /* Computed Parameter: Integrator_gainval_e
                                       * Referenced by: '<S233>/Integrator'
@@ -785,7 +879,7 @@ struct P_Sensors_and_actuators_ball__T_ {
   real_T CloseLoop_disable_3_Threshold;/* Expression: 0.5
                                         * Referenced by: '<S7>/CloseLoop_disable_3'
                                         */
-  real_T Outer_I_Value;                /* Expression: -5.83
+  real_T Outer_I_Value;                /* Expression: -0.0648
                                         * Referenced by: '<Root>/Outer_I'
                                         */
   uint8_T Gain1_Gain;                  /* Computed Parameter: Gain1_Gain
@@ -840,10 +934,14 @@ struct tag_RTM_Sensors_and_actuators_T {
     time_T stepSize0;
     uint32_T clockTick1;
     uint32_T clockTickH1;
+    struct {
+      uint8_T TID[3];
+    } TaskCounters;
+
     SimTimeStep simTimeStep;
     boolean_T stopRequestedFlag;
     time_T *t;
-    time_T tArray[2];
+    time_T tArray[3];
   } Timing;
 };
 

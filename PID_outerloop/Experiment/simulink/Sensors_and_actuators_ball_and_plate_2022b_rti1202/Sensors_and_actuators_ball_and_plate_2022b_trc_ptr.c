@@ -5,7 +5,7 @@
    Definition of function that initializes the global TRC pointers
 
    RTI1202 7.15 (02-Nov-2020)
-   Wed Jun 14 18:32:46 2023
+   Mon Jun 19 18:49:32 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -157,7 +157,7 @@ static void rti_init_trc_pointers_0(void)
   p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_7 =
     &Sensors_and_actuators_ball_an_P.EnabledSubsystem.Out1_Y0;
   p_2_Sensors_and_actuators_ball_and_plate_2022b_real_T_0 =
-    &Sensors_and_actuators_ball_a_DW.Integrator_DSTATE;
+    &Sensors_and_actuators_ball_a_DW.DiscreteTransferFcn2_states[0];
   p_2_Sensors_and_actuators_ball_and_plate_2022b_uint32_T_1 =
     &Sensors_and_actuators_ball_a_DW.Add1_DWORK1;
   p_2_Sensors_and_actuators_ball_and_plate_2022b_uint16_T_2 =

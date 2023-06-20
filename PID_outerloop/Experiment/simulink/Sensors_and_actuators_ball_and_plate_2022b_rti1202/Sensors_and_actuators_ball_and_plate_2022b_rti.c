@@ -6,7 +6,7 @@
    the hardware and software interrupts used.
 
    RTI1202 7.15 (02-Nov-2020)
-   Wed Jun 14 18:32:46 2023
+   Mon Jun 19 18:49:32 2023
 
    Copyright 2023, dSPACE GmbH. All rights reserved.
 
@@ -33,7 +33,7 @@
 #include <rtidefineddatatypes.h>
 #include <dsIoEth.h>
 #ifndef dsRtmGetNumSampleTimes
-# define dsRtmGetNumSampleTimes(rtm)   2
+# define dsRtmGetNumSampleTimes(rtm)   3
 #endif
 
 #ifndef dsRtmGetTPtr

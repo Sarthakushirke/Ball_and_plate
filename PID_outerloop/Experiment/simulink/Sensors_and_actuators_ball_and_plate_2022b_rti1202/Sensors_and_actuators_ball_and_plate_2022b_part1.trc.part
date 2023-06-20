@@ -96,7 +96,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[88]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[121]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -111,7 +111,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[91]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[124]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -126,7 +126,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[92]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[125]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -141,7 +141,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[93]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[126]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -156,7 +156,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[116]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -171,7 +171,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[84]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[117]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -186,7 +186,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[74]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[93]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -201,7 +201,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[106]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[139]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -216,7 +216,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -231,7 +231,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -246,7 +246,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[85]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[118]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -261,7 +261,7 @@ group "Model Root"
 	 block: "Constant"
 	}
 		-- Skipping output Out1
-		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[100]
+		p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[133]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Value"
@@ -271,11 +271,39 @@ group "Model Root"
 
 	endgroup -- block-group "init_3"
 
+	group "Rate Transition" -- block-group
+	{
+	 block: "RateTransition"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Rate Transition"
+
+	group "Rate Transition1" -- block-group
+	{
+	 block: "RateTransition"
+	}
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[22]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Rate Transition1"
+
 	group "Ref_error_sum_x" -- block-group
 	{
 	 block: "Sum"
 	}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[4]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[7]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -289,7 +317,7 @@ group "Model Root"
 	{
 	 block: "Sum"
 	}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[13]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Out1"
@@ -356,7 +384,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -572,6 +600,26 @@ group "Model Root"
 
 		endgroup -- block-group "Display7"
 
+		group "Gain" -- block-group
+		{
+		 block: "Gain"
+		}
+			p_5_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[71]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Gain"
+
 		group "Gain1" -- block-group
 		{
 		 block: "Gain"
@@ -706,7 +754,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_5_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[1]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[4]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -817,16 +865,41 @@ group "Model Root"
   
 	group "Circular reference" -- subsystem-group
 
-		-- Skipping output Ref_x
-		-- Skipping output Ref_y
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[6]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Ref_x"
+		 flags:   OUTPUT|READONLY
+		}
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Ref_y"
+		 flags:   OUTPUT|READONLY
+		}
 
+
+		group "circle_reference_on" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "circle_reference_on"
 
 		group "ref_x_constant" -- block-group
 		{
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[77]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -841,7 +914,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[79]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[102]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -850,6 +923,122 @@ group "Model Root"
 
 
 		endgroup -- block-group "ref_y_constant"
+
+		group "Sine Wave" -- block-group
+		{
+		 block: "Sin"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[74]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[75]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Phase"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Sine Wave"
+
+		group "Sine Wave1" -- block-group
+		{
+		 block: "Sin"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[98]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Amplitude"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[99]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Bias"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[100]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Frequency"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[101]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Phase"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Sine Wave1"
+
+		group "Switch" -- block-group
+		{
+		 block: "Switch"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[78]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Threshold"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Switch"
+
+		group "Switch1" -- block-group
+		{
+		 block: "Switch"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[103]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Threshold"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Switch1"
 
 
 
@@ -995,19 +1184,19 @@ group "Model Root"
   
 	group "Inverse Kinematics" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[110]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "ref_l1"
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[98]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[111]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "ref_l2"
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[99]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[112]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "ref_l3"
@@ -1094,19 +1283,19 @@ group "Model Root"
   
 		group "Inverse Kinematics Calculation Function" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[110]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "z1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[98]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[111]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "z2"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[99]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[112]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "z3"
@@ -1124,7 +1313,7 @@ group "Model Root"
   
 	group "Motor1" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[34]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Motor_current_1"
@@ -1137,7 +1326,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[122]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1167,7 +1356,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[86]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[119]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1182,7 +1371,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[90]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[123]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -1196,7 +1385,7 @@ group "Model Root"
 		{
 		 block: "DataTypeConversion"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[22]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1226,7 +1415,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[24]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[35]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -1240,13 +1429,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[34]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[127]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -1260,13 +1449,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[23]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[34]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[87]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[120]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -1280,7 +1469,7 @@ group "Model Root"
   
 		group "Actuator_PID_1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "y"
@@ -1316,7 +1505,7 @@ group "Model Root"
   
 			group "Anti-windup" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1328,7 +1517,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1346,7 +1535,7 @@ group "Model Root"
   
 			group "D Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[36]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1358,7 +1547,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[36]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1370,7 +1559,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[36]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1390,7 +1579,7 @@ group "Model Root"
   
 			group "Filter" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Y"
@@ -1402,7 +1591,7 @@ group "Model Root"
   
 				group "Cont. Filter" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Y"
@@ -1414,7 +1603,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[26]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[37]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1441,7 +1630,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1481,7 +1670,7 @@ group "Model Root"
   
 			group "I Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1493,7 +1682,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1505,7 +1694,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1525,7 +1714,7 @@ group "Model Root"
   
 			group "Ideal P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1537,7 +1726,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1575,7 +1764,7 @@ group "Model Root"
 			group "Integrator" -- subsystem-group
 
 				-- Skipping output state
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "out"
@@ -1588,7 +1777,7 @@ group "Model Root"
 				group "Continuous" -- subsystem-group
 
 					-- Skipping output state
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "out"
@@ -1600,7 +1789,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1672,7 +1861,7 @@ group "Model Root"
   
 			group "N Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1684,7 +1873,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1696,7 +1885,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1744,7 +1933,7 @@ group "Model Root"
   
 			group "Parallel P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1756,7 +1945,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1768,7 +1957,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1788,7 +1977,7 @@ group "Model Root"
   
 			group "Reset Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[109]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1800,7 +1989,7 @@ group "Model Root"
   
 				group "External Reset" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[109]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1818,7 +2007,7 @@ group "Model Root"
   
 			group "Saturation" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1830,7 +2019,7 @@ group "Model Root"
   
 				group "Enabled" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1842,7 +2031,7 @@ group "Model Root"
 					{
 					 block: "Saturate"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1907,7 +2096,7 @@ group "Model Root"
   
 			group "Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -1919,7 +2108,7 @@ group "Model Root"
   
 				group "Sum_PID" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -1931,7 +2120,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -1989,7 +2178,7 @@ group "Model Root"
   
 			group "Tracking Mode Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2001,7 +2190,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2019,7 +2208,7 @@ group "Model Root"
   
 			group "Tsamp - Integral" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2031,7 +2220,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2049,7 +2238,7 @@ group "Model Root"
   
 			group "Tsamp - Ngain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2061,7 +2250,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2079,7 +2268,7 @@ group "Model Root"
   
 			group "postSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2091,7 +2280,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[33]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2109,7 +2298,7 @@ group "Model Root"
   
 			group "preSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2121,7 +2310,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2142,7 +2331,7 @@ group "Model Root"
   
 		group "Integrator reset determination1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[109]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Integrator_reset_mode_1"
@@ -2160,7 +2349,7 @@ group "Model Root"
   
 	group "Motor2" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[47]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Motor_current_2"
@@ -2173,7 +2362,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[130]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2203,7 +2392,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[128]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2218,7 +2407,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[98]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[131]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -2232,7 +2421,7 @@ group "Model Root"
 		{
 		 block: "DataTypeConversion"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[35]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2262,7 +2451,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[37]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[48]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -2276,13 +2465,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[47]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[99]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[132]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -2296,13 +2485,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[36]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[47]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[129]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -2316,7 +2505,7 @@ group "Model Root"
   
 		group "Actuator_PID_2" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "y"
@@ -2352,7 +2541,7 @@ group "Model Root"
   
 			group "Anti-windup" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2364,7 +2553,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2382,7 +2571,7 @@ group "Model Root"
   
 			group "D Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[49]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2394,7 +2583,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[49]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2406,7 +2595,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[38]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[49]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2426,7 +2615,7 @@ group "Model Root"
   
 			group "Filter" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Y"
@@ -2438,7 +2627,7 @@ group "Model Root"
   
 				group "Cont. Filter" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Y"
@@ -2450,7 +2639,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[39]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[50]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2477,7 +2666,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[40]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2517,7 +2706,7 @@ group "Model Root"
   
 			group "I Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2529,7 +2718,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2541,7 +2730,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2561,7 +2750,7 @@ group "Model Root"
   
 			group "Ideal P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2573,7 +2762,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2611,7 +2800,7 @@ group "Model Root"
 			group "Integrator" -- subsystem-group
 
 				-- Skipping output state
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "out"
@@ -2624,7 +2813,7 @@ group "Model Root"
 				group "Continuous" -- subsystem-group
 
 					-- Skipping output state
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "out"
@@ -2636,7 +2825,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[42]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2708,7 +2897,7 @@ group "Model Root"
   
 			group "N Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2720,7 +2909,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2732,7 +2921,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2780,7 +2969,7 @@ group "Model Root"
   
 			group "Parallel P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2792,7 +2981,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2804,7 +2993,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[44]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2824,7 +3013,7 @@ group "Model Root"
   
 			group "Reset Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[108]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2836,7 +3025,7 @@ group "Model Root"
   
 				group "External Reset" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[108]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2854,7 +3043,7 @@ group "Model Root"
   
 			group "Saturation" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2866,7 +3055,7 @@ group "Model Root"
   
 				group "Enabled" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2878,7 +3067,7 @@ group "Model Root"
 					{
 					 block: "Saturate"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -2943,7 +3132,7 @@ group "Model Root"
   
 			group "Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -2955,7 +3144,7 @@ group "Model Root"
   
 				group "Sum_PID" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -2967,7 +3156,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3025,7 +3214,7 @@ group "Model Root"
   
 			group "Tracking Mode Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3037,7 +3226,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3055,7 +3244,7 @@ group "Model Root"
   
 			group "Tsamp - Integral" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3067,7 +3256,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[41]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3085,7 +3274,7 @@ group "Model Root"
   
 			group "Tsamp - Ngain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3097,7 +3286,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[43]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3115,7 +3304,7 @@ group "Model Root"
   
 			group "postSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3127,7 +3316,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[46]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3145,7 +3334,7 @@ group "Model Root"
   
 			group "preSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3157,7 +3346,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[45]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3178,7 +3367,7 @@ group "Model Root"
   
 		group "Integrator reset determination" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[108]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Integrator_reset_mode_2"
@@ -3196,7 +3385,7 @@ group "Model Root"
   
 	group "Motor3" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[60]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[71]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Motor_current_3"
@@ -3209,7 +3398,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[103]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[136]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -3239,7 +3428,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[101]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[134]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -3254,7 +3443,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[104]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[137]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -3268,7 +3457,7 @@ group "Model Root"
 		{
 		 block: "DataTypeConversion"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[48]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -3298,7 +3487,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[50]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -3312,13 +3501,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[60]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[71]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[105]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[138]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -3332,13 +3521,13 @@ group "Model Root"
 		{
 		 block: "Switch"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[49]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[60]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[102]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[135]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -3352,7 +3541,7 @@ group "Model Root"
   
 		group "Actuator_PID_3" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "y"
@@ -3388,7 +3577,7 @@ group "Model Root"
   
 			group "Anti-windup" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3400,7 +3589,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3418,7 +3607,7 @@ group "Model Root"
   
 			group "D Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3430,7 +3619,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3442,7 +3631,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[51]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3462,7 +3651,7 @@ group "Model Root"
   
 			group "Filter" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[64]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Y"
@@ -3474,7 +3663,7 @@ group "Model Root"
   
 				group "Cont. Filter" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[64]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Y"
@@ -3486,7 +3675,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[52]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3513,7 +3702,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[53]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[64]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3553,7 +3742,7 @@ group "Model Root"
   
 			group "I Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3565,7 +3754,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3577,7 +3766,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3597,7 +3786,7 @@ group "Model Root"
   
 			group "Ideal P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3609,7 +3798,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3647,7 +3836,7 @@ group "Model Root"
 			group "Integrator" -- subsystem-group
 
 				-- Skipping output state
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[66]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "out"
@@ -3660,7 +3849,7 @@ group "Model Root"
 				group "Continuous" -- subsystem-group
 
 					-- Skipping output state
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[66]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "out"
@@ -3672,7 +3861,7 @@ group "Model Root"
 					{
 					 block: "Integrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[55]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[66]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3744,7 +3933,7 @@ group "Model Root"
   
 			group "N Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3756,7 +3945,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3768,7 +3957,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3816,7 +4005,7 @@ group "Model Root"
   
 			group "Parallel P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3828,7 +4017,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3840,7 +4029,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[57]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3860,7 +4049,7 @@ group "Model Root"
   
 			group "Reset Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[107]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3872,7 +4061,7 @@ group "Model Root"
   
 				group "External Reset" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[107]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3890,7 +4079,7 @@ group "Model Root"
   
 			group "Saturation" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3902,7 +4091,7 @@ group "Model Root"
   
 				group "Enabled" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -3914,7 +4103,7 @@ group "Model Root"
 					{
 					 block: "Saturate"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -3979,7 +4168,7 @@ group "Model Root"
   
 			group "Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -3991,7 +4180,7 @@ group "Model Root"
   
 				group "Sum_PID" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4003,7 +4192,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -4061,7 +4250,7 @@ group "Model Root"
   
 			group "Tracking Mode Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4073,7 +4262,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4091,7 +4280,7 @@ group "Model Root"
   
 			group "Tsamp - Integral" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4103,7 +4292,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[54]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4121,7 +4310,7 @@ group "Model Root"
   
 			group "Tsamp - Ngain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4133,7 +4322,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[56]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4151,7 +4340,7 @@ group "Model Root"
   
 			group "postSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4163,7 +4352,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[59]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4181,7 +4370,7 @@ group "Model Root"
   
 			group "preSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4193,7 +4382,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[58]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -4214,7 +4403,7 @@ group "Model Root"
   
 		group "Integrator reset determination1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[107]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Integrator_reset_mode_3"
@@ -4246,7 +4435,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[92]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[105]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4266,7 +4455,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[93]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[106]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4286,7 +4475,7 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[91]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[104]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4352,7 +4541,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[102]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4372,7 +4561,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[90]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[103]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4392,7 +4581,7 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[88]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[101]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4458,7 +4647,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[86]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[99]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4478,7 +4667,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[87]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[100]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4498,7 +4687,7 @@ group "Model Root"
 		{
 		 block: "Saturate"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[85]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[98]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4550,13 +4739,13 @@ group "Model Root"
   
 	group "Position Measurement1" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[84]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
@@ -4613,7 +4802,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[80]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[93]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4633,7 +4822,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[84]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4653,7 +4842,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[81]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4667,13 +4856,13 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[78]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[91]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[79]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[92]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
@@ -4697,7 +4886,7 @@ group "Model Root"
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
@@ -4709,7 +4898,7 @@ group "Model Root"
 			{
 			 block: "Abs"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[95]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4801,7 +4990,7 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -4892,13 +5081,13 @@ group "Model Root"
   
 	group "Position Measurement2" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[77]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[90]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
@@ -4955,7 +5144,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[86]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4975,7 +5164,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[77]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[90]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -4995,7 +5184,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[74]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[87]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -5009,13 +5198,13 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[71]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[84]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[85]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
@@ -5039,7 +5228,7 @@ group "Model Root"
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
@@ -5051,7 +5240,7 @@ group "Model Root"
 			{
 			 block: "Abs"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[75]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[88]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5143,7 +5332,7 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[89]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5234,13 +5423,13 @@ group "Model Root"
   
 	group "Position Measurement3" -- subsystem-group
 
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "init_current"
 		 flags:   OUTPUT|READONLY
 		}
-		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
+		p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
 		{
 		 type:    flt(64,IEEE)*
 		 alias:   "Position [m]"
@@ -5297,7 +5486,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[66]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[79]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -5317,7 +5506,7 @@ group "Model Root"
 		{
 		 block: "Gain"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[70]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[83]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -5337,7 +5526,7 @@ group "Model Root"
 		{
 		 block: "Sum"
 		}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[67]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[80]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Out1"
@@ -5351,13 +5540,13 @@ group "Model Root"
   
 		group "EMC_ENCODER_BL1" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[64]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[77]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Position"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[65]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[78]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Speed"
@@ -5381,7 +5570,7 @@ group "Model Root"
 			 alias:   "Pos_offset"
 			 flags:   OUTPUT|READONLY
 			}
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "init_current"
@@ -5393,7 +5582,7 @@ group "Model Root"
 			{
 			 block: "Abs"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[81]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5485,7 +5674,7 @@ group "Model Root"
 			{
 			 block: "TransferFcn"
 			}
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5617,7 +5806,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[77]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[96]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -5632,7 +5821,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[71]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[90]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -5647,7 +5836,7 @@ group "Model Root"
 		 block: "Constant"
 		}
 			-- Skipping output Out1
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[91]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Value"
@@ -5656,6 +5845,73 @@ group "Model Root"
 
 
 		endgroup -- block-group "reset_integrator_outerloop"
+
+		group "switch_outerloop_controller" -- block-group
+		{
+		 block: "Constant"
+		}
+			-- Skipping output Out1
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[88]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "switch_outerloop_controller"
+
+		group "Saturation" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[24]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[111]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[112]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Saturation"
+
+		group "Saturation1" -- block-group
+		{
+		 block: "Saturate"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[86]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "UpperLimit"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[87]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "LowerLimit"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Saturation1"
 
 		group "Outerloop_phi_switch" -- block-group
 		{
@@ -5667,7 +5923,7 @@ group "Model Root"
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[115]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -5687,7 +5943,7 @@ group "Model Root"
 			 alias:   "Out1"
 			 flags:   OUTPUT|READONLY
 			}
-			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[78]
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[97]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Threshold"
@@ -5697,11 +5953,115 @@ group "Model Root"
 
 		endgroup -- block-group "Outerloop_theta_switch"
 
+		group "Switch" -- block-group
+		{
+		 block: "Switch"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[74]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[69]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Threshold"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Switch"
+
+		group "Switch1" -- block-group
+		{
+		 block: "Switch"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[75]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[68]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Threshold"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Switch1"
+
+		group "Discrete\nTransfer Fcn1" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[104]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_2022b_ArrayDT0_3*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[107]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_2022b_ArrayDT0_3*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[110]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Discrete\nTransfer Fcn1"
+
+		group "Discrete\nTransfer Fcn2" -- block-group
+		{
+		 block: "DiscreteTransferFcn"
+		}
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 flags:   OUTPUT|READONLY
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[79]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_2022b_ArrayDT0_3*
+			 alias:   "Numerator"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[82]
+			{
+			 type:    Sensors_and_actuators_ball_and_plate_2022b_ArrayDT0_3*
+			 alias:   "Denominator"
+			 flags:   PARAM
+			}
+			p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[85]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "InitialStates"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "Discrete\nTransfer Fcn2"
+
   
   
 		group "PID_outer_phi" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "y"
@@ -5737,7 +6097,7 @@ group "Model Root"
   
 			group "Anti-windup" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5749,7 +6109,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -5767,7 +6127,7 @@ group "Model Root"
   
 			group "D Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5779,7 +6139,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -5791,7 +6151,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[27]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -5811,7 +6171,7 @@ group "Model Root"
   
 			group "Filter" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Y"
@@ -5823,7 +6183,7 @@ group "Model Root"
   
 				group "Disc. Forward Euler Filter" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Y"
@@ -5835,13 +6195,13 @@ group "Model Root"
 					{
 					 block: "DiscreteIntegrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[28]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
 						 flags:   OUTPUT|READONLY
 						}
-						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[81]
+						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[114]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "gainval"
@@ -5868,7 +6228,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[29]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -5908,7 +6268,7 @@ group "Model Root"
   
 			group "I Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5920,7 +6280,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -5932,7 +6292,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -5952,7 +6312,7 @@ group "Model Root"
   
 			group "Ideal P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -5964,7 +6324,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6002,7 +6362,7 @@ group "Model Root"
 			group "Integrator" -- subsystem-group
 
 				-- Skipping output state
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[26]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "out"
@@ -6014,7 +6374,7 @@ group "Model Root"
   
 				group "Discrete" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[26]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "out"
@@ -6027,13 +6387,13 @@ group "Model Root"
 					{
 					 block: "DiscreteIntegrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[26]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
 						 flags:   OUTPUT|READONLY
 						}
-						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[80]
+						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[113]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "gainval"
@@ -6105,7 +6465,7 @@ group "Model Root"
   
 			group "N Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6117,7 +6477,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6129,7 +6489,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6177,7 +6537,7 @@ group "Model Root"
   
 			group "Parallel P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[14]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6189,7 +6549,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[14]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6201,7 +6561,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[14]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[25]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6221,7 +6581,7 @@ group "Model Root"
   
 			group "Reset Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6233,7 +6593,7 @@ group "Model Root"
   
 				group "External Reset" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6251,7 +6611,7 @@ group "Model Root"
   
 			group "Saturation" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6263,7 +6623,7 @@ group "Model Root"
   
 				group "Enabled" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6275,7 +6635,7 @@ group "Model Root"
 					{
 					 block: "Saturate"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6340,7 +6700,7 @@ group "Model Root"
   
 			group "Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6352,7 +6712,7 @@ group "Model Root"
   
 				group "Sum_PID" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6364,7 +6724,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6422,7 +6782,7 @@ group "Model Root"
   
 			group "Tracking Mode Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6434,7 +6794,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6452,7 +6812,7 @@ group "Model Root"
   
 			group "Tsamp - Integral" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6464,7 +6824,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[61]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[72]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6482,7 +6842,7 @@ group "Model Root"
   
 			group "Tsamp - Ngain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6494,7 +6854,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[19]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[30]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6512,7 +6872,7 @@ group "Model Root"
   
 			group "postSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6524,7 +6884,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[21]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[32]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6542,7 +6902,7 @@ group "Model Root"
   
 			group "preSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6554,7 +6914,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[20]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[31]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6575,7 +6935,7 @@ group "Model Root"
   
 		group "PID_outer_theta" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "y"
@@ -6611,7 +6971,7 @@ group "Model Root"
   
 			group "Anti-windup" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6623,7 +6983,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6641,7 +7001,7 @@ group "Model Root"
   
 			group "D Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[7]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[13]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6653,7 +7013,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[7]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[13]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6665,7 +7025,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[7]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[13]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6685,7 +7045,7 @@ group "Model Root"
   
 			group "Filter" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[9]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Y"
@@ -6697,7 +7057,7 @@ group "Model Root"
   
 				group "Disc. Forward Euler Filter" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[9]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Y"
@@ -6709,13 +7069,13 @@ group "Model Root"
 					{
 					 block: "DiscreteIntegrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[8]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[14]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
 						 flags:   OUTPUT|READONLY
 						}
-						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[75]
+						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[94]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "gainval"
@@ -6742,7 +7102,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[9]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[15]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6782,7 +7142,7 @@ group "Model Root"
   
 			group "I Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6794,7 +7154,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6806,7 +7166,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -6826,7 +7186,7 @@ group "Model Root"
   
 			group "Ideal P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6838,7 +7198,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -6876,7 +7236,7 @@ group "Model Root"
 			group "Integrator" -- subsystem-group
 
 				-- Skipping output state
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[6]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "out"
@@ -6888,7 +7248,7 @@ group "Model Root"
   
 				group "Discrete" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[6]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "out"
@@ -6901,13 +7261,13 @@ group "Model Root"
 					{
 					 block: "DiscreteIntegrator"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[6]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
 						 flags:   OUTPUT|READONLY
 						}
-						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
+						p_1_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[92]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "gainval"
@@ -6979,7 +7339,7 @@ group "Model Root"
   
 			group "N Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -6991,7 +7351,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7003,7 +7363,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -7051,7 +7411,7 @@ group "Model Root"
   
 			group "Parallel P Gain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[5]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7063,7 +7423,7 @@ group "Model Root"
   
 				group "External Parameters" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[5]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7075,7 +7435,7 @@ group "Model Root"
 					{
 					 block: "Product"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[5]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -7095,7 +7455,7 @@ group "Model Root"
   
 			group "Reset Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7107,7 +7467,7 @@ group "Model Root"
   
 				group "External Reset" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7125,7 +7485,7 @@ group "Model Root"
   
 			group "Saturation" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7137,7 +7497,7 @@ group "Model Root"
   
 				group "Enabled" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7149,7 +7509,7 @@ group "Model Root"
 					{
 					 block: "Saturate"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -7214,7 +7574,7 @@ group "Model Root"
   
 			group "Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7226,7 +7586,7 @@ group "Model Root"
   
 				group "Sum_PID" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7238,7 +7598,7 @@ group "Model Root"
 					{
 					 block: "Sum"
 					}
-						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+						p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 						{
 						 type:    flt(64,IEEE)*
 						 alias:   "Out1"
@@ -7296,7 +7656,7 @@ group "Model Root"
   
 			group "Tracking Mode Sum" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7308,7 +7668,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7326,7 +7686,7 @@ group "Model Root"
   
 			group "Tsamp - Integral" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7338,7 +7698,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[62]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[73]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7356,7 +7716,7 @@ group "Model Root"
   
 			group "Tsamp - Ngain" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7368,7 +7728,7 @@ group "Model Root"
   
 				group "Passthrough" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[10]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[16]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7386,7 +7746,7 @@ group "Model Root"
   
 			group "postSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7398,7 +7758,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[12]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[18]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7416,7 +7776,7 @@ group "Model Root"
   
 			group "preSat Signal" -- subsystem-group
 
-				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+				p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 				{
 				 type:    flt(64,IEEE)*
 				 alias:   "Out1"
@@ -7428,7 +7788,7 @@ group "Model Root"
   
 				group "Forward_Path" -- subsystem-group
 
-					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[11]
+					p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[17]
 					{
 					 type:    flt(64,IEEE)*
 					 alias:   "Out1"
@@ -7449,7 +7809,7 @@ group "Model Root"
   
 		group "Integrator reset determination outer loop" -- subsystem-group
 
-			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[63]
+			p_0_Sensors_and_actuators_ball_and_plate_2022b_real_T_0[76]
 			{
 			 type:    flt(64,IEEE)*
 			 alias:   "Integrator_reset_mode_outerloop"
