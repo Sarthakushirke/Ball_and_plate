@@ -7,9 +7,9 @@
  *
  * Code generation for model "Sensors_and_actuators_ball_and_plate_2022b".
  *
- * Model version              : 7.14
+ * Model version              : 7.23
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C source code generated on : Wed Jun 14 18:32:46 2023
+ * C source code generated on : Mon Jun 19 18:49:32 2023
  *
  * Target selection: rti1202.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -359,20 +359,95 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.001,
 
+  /* Expression: 0
+   * Referenced by: '<S15>/Switch1'
+   */
+  0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S15>/Switch'
+   */
+  0.5,
+
   /* Expression: 1
    * Referenced by: '<S1>/Constant1'
    */
   1.0,
+
+  /* Expression: -1
+   * Referenced by: '<S1>/Gain'
+   */
+  -1.0,
+
+  /* Expression: 0.1
+   * Referenced by: '<S2>/Sine Wave'
+   */
+  0.1,
+
+  /* Expression: 0
+   * Referenced by: '<S2>/Sine Wave'
+   */
+  0.0,
+
+  /* Expression: 0.25*2*pi
+   * Referenced by: '<S2>/Sine Wave'
+   */
+  1.5707963267948966,
+
+  /* Expression: pi/2
+   * Referenced by: '<S2>/Sine Wave'
+   */
+  1.5707963267948966,
+
+  /* Expression: 0
+   * Referenced by: '<S2>/circle_reference_on'
+   */
+  0.0,
 
   /* Expression: 0
    * Referenced by: '<S2>/ref_x_constant'
    */
   0.0,
 
-  /* Expression: -7.41
+  /* Expression: 0.5
+   * Referenced by: '<S2>/Switch'
+   */
+  0.5,
+
+  /* Expression: [-2.127 3.042 -0.9575]
+   * Referenced by: '<S15>/Discrete Transfer Fcn2'
+   */
+  { -2.127, 3.042, -0.9575 },
+
+  /* Expression: [1 -0.7776 0.199]
+   * Referenced by: '<S15>/Discrete Transfer Fcn2'
+   */
+  { 1.0, -0.7776, 0.199 },
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Discrete Transfer Fcn2'
+   */
+  0.0,
+
+  /* Expression: 0.087
+   * Referenced by: '<S15>/Saturation1'
+   */
+  0.087,
+
+  /* Expression: -0.087
+   * Referenced by: '<S15>/Saturation1'
+   */
+  -0.087,
+
+  /* Expression: 0
+   * Referenced by: '<S15>/switch_outerloop_controller'
+   */
+  0.0,
+
+  /* Expression: -0.157
    * Referenced by: '<Root>/Outer_P'
    */
-  -7.41,
+  -0.157,
 
   /* Expression: 0
    * Referenced by: '<S15>/Outerloop_controller_status'
@@ -389,20 +464,20 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.001,
 
-  /* Expression: -2.31
+  /* Expression: -0.479
    * Referenced by: '<Root>/Outer_D'
    */
-  -2.31,
+  -0.479,
 
   /* Computed Parameter: Filter_gainval
    * Referenced by: '<S276>/Filter'
    */
   0.001,
 
-  /* Expression: 93.1871
+  /* Expression: 3.1722
    * Referenced by: '<Root>/Outer_N'
    */
-  93.1871,
+  3.1722,
 
   /* Expression: 0
    * Referenced by: '<S15>/0_ref_outerloop_constant'
@@ -414,10 +489,60 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.5,
 
+  /* Expression: 0.1
+   * Referenced by: '<S2>/Sine Wave1'
+   */
+  0.1,
+
+  /* Expression: 0
+   * Referenced by: '<S2>/Sine Wave1'
+   */
+  0.0,
+
+  /* Expression: 0.25*2*pi
+   * Referenced by: '<S2>/Sine Wave1'
+   */
+  1.5707963267948966,
+
+  /* Expression: 0
+   * Referenced by: '<S2>/Sine Wave1'
+   */
+  0.0,
+
   /* Expression: 0
    * Referenced by: '<S2>/ref_y_constant'
    */
   0.0,
+
+  /* Expression: 0.5
+   * Referenced by: '<S2>/Switch1'
+   */
+  0.5,
+
+  /* Expression: [-2.127 3.042 -0.9575]
+   * Referenced by: '<S15>/Discrete Transfer Fcn1'
+   */
+  { -2.127, 3.042, -0.9575 },
+
+  /* Expression: [1 -0.7776 0.199]
+   * Referenced by: '<S15>/Discrete Transfer Fcn1'
+   */
+  { 1.0, -0.7776, 0.199 },
+
+  /* Expression: 0
+   * Referenced by: '<S15>/Discrete Transfer Fcn1'
+   */
+  0.0,
+
+  /* Expression: 0.087
+   * Referenced by: '<S15>/Saturation'
+   */
+  0.087,
+
+  /* Expression: -0.087
+   * Referenced by: '<S15>/Saturation'
+   */
+  -0.087,
 
   /* Computed Parameter: Integrator_gainval_e
    * Referenced by: '<S233>/Integrator'
@@ -549,10 +674,10 @@ P_Sensors_and_actuators_ball__T Sensors_and_actuators_ball_an_P = {
    */
   0.5,
 
-  /* Expression: -5.83
+  /* Expression: -0.0648
    * Referenced by: '<Root>/Outer_I'
    */
-  -5.83,
+  -0.0648,
 
   /* Computed Parameter: Gain1_Gain
    * Referenced by: '<S1>/Gain1'

@@ -103,14 +103,14 @@ MODULES                        = Sensors_and_actuators_ball_and_plate_2022b_data
 S_FUNCTIONS                    = 
 S_FUNCTIONS_LIB                = 
 SOLVER                         = 
-NUMST                          = 2
+NUMST                          = 3
 TID01EQ                        = 1
 NCSTATES                       = 9
 EXT_MODE                       = 0
 MULTITASKING                   = 0
 # Support for parallel computing
 MASTER_ANCHOR_DIR              = 
-START_DIR                      = C:\Users\20203985\Documents\MATLAB\14_06_2023\simulink
+START_DIR                      = C:\Users\20203985\Documents\MATLAB\19_06_2023\simulink
 # Shared library for utility code
 RTW_SHARED_LIB_SRCS_WILD       = 
 RTW_SHARED_LIB_SRCS_DIR        = 
