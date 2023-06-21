@@ -44,7 +44,8 @@ else:
 
 start_time = time.time()
 prev_center = None
-prev_velocity = None
+prev_velocity_x = None
+prev_velocity_y = None
 
 # keep looping
 while True:
@@ -117,21 +118,33 @@ while True:
             if prev_center is not None:
                 prev_x, prev_y = prev_center
                 curr_x, curr_y = center
-                distance = np.sqrt((curr_x - prev_x) ** 2 + (curr_y - prev_y) ** 2)
-                velocity = distance / elapsed_time
-                print("Filtered Velocity: {:.2f} pixels per second".format(velocity))
+                #distance = np.sqrt((curr_x - prev_x) ** 2 + (curr_y - prev_y) ** 2)
+                distance_x = curr_x - prev_x
+                distance_y = curr_y - prev_y
+                velocity_x = distance_x / elapsed_time
+                velocity_y = distance_y / elapsed_time
+                print("Velocity: ({:.2f},{:.2f}) pixels per second".format(velocity_x,velocity_y))
 
                 # # Apply Savitzky-Golay filter to the velocity
-                if prev_velocity is not None:
-                    velocities = np.array([prev_velocity, velocity])
-                    filtered_velocity = savgol_filter(velocities, window_length=5, polyorder=2, deriv=1)[-1]
-                    print("Filtered Velocity: {:.2f} pixels per second".format(filtered_velocity))
-                    prev_velocity = filtered_velocity
+                if prev_velocity_x is not None:
+                    #For filtered velocity x
+                    velocity_x = np.array([prev_velocity_x, velocity_x])
+                    filtered_velocity_x = savgol_filter(velocity_x, window_length=2, polyorder=1, deriv=1)[-1]
+                    print("Filtered Velocity: {:.2f} pixels per second".format(filtered_velocity_x))
+                    prev_velocity_x = filtered_velocity_x
+                    #For filtered velocity y
+                    velocity_x = np.array([prev_velocity_y, velocity_y])
+                    filtered_velocity_y = savgol_filter(velocity_y, window_length=2, polyorder=1, deriv=1)[-1]
+                    print("Filtered Velocity: {:.2f} pixels per second".format(filtered_velocity_x))
+                    prev_velocity_y = filtered_velocity_y
+                    
+                    
 
             # else:
             #     # If prev_velocity is None, assign the initial velocity without filtering
-            #     print("Initial Velocity: {:.2f} pixels per second".format(velocity))
-            #     prev_velocity = velocity
+                print("Initial Velocity: ({:.2f},{:.2f}) pixels per second".format(velocity_x,velocity_y))
+                prev_velocity_x = velocity_x
+                prev_velocity_y = velocity_y
 
             # Update previous center
             prev_center = center
