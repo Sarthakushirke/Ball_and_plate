@@ -7,7 +7,7 @@ Cc = [1 0 0 0; 0 0 1 0];
 Dc = [0 0 ;0 0 ];
 x0 = [0;0;0;0]; % Initial point
 
-Ts = 0.1;
+Ts = 0.035;
 ss_c = ss(Ac,Bc,Cc,Dc); % state space definition 
 ss_d = c2d(ss_c,Ts,'zoh'); % discritization using matlab function 
 ss_d_ccf = canon(ss_d);
@@ -25,9 +25,9 @@ C = C(1,1:2);
 D = 0;
 test_ss = ss(A,B,C,D);
 
-poles = [-5+5j -5-5j];
+poles = [0.5 0.5];
 K = -acker(A,B,poles);
-obspoles = [-20 -20];
+obspoles = [0.01 0.01];
 l = acker(A',C',obspoles);
 L = l';
 Aobs = A-L*C;
