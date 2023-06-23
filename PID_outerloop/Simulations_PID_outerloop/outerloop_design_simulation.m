@@ -190,10 +190,9 @@ step((C_shapeit_manually_aux*sys_tf1)/(1+C_shapeit_manually_aux*sys_tf1))
 
 load('outerloop_filtd_0_035.mat')
 C_d = shapeit_data.C_tf_z;
-C_d.Ts = Ts;
 C_d = tf(C_d);
-dsys=c2d(sys_tf1,Ts,'zoh');
-% step((C_d*dsys)/(1+C_d*dsys))
+dsys=c2d(sys_tf1,C_d.Ts,'zoh');
+step((C_d*dsys)/(1+C_d*dsys))
 num_d = C_d.num{:};
 den_d = C_d.den{:};
 
