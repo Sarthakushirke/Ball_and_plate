@@ -1,0 +1,15 @@
+[System]
+Version=2.2
+SystemType=SingleProcessorSystem
+DAQService=DsDAQ
+DsDAQBackground=1
+Status=Start
+File=sensors_and_actuators_ball_and_plate_2022b.rta
+RTP=Master
+
+[Master]
+Type=DS1202
+State=Enabled
+ServiceID=1
+TraceFile=sensors_and_actuators_ball_and_plate_2022b.trc
+ID=FC7C13F7-FC61-4A82-BBA9-B14AD64CC7A1
