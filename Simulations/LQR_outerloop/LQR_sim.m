@@ -91,6 +91,12 @@ R = [3 0;0 3];
 [K,P,~] = dlqr(A,B,Q,R); % In MATLAB documentation, u(k)=-Kx(k)
 K_lqr = -K; % In this lecture, we use the form u(k)=+Kx(k)
 
+kx = -0.4371;
+kxdot = -0.3586;
+ky = -0.4371;
+kydot = -0.3586;
+K_lqr = [kx,kxdot,0,0;0,0,ky,kydot];
+
 k_sim = 1000;
 t= Ts*(0:k_sim); % Time vector
 r = 0.1; % Radius of the circular reference trajectory
