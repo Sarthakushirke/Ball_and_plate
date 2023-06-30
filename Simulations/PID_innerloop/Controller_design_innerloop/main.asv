@@ -1,11 +1,9 @@
 % clc; clear; close all;
-clc; close all; clear
+clc; close all;
 
 %% Dynamics plant
 
-T = 2;
-init_val = -0.02;
-T_jump = 1;
+sim_time = 1;
 s = tf('s');
 Kt = 11;   % [N/A] - motor constant
 lx = 39/100; 
@@ -16,18 +14,18 @@ thickness = 4.8/1000;
 rho = 1180; %kg/m^3
 
 
-d = (0:5:40);
-for i = 1:length(d)
+
+
 % Mass calculation
 V_outer = lx*ly*depth;
 V_inner = (lx-2*thickness)*(ly-2*thickness)*(depth-thickness);
 V = (V_outer-V_inner);
 m_plate = V*rho;
 m = (1/3*m_plate)+m_slider;
-% d = 0;  % damping coefficient, assumed 0 for now
+d = 0;  % damping coefficient, assumed 0 for now
 
 % Motor model
-sys = Kt/(s^2*m+d(i)*s);
+sys = Kt/(s^2*m+d*s);
 % bode(sys)
 num_sys = sys.num{:};
 den_sys = sys.den{:};
@@ -45,18 +43,10 @@ Kp = 300;
 Ki = 100;
 Kd = 10;
 N = 80;
-% t_indx = find(out.t == 1);
+
 out = sim('motor_model');
-% out.y(1:t_indx-10) = init_val;
-plot(out.t,out.y,'Linewidth',1.5)
-xlabel('Time [s]','Interpreter','latex')
-ylabel('Displacement [m]','Interpreter','latex')
-xlim([0.95 1.3])
-ylim([-0.022 0.025])
-hold on
-end
-legend('D = 0','D = 5','D = 10','D = 15','D = 20','D = 25','D = 30','D = 35','D = 40','Interpreter','latex')
-grid on
+
+figure 
 
 
 %% Shapeit controller (TRANSFER FUNCTION CONTROLLER) !!
@@ -145,3 +135,4 @@ grid on
 % C = tf(C);
 % num_d = cell2mat(C.num);
 % den_d = cell2mat(C.den);
+
