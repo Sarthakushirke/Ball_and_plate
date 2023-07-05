@@ -112,6 +112,8 @@ xfuzzy = out.y_fuzzy(:,1);
 yfuzzy = out.y_fuzzy(:,2);
 % figure
 % plot(xfuzzy,yfuzzy)
+
+
 %% all trajectories on top of eachother
 refx = out.r_pid(:,1);
 refy = out.r_pid(:,2);
@@ -127,6 +129,10 @@ legend('PID','Fuzzy PID','LQR','LQG','Reference')
 grid on
 xlabel('Displacement $x$ [m]','Interpreter','latex')
 ylabel('Displacement $y$ [m]','Interpreter','latex')
+xlim([-0.17 0.17])
+ylim([-0.17 0.17])
+newcolors = {'#0072BD','#D95319','#EDB120','#7E2F8E','#77AC30','#4DBEEE','#A2142F'};
+colororder(newcolors)
 
 %% Cummulative error 
 
@@ -148,16 +154,23 @@ ct_fpid(i) = sum_fpid;
 ct_lqr(i) = sum_lqr;
 ct_lqg(i) = sum_lqg;
 end
-vecnorm(out.e_pid,2,2)
+ct_pid = cumsum(vecnorm(out.e_pid,2,2));
+ct_fpid = cumsum(vecnorm(out.e_fuzzy,2,2));
+ct_lqr = cumsum(vecnorm(out.e_lqr,2,2));
+ct_lqg = cumsum(vecnorm(out.e_lqg,2,2));
 figure
 area(out.t,ct_fpid+ct_pid+ct_lqr+ct_lqg)
 hold on
-area(out.t,ct_pid+ct_lqr+ct_lqg)
-area(out.t,ct_lqr+ct_lqg)
-area(out.t,ct_lqg)
-% legend({'$all$','$no pid$','$no lqg$','$no fuzzy$'},'Location','northwest','Interpreter','latex')
-% xlabel('Time [$s$]','Interpreter','latex')
-% ylabel('$\int |X_{e}|+|Y_e|dt$','Interpreter','latex')
+area(out.t,ct_fpid+ct_pid+ct_lqg)
+area(out.t,ct_fpid+ct_pid)
+area(out.t,ct_pid)
+legend({'$LQR$','$LQG$','$Fuzzy \; PID$','$PID$'},'Location','northwest','Interpreter','latex')
+xlabel('Time [$s$]','Interpreter','latex')
+ylabel('Cummulative sum of error $e$ [m]','Interpreter','latex')
+grid on
+
+newcolors = {'#EDB120','#7E2F8E','#D95319','#0072BD'};
+colororder(newcolors)
 
 %% Plot error signals LQR and PID to check
 
@@ -177,3 +190,13 @@ hold on
 plot(out.t,out.y_lqr(:,1))
 plot(out.t,out.r_pid(:,1))
 legend('pid','lqr','reference')
+
+
+%% Calculating Kalman gain L for report
+Q = [1,0,0,0;
+     0,200,0,0;
+     0,0,1,0;
+     0,0,0,200];
+R= [100,0;
+    0,100];
+[kalmf,L,P] = kalman(sys,Q,R);

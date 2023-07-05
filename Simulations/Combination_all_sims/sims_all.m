@@ -12,7 +12,7 @@ Bc = (-5/7)*g*[0 0 ;1 0;0 0; 0 1];
 Cc = [1 0 0 0; 0 0 1 0];
 Dc = [0 0 ;0 0 ];
 x0 = [0.1;0;0.1;0]; % Initial point
-xobs0 = [0.1950;0;0.-0.1950;0]; % Worste case initial observer point
+xobs0 = [0.1950;0;-0950;0]; % Worste case initial observer point
 
 Ts = 0.035; % Sampling time !!!
 
@@ -190,3 +190,6 @@ hold on
 plot(out.t,out.y_lqr(:,1))
 plot(out.t,out.r_pid(:,1))
 legend('pid','lqr','reference')
+
+
+

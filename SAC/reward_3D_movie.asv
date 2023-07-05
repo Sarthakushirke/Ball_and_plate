@@ -1,0 +1,38 @@
+clear all; close all; clc;
+
+%% Reward function refrence tracking over time 3D matrix
+k_sim = 300; % Time
+gridsize = 100; % Total spacing 
+x = linspace(-0.195,0.195,gridsize);
+y = linspace(-0.195,0.195,gridsize);
+[X,Y] = meshgrid(x,y);
+
+Ts=0.035;
+T=5; % Period of reference
+t= Ts*(0:k_sim); % Time vector
+x=0.05*sin((2*pi*t/T)+pi/2);
+y=0.05*sin(2*pi*t/T);
+[X_ref,Y_ref] = meshgrid(x,y);
+Reward = zeros(length(X),length(Y),k_sim);
+for i=1:length(X)
+    for j=1:length(Y)
+        for k = 1:k_sim
+            if X(i,j)^2 + Y(i,j)^2 <= 0.003 && X(i,j)^2 + Y(i,j)^2 >= 0.002
+                Reward(i,j,k) = exp(-1000*((-X(i,j)+xref(t(k),T))^2+(-Y(i,j)+yref(t(k),T))^2));
+            else
+                Reward(i,j,k) = -0.8*(abs(X(i,j)-xref(t(k),T))+abs(Y(i,j)-yref(t(k),T))-0.0025);
+            end
+        end
+    end
+end 
+
+fps = 30;
+figure()
+for k = 1:k_sim
+    title(sprintf('Plate temperature for time = %g [s]', round(t(k))),Interpreter='latex',FontSize = 10);
+    xlabel('$e_{x} [m]$')
+    ylabel('$e_{y} [m]$')
+    zlabel('$reward [-]$')
+    mesh(X,Y,Reward(:,:,k))
+    pause(1/fps)
+end
